@@ -96,6 +96,14 @@
 			name = InclusiveShop;
 			sourceTree = "<group>";
 		};
+		1FEF972C183E4B01B8BD1A35 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Resources;
+			path = "";
+			sourceTree = "<group>";
+		};
 		2D16E6871FA4F8E400B85C8A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -122,6 +130,7 @@
 				83CBBA001A601CBA00E9B192 /* Products */,
 				2D16E6871FA4F8E400B85C8A /* Frameworks */,
 				A070EBF3875A23EF334AC413 /* Pods */,
+				1FEF972C183E4B01B8BD1A35 /* Resources */,
 			);
 			indentWidth = 2;
 			sourceTree = "<group>";
