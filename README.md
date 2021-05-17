@@ -2,7 +2,7 @@
 
 ## What
 
-This project is an offline online shop demonstrating common a11y techniques. The app design is inspired by the [Shrine](https://material.io/design/material-studies/shrine.html) and [Zalando](https://www.zalando.com/).
+This project is an offline shop demonstrating common a11y techniques. The app design is inspired by the [Shrine](https://material.io/design/material-studies/shrine.html) and [Zalando](https://www.zalando.com/).
 
 ## Why
 
