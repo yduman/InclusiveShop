@@ -1,10 +1,20 @@
 import React from 'react';
-import { View, Text } from 'react-native';
+import { View, FlatList, Image } from 'react-native';
+
+import { products } from '../../utils/data';
 
 export default function HomeScreen() {
   return (
     <View>
-      <Text>Home Screen</Text>
+      <FlatList
+        showsVerticalScrollIndicator={false}
+        data={products}
+        renderItem={({ item }) => {
+          return (
+            <Image source={item.img} style={{ width: '100%', height: 500 }} />
+          );
+        }}
+      />
     </View>
   );
 }
