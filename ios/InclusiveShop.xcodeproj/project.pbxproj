@@ -13,7 +13,6 @@
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		5CF4A7937FE330BE17BCF634 /* libPods-InclusiveShop.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 463F80D2B5B251B16140DDBD /* libPods-InclusiveShop.a */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
-		833BD6F2265433C700213418 /* wmelon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 833BD6F1265433C700213418 /* wmelon.swift */; };
 		A3F4428E32A7F4DB555944D8 /* libPods-InclusiveShop-InclusiveShopTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 11DC183996D85B694BF0CDF1 /* libPods-InclusiveShop-InclusiveShopTests.a */; };
 /* End PBXBuildFile section */
 
@@ -41,8 +40,6 @@
 		1BF85906233F3E68E4D8B07F /* Pods-InclusiveShop-InclusiveShopTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InclusiveShop-InclusiveShopTests.release.xcconfig"; path = "Target Support Files/Pods-InclusiveShop-InclusiveShopTests/Pods-InclusiveShop-InclusiveShopTests.release.xcconfig"; sourceTree = "<group>"; };
 		463F80D2B5B251B16140DDBD /* libPods-InclusiveShop.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-InclusiveShop.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = InclusiveShop/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		833BD6F0265433C700213418 /* InclusiveShop-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "InclusiveShop-Bridging-Header.h"; sourceTree = "<group>"; };
-		833BD6F1265433C700213418 /* wmelon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = wmelon.swift; sourceTree = "<group>"; };
 		9142221C4715C798F6583E74 /* Pods-InclusiveShop-InclusiveShopTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InclusiveShop-InclusiveShopTests.debug.xcconfig"; path = "Target Support Files/Pods-InclusiveShop-InclusiveShopTests/Pods-InclusiveShop-InclusiveShopTests.debug.xcconfig"; sourceTree = "<group>"; };
 		E2FB626D823B3D0C6C0A4088 /* Pods-InclusiveShop.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InclusiveShop.release.xcconfig"; path = "Target Support Files/Pods-InclusiveShop/Pods-InclusiveShop.release.xcconfig"; sourceTree = "<group>"; };
 		E4F412E004516485480D2B5D /* Pods-InclusiveShop.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InclusiveShop.debug.xcconfig"; path = "Target Support Files/Pods-InclusiveShop/Pods-InclusiveShop.debug.xcconfig"; sourceTree = "<group>"; };
@@ -95,8 +92,6 @@
 				13B07FB61A68108700A75B9A /* Info.plist */,
 				81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */,
 				13B07FB71A68108700A75B9A /* main.m */,
-				833BD6F1265433C700213418 /* wmelon.swift */,
-				833BD6F0265433C700213418 /* InclusiveShop-Bridging-Header.h */,
 			);
 			name = InclusiveShop;
 			sourceTree = "<group>";
@@ -425,7 +420,6 @@
 			files = (
 				13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */,
 				13B07FC11A68108700A75B9A /* main.m in Sources */,
-				833BD6F2265433C700213418 /* wmelon.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -444,7 +438,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 9142221C4715C798F6583E74 /* Pods-InclusiveShop-InclusiveShopTests.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
@@ -472,7 +465,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 1BF85906233F3E68E4D8B07F /* Pods-InclusiveShop-InclusiveShopTests.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				COPY_PHASE_STRIP = NO;
 				INFOPLIST_FILE = InclusiveShopTests/Info.plist;
