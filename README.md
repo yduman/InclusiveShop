@@ -14,4 +14,3 @@ The goal of this project is to highlight techniques regarding a11y and moreover 
 - [React Navigation](https://reactnavigation.org/)
 - [React Native Paper](https://callstack.github.io/react-native-paper/)
 - [Material Design](https://material.io/design/usability/accessibility.html#understanding-accessibility)
-- [WatermelonDB](https://github.com/Nozbe/WatermelonDB)
