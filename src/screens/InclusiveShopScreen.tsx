@@ -26,6 +26,7 @@ export default function InclusiveShopScreen() {
   return (
     <NavigationContainer>
       <Tab.Navigator
+        swipeEnabled={false}
         tabBarOptions={{
           showIcon: true,
           showLabel: false,

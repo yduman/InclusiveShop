@@ -1,20 +1,35 @@
 import React from "react";
-import { View, FlatList, Image } from "react-native";
+import { View, FlatList, StyleSheet } from "react-native";
+import { Title, Subheading } from "react-native-paper";
 
 import { products } from "../../utils/data";
+import ProductCard from "../components/ProductCard";
 
 export default function HomeScreen() {
   return (
-    <View>
+    <View style={styles.pageContainer}>
+      <Title>Featured Products</Title>
+      <Subheading>Recommendations for you</Subheading>
       <FlatList
-        showsVerticalScrollIndicator={false}
+        horizontal
+        showsHorizontalScrollIndicator={false}
         data={products}
         renderItem={({ item }) => {
           return (
-            <Image source={item.img} style={{ width: "100%", height: 500 }} />
+            <ProductCard
+              title={item.brand}
+              subtitle={item.title}
+              imgSrc={item.img}
+            />
           );
         }}
       />
     </View>
   );
 }
+
+const styles = StyleSheet.create({
+  pageContainer: {
+    padding: 8,
+  },
+});

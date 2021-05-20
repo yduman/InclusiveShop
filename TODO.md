@@ -1,0 +1,7 @@
+- [ ] Create dummy login screen which will trigger loading the local data
+- [ ] Setup the data via React Context API
+- [ ] Design home screen
+- [ ] Integrate styled-components
+- [ ] Design search screen
+- [ ] Design favorites screen
+- [ ] Design shopping cart screen
