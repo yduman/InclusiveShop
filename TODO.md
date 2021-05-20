@@ -5,3 +5,5 @@
 - [ ] Design search screen
 - [ ] Design favorites screen
 - [ ] Design shopping cart screen
+- [ ] Configure Zalando-like theme (adhere to color contrast guidelines)
+- [ ] Apply a11y to LoginScreen

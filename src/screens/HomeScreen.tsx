@@ -1,5 +1,5 @@
 import React from "react";
-import { View, FlatList, StyleSheet } from "react-native";
+import { ScrollView, FlatList, StyleSheet } from "react-native";
 import { Title, Subheading } from "react-native-paper";
 
 import { products } from "../../utils/data";
@@ -7,7 +7,7 @@ import ProductCard from "../components/ProductCard";
 
 export default function HomeScreen() {
   return (
-    <View style={styles.pageContainer}>
+    <ScrollView style={styles.pageContainer}>
       <Title>Featured Products</Title>
       <Subheading>Recommendations for you</Subheading>
       <FlatList
@@ -24,7 +24,7 @@ export default function HomeScreen() {
           );
         }}
       />
-    </View>
+    </ScrollView>
   );
 }
 
