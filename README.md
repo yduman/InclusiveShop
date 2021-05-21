@@ -6,7 +6,7 @@ This project is an offline shop demonstrating common a11y techniques. The app de
 
 ## Why
 
-The goal of this project is to highlight techniques regarding a11y and moreover Inclusive Design in the realm of React Native.
+The goal of this project is to highlight techniques regarding a11y and moreover Inclusive Design in the realm of React Native. It is also the project for my thesis. The corresponding paper will be published later.
 
 ## How
 
