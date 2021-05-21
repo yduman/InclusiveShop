@@ -3,9 +3,16 @@ import { useNavigation } from "@react-navigation/native";
 
 import { AppLogo, LoginContainer, LoginButton } from "../components/Styled";
 import Input from "../components/Input";
+import useProductStore, { initialState } from "../../utils/useProductStore";
 
 export default function LoginScreen() {
   const navigation = useNavigation();
+  const store = useProductStore();
+
+  const resetStateAndNavigateToShop = () => {
+    store.setShopState(initialState);
+    navigation.navigate("Shop");
+  };
 
   return (
     <LoginContainer>
@@ -15,7 +22,7 @@ export default function LoginScreen() {
       <LoginButton
         icon="login"
         label="Login"
-        onPress={() => navigation.navigate("Shop")}
+        onPress={resetStateAndNavigateToShop}
       />
     </LoginContainer>
   );

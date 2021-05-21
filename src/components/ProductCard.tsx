@@ -25,7 +25,7 @@ export default function ProductCard(props: ProductCardProps) {
 const styles = StyleSheet.create({
   card: {
     width: 210,
-    margin: 8,
+    marginRight: 16,
   },
   cardImg: {
     height: 300,

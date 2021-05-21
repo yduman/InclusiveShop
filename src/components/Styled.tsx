@@ -1,5 +1,5 @@
 import styled from "styled-components/native";
-import { FAB } from "react-native-paper";
+import { FAB, Divider } from "react-native-paper";
 
 export const LoginContainer = styled.View`
   flex: 1;
@@ -17,4 +17,10 @@ export const AppLogo = styled.Image`
 export const LoginButton = styled(FAB)`
   width: 70%;
   align-self: center;
+`;
+
+export const Spacer = styled(Divider)`
+  margin-top: 16px;
+  margin-bottom: 8px;
+  /* border: 1px red solid; */
 `;

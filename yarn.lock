@@ -7218,3 +7218,8 @@ yargs@^16.1.1:
     string-width "^4.2.0"
     y18n "^5.0.5"
     yargs-parser "^20.2.2"
+
+zustand@^3.5.1:
+  version "3.5.1"
+  resolved "https://registry.yarnpkg.com/zustand/-/zustand-3.5.1.tgz#28970280e830924b185ce064061231957398c1d0"
+  integrity sha512-7J56Ve814z4zap71iaKFD+t65LFI//jEq/Vf55BTSVqJZCm+w9rov8OMBg+YSwIPQk54bfoIWHTrOWuAbpEDMw==

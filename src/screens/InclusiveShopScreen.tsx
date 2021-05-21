@@ -28,7 +28,9 @@ export default function InclusiveShopScreen() {
       tabBarOptions={{
         showIcon: true,
         showLabel: false,
-        style: { marginTop: insets.top },
+        style: {
+          marginTop: insets.top,
+        },
       }}>
       <Tab.Screen
         name="Home"

@@ -1,9 +1,17 @@
-- [ ] Create dummy login screen which will trigger loading the local data
-- [ ] Setup the data via React Context API
+- [X] Create dummy login screen which will trigger loading the local data
+- [X] Setup the data via Zustand
+- [X] Integrate styled-components
 - [ ] Design home screen
-- [ ] Integrate styled-components
+- [ ] Design product cards
 - [ ] Design search screen
 - [ ] Design favorites screen
 - [ ] Design shopping cart screen
 - [ ] Configure Zalando-like theme (adhere to color contrast guidelines)
-- [ ] Apply a11y to LoginScreen
+- [ ] Apply a11y to login screen
+- [ ] Apply a11y to home screen
+- [ ] Apply a11y to search screen
+- [ ] Apply a11y to favorites screen
+- [ ] Apply a11y to shopping cart screen
+- [ ] Extend state with `isSignedIn` to simulate auth flow
+  - [ ] Design profile section
+  - [ ] Implement logout
