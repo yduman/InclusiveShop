@@ -4,18 +4,9 @@ import { TouchableWithoutFeedback, ImageSourcePropType } from "react-native";
 import { ProductImage, ProductView, ProductLikeButton } from "./Styled";
 import ProductDescription from "./ProductDescription";
 import ProductSaleBadge from "./ProductSaleBadge";
+import { Product } from "../../utils/data";
 
-interface ProductCardProps {
-  img: ImageSourcePropType;
-  brand: string;
-  title: string;
-  type: string;
-  price: string;
-  salePrice?: string;
-  salePercent?: string;
-}
-
-export default function ProductCard(props: ProductCardProps) {
+export default function ProductCard(props: Product) {
   const { img, brand, title, type, price, salePrice, salePercent } = props;
 
   return (
