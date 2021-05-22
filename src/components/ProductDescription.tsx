@@ -5,18 +5,18 @@ import { Paragraph } from "react-native-paper";
 interface ProductDescriptionProps {
   brand: string;
   type: string;
-  title: string;
   price: string;
+  color: string;
   salePrice?: string;
 }
 
 export default function ProductDescription(props: ProductDescriptionProps) {
   return (
     <React.Fragment>
+      <Paragraph numberOfLines={1}>{props.brand}</Paragraph>
       <Paragraph numberOfLines={1}>
-        {props.brand + " - " + props.type}
+        {props.type + " - " + props.color}
       </Paragraph>
-      <Paragraph numberOfLines={1}>{props.title}</Paragraph>
       {renderPrice(props.price, props.salePrice)}
     </React.Fragment>
   );

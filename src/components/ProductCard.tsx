@@ -7,7 +7,8 @@ import ProductSaleBadge from "./ProductSaleBadge";
 import { Product } from "../../utils/data";
 
 export default function ProductCard(props: Product) {
-  const { img, brand, title, type, price, salePrice, salePercent } = props;
+  const { img, brand, title, type, price, salePrice, salePercent, color } =
+    props;
 
   return (
     <TouchableWithoutFeedback
@@ -22,10 +23,10 @@ export default function ProductCard(props: Product) {
         <ProductSaleBadge salePrice={salePrice} salePercent={salePercent} />
         <ProductDescription
           brand={brand}
-          title={title}
           type={type}
           price={price}
           salePrice={salePrice}
+          color={color}
         />
       </ProductView>
     </TouchableWithoutFeedback>
