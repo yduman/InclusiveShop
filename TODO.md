@@ -4,8 +4,9 @@
 - [X] Design product cards
 - [X] Design home screen
 - [ ] Design search screen
-- [ ] Design favorites screen
+- [X] Design favorites screen
 - [ ] Design shopping cart screen
+- [ ] Design product detail screen
 - [ ] Configure Zalando-like theme (adhere to color contrast guidelines)
 - [ ] Apply a11y to login screen
 - [ ] Apply a11y to home screen
