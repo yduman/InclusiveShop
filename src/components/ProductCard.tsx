@@ -1,33 +1,46 @@
 import React from "react";
 import { StyleSheet, ImageSourcePropType } from "react-native";
-import { Card } from "react-native-paper";
 
-interface ProductCardProps {
+import { ProductImage, ProductView, ProductLikeButton } from "./Styled";
+import ProductDescription from "./ProductDescription";
+import ProductSaleBadge from "./ProductSaleBadge";
+
+interface NewProductCardProps {
+  img: ImageSourcePropType;
+  brand: string;
   title: string;
-  imgSrc: ImageSourcePropType;
-  content?: string;
-  subtitle?: string;
+  type: string;
+  price: string;
+  salePrice?: string;
+  salePercent?: string;
 }
 
-export default function ProductCard(props: ProductCardProps) {
+export default function ProductCard(props: NewProductCardProps) {
+  const { img, brand, title, type, price, salePrice, salePercent } = props;
+
   return (
-    <Card style={styles.card}>
-      <Card.Cover
-        style={styles.cardImg}
-        source={props.imgSrc}
-        resizeMode="stretch"
+    <ProductView>
+      <ProductLikeButton
+        icon="heart-outline"
+        size={20}
+        onPress={() => console.log("me likey")}
       />
-      <Card.Title title={props.title} subtitle={props.subtitle} />
-    </Card>
+      <ProductImage source={img} resizeMode="cover" />
+      <ProductSaleBadge salePrice={salePrice} salePercent={salePercent} />
+      <ProductDescription
+        brand={brand}
+        title={title}
+        type={type}
+        price={price}
+        salePrice={salePrice}
+      />
+    </ProductView>
   );
 }
 
 const styles = StyleSheet.create({
-  card: {
-    width: 210,
-    marginRight: 16,
-  },
-  cardImg: {
-    height: 300,
+  discount: {
+    color: "white",
+    fontWeight: "bold",
   },
 });

@@ -1,6 +1,6 @@
 import React from "react";
-import { ScrollView, FlatList, StyleSheet } from "react-native";
-import { Title, Subheading, Divider } from "react-native-paper";
+import { ScrollView, FlatList } from "react-native";
+import { Title, Subheading } from "react-native-paper";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 
 import ProductCard from "../components/ProductCard";
@@ -34,9 +34,11 @@ export default function HomeScreen() {
         renderItem={({ item }) => {
           return (
             <ProductCard
-              title={item.brand}
-              subtitle={item.title}
-              imgSrc={item.img}
+              img={item.img}
+              brand={item.brand}
+              title={item.title}
+              type={item.type}
+              price={item.price}
             />
           );
         }}
@@ -51,9 +53,13 @@ export default function HomeScreen() {
         renderItem={({ item }) => {
           return (
             <ProductCard
-              title={item.brand}
-              subtitle={item.title}
-              imgSrc={item.img}
+              img={item.img}
+              brand={item.brand}
+              title={item.title}
+              type={item.type}
+              price={item.price}
+              salePrice={item.salePrice}
+              salePercent={item.salePercent}
             />
           );
         }}
@@ -62,10 +68,3 @@ export default function HomeScreen() {
     </ScrollView>
   );
 }
-
-const styles = StyleSheet.create({
-  pageContainer: {
-    paddingTop: 16,
-    paddingLeft: 16,
-  },
-});

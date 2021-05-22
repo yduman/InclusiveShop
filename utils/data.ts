@@ -10,6 +10,7 @@ export interface Product {
   title: string;
   price: string;
   salePrice: string;
+  salePercent?: string;
   isSale: boolean;
   isFavorite: boolean;
   isFeatured: boolean;
@@ -42,6 +43,7 @@ export const products: Product[] = [
     title: "MARVIC",
     price: "$60",
     salePrice: "$40",
+    salePercent: "-33%",
     isSale: true,
     isFavorite: false,
     isFeatured: false,
@@ -72,6 +74,7 @@ export const products: Product[] = [
     title: "Comfortable Slim",
     price: "$70",
     salePrice: "$50",
+    salePercent: "-28%",
     isSale: true,
     isFavorite: false,
     isFeatured: false,
@@ -89,7 +92,7 @@ export const products: Product[] = [
     salePrice: "",
     isSale: false,
     isFavorite: false,
-    isFeatured: false,
+    isFeatured: true,
     img: require("../assets/clothing5.jpeg"),
   },
   {
@@ -102,6 +105,7 @@ export const products: Product[] = [
     title: "TROY - Slim Fit",
     price: "$50",
     salePrice: "$40",
+    salePercent: "-20%",
     isSale: true,
     isFavorite: false,
     isFeatured: false,
@@ -132,6 +136,7 @@ export const products: Product[] = [
     title: "KATE BOYFRIEND - Relaxed Fit",
     price: "$100",
     salePrice: "$70",
+    salePercent: "-30%",
     isSale: true,
     isFavorite: false,
     isFeatured: false,
@@ -162,6 +167,7 @@ export const products: Product[] = [
     title: "500",
     price: "$75",
     salePrice: "$55",
+    salePercent: "-26%",
     isSale: true,
     isFavorite: false,
     isFeatured: false,
@@ -192,6 +198,7 @@ export const products: Product[] = [
     title: "CHUCK TAYLOR ALL STAR LIFT",
     price: "$80",
     salePrice: "$75",
+    salePercent: "-6%",
     isSale: true,
     isFavorite: false,
     isFeatured: false,

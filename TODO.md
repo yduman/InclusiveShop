@@ -1,8 +1,8 @@
 - [X] Create dummy login screen which will trigger loading the local data
 - [X] Setup the data via Zustand
 - [X] Integrate styled-components
-- [ ] Design home screen
-- [ ] Design product cards
+- [X] Design product cards
+- [X] Design home screen
 - [ ] Design search screen
 - [ ] Design favorites screen
 - [ ] Design shopping cart screen
