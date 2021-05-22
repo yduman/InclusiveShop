@@ -1,5 +1,5 @@
 import React from "react";
-import { StyleSheet, ImageSourcePropType } from "react-native";
+import { ImageSourcePropType } from "react-native";
 
 import { ProductImage, ProductView, ProductLikeButton } from "./Styled";
 import ProductDescription from "./ProductDescription";
@@ -37,10 +37,3 @@ export default function ProductCard(props: NewProductCardProps) {
     </ProductView>
   );
 }
-
-const styles = StyleSheet.create({
-  discount: {
-    color: "white",
-    fontWeight: "bold",
-  },
-});
