@@ -18,10 +18,7 @@ export default function ProductCard(product: Product) {
     <TouchableWithoutFeedback onPress={handleProductPress}>
       <ProductView>
         <ProductImage source={product.img} resizeMode="cover" />
-        <ProductSaleBadge
-          salePrice={product.salePrice}
-          salePercent={product.salePercent}
-        />
+        <ProductSaleBadge salePrice={product.salePrice} salePercent={product.salePercent} />
         <ProductDescription
           brand={product.brand}
           type={product.type}

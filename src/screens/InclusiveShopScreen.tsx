@@ -12,11 +12,7 @@ const Tab = createBottomTabNavigator();
 
 function renderIcon(activeIcon: string, focused: boolean) {
   const iconSize = 20;
-  return focused ? (
-    <Icon name={activeIcon} size={iconSize} />
-  ) : (
-    <Icon name={activeIcon + "-outline"} size={iconSize} />
-  );
+  return focused ? <Icon name={activeIcon} size={iconSize} /> : <Icon name={activeIcon + "-outline"} size={iconSize} />;
 }
 
 export default function InclusiveShopScreen() {

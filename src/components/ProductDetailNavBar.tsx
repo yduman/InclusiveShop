@@ -6,16 +6,14 @@ import { RouteProp, useRoute } from "@react-navigation/native";
 import useProductStore from "../../utils/useProductStore";
 import { ParamList } from "../screens/ProductDetailScreen";
 import { Product } from "../../utils/data";
+import { getFullDescription } from "../../utils";
 
 export default function ProductDetailNavBar(props: StackHeaderProps) {
   const { navigation, previous } = props;
   const route = useRoute<RouteProp<ParamList, "ProductDetailScreen">>();
-  const product = useProductStore(state =>
-    state.products.find(p => p.id === route.params.productId),
-  ) as Product;
-  const description =
-    product.title + " - " + product.type + " - " + product.color;
-  const { colors } = useTheme();
+  const productId = route.params.productId;
+  const product = useProductStore(state => state.products.find(p => p.id === productId)) as Product;
+  const description = getFullDescription(product);
 
   return (
     <Appbar.Header

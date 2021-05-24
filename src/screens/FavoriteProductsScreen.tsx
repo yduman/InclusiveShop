@@ -7,9 +7,7 @@ import EmptyPage from "../components/EmptyPage";
 import useProductStore from "../../utils/useProductStore";
 
 export default function FavoriteProductsScreen() {
-  const favoriteProducts = useProductStore(state =>
-    state.products.filter(p => p.isFavorite),
-  );
+  const favoriteProducts = useProductStore(state => state.products.filter(p => p.isFavorite));
 
   return (
     <React.Fragment>
@@ -27,11 +25,7 @@ export default function FavoriteProductsScreen() {
             img={require("../../assets/images/nofavorites.png")}
           />
         ) : (
-          <ProductList
-            data={favoriteProducts}
-            isHorizontal={false}
-            columns={2}
-          />
+          <ProductList data={favoriteProducts} isHorizontal={false} columns={2} />
         )}
       </View>
     </React.Fragment>

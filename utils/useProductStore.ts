@@ -22,11 +22,7 @@ const useProductStore = create<ProductStore>((set, get) => ({
   toggleFavorite: id => handleFavoriteChange(id, get, set),
 }));
 
-function handleFavoriteChange(
-  id: number,
-  get: GetState<ProductStore>,
-  set: SetState<ProductStore>,
-) {
+function handleFavoriteChange(id: number, get: GetState<ProductStore>, set: SetState<ProductStore>) {
   const products = get().products;
   let product = products.find(p => p.id === id) as Product;
   product.isFavorite = !product.isFavorite;

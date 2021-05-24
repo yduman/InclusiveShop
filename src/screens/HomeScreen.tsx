@@ -8,13 +8,8 @@ import Headlines from "../components/Headlines";
 import Header from "../components/Header";
 
 export default function HomeScreen() {
-  const featuredProducts = useProductStore(state =>
-    state.products.filter(p => p.isFeatured),
-  );
-
-  const discountProducts = useProductStore(state =>
-    state.products.filter(p => p.isSale),
-  );
+  const featuredProducts = useProductStore(state => state.products.filter(p => p.isFeatured));
+  const discountProducts = useProductStore(state => state.products.filter(p => p.isSale));
 
   return (
     <React.Fragment>
@@ -25,16 +20,10 @@ export default function HomeScreen() {
           paddingTop: 16,
           paddingLeft: 16,
         }}>
-        <Headlines
-          title="Featured Products"
-          subtitle="Recommendations for you"
-        />
+        <Headlines title="Featured Products" subtitle="Recommendations for you" />
         <ProductList data={featuredProducts} isHorizontal />
         <Spacer top={4} bottom={8} />
-        <Headlines
-          title="Products on Sale"
-          subtitle="Our best discounts for you"
-        />
+        <Headlines title="Products on Sale" subtitle="Our best discounts for you" />
         <ProductList data={discountProducts} isHorizontal />
         <Spacer top={4} bottom={8} />
       </ScrollView>
