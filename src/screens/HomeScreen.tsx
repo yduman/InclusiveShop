@@ -13,7 +13,7 @@ export default function HomeScreen() {
 
   return (
     <React.Fragment>
-      <Header title="Home" />
+      <Header title="InclusiveShop" />
       <ScrollView
         showsVerticalScrollIndicator={false}
         style={{

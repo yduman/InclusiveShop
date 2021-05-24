@@ -16,13 +16,10 @@ export default function ProductDetailNavBar(props: StackHeaderProps) {
   const description = getFullDescription(product);
 
   return (
-    <Appbar.Header
-      theme={{
-        dark: true,
-        mode: "adaptive",
-      }}>
+    <Appbar.Header>
       {previous ? <Appbar.BackAction onPress={navigation.goBack} /> : null}
       <Appbar.Content title={product.brand} subtitle={description} />
+      <Appbar.Action icon="cart-outline" onPress={() => {}} />
     </Appbar.Header>
   );
 }

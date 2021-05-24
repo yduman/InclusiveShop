@@ -11,7 +11,7 @@ export default function FavoriteProductsScreen() {
 
   return (
     <React.Fragment>
-      <Header title="Favorite Products" />
+      <Header title="Favorites" />
       <View
         style={{
           paddingTop: 16,
