@@ -6,7 +6,7 @@ import EmptyPage from "../components/EmptyPage";
 import ProductList from "../components/ProductList";
 import useProductStore from "../../utils/useProductStore";
 
-export default function ShoppingCartScreen() {
+export default function CheckoutScreen() {
   const shoppingCart = useProductStore(state => state.cart);
 
   return (

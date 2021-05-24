@@ -25,7 +25,7 @@ export default function HomeScreen() {
         <Spacer top={4} bottom={8} />
         <Headlines title="Products on Sale" subtitle="Our best discounts for you" />
         <ProductList data={discountProducts} isHorizontal />
-        <Spacer top={4} bottom={8} />
+        <Spacer top={4} bottom={20} />
       </ScrollView>
     </React.Fragment>
   );

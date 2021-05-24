@@ -25,7 +25,8 @@ interface SpacerProps {
 }
 
 export const Spacer = styled(Divider)<SpacerProps>`
-  background-color: transparent;
+  /* background-color: black; */
+  margin-right: 16px;
   margin-top: ${props => (props.top ? String(props.top + "px") : "8px")};
   margin-bottom: ${props => (props.bottom ? String(props.bottom + "px") : "8px")};
 `;
@@ -40,16 +41,16 @@ export const ProductImage = styled.Image`
   height: 250px;
 `;
 
-export const ProductLikeButton = styled(IconButton)`
-  position: absolute;
-  z-index: 1;
-  background-color: white;
-  /* margin-left: 133px; */
-  align-self: flex-end;
-  top: 31%;
-  width: 48px;
-  height: 48px;
-`;
+// export const ProductLikeButton = styled(IconButton)`
+//   position: absolute;
+//   z-index: 1;
+//   background-color: white;
+//   /* margin-left: 133px; */
+//   align-self: flex-end;
+//   top: 31%;
+//   width: 48px;
+//   height: 48px;
+// `;
 
 export const SaleBadge = styled.View`
   position: absolute;
@@ -64,8 +65,8 @@ export const SaleBadge = styled.View`
 `;
 
 export const ProductImageCover = styled.Image`
-  max-width: 100%;
-  max-height: 74%;
+  width: 100%;
+  height: 100%;
 `;
 
 export const ProductDetailsContainer = styled.View`

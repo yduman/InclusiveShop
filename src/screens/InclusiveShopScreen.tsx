@@ -5,7 +5,7 @@ import Icon from "react-native-vector-icons/MaterialCommunityIcons";
 import HomeScreen from "./HomeScreen";
 import SearchScreen from "./SearchScreen";
 import FavoriteProductsScreen from "./FavoriteProductsScreen";
-import ShoppingCartScreen from "./ShoppingCartScreen";
+import CheckoutScreen from "./CheckoutScreen";
 
 const Tab = createMaterialBottomTabNavigator();
 
@@ -43,9 +43,9 @@ export default function InclusiveShopScreen() {
       />
       <Tab.Screen
         name="Checkout"
-        component={ShoppingCartScreen}
+        component={CheckoutScreen}
         options={{
-          tabBarAccessibilityLabel: "Shopping Cart",
+          tabBarAccessibilityLabel: "Checkout",
           tabBarIcon: ({ focused }) => renderIcon("cart", focused),
         }}
       />

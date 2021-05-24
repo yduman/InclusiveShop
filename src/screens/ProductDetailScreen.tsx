@@ -1,12 +1,13 @@
 import React from "react";
 import { ScrollView } from "react-native";
 import { RouteProp, useRoute } from "@react-navigation/native";
-
+import { Image } from "native-base";
 import useProductStore from "../../utils/useProductStore";
 import Price from "../components/Price";
 import ProductDetailTitle from "../components/ProductDetailTitle";
-import { ProductDetailsContainer, ProductImageCover, ProductLikeButton, Spacer } from "../components/Styled";
+import { ProductDetailsContainer, ProductImageCover, Spacer } from "../components/Styled";
 import { getFullDescription } from "../../utils";
+import ProductSizeSelect from "../components/ProductSizeSelect";
 
 export type ParamList = {
   ProductDetailScreen: {
@@ -31,13 +32,13 @@ export default function ProductDetailScreen() {
 
   return (
     <ScrollView showsVerticalScrollIndicator={false}>
-      <ProductLikeButton icon={product.isFavorite ? "heart" : "heart-outline"} onPress={handleLikePress} />
-      <ProductImageCover source={product.img} resizeMode="cover" />
+      <Image source={product.img} resizeMode="cover" alt="Some alt" style={{ height: 570 }} />
       <ProductDetailsContainer>
         <ProductDetailTitle brand={product.brand} description={description} />
         <Spacer top={2} />
         <Price price={product.price} salePrice={product.salePrice} salePercent={product.salePercent?.slice(1)} />
       </ProductDetailsContainer>
+      <ProductSizeSelect />
     </ScrollView>
   );
 }

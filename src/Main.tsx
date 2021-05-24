@@ -3,6 +3,7 @@ import merge from "deepmerge";
 import { createStackNavigator } from "@react-navigation/stack";
 import { NavigationContainer, DefaultTheme as NavigationDefaultTheme } from "@react-navigation/native";
 import { configureFonts, DefaultTheme as PaperDefaultTheme, Provider as PaperProvider } from "react-native-paper";
+import { NativeBaseProvider } from "native-base";
 
 import LoginScreen from "./screens/LoginScreen";
 import InclusiveShopScreen from "./screens/InclusiveShopScreen";
@@ -26,17 +27,19 @@ const theme = {
 
 export default function Main() {
   return (
-    <PaperProvider theme={theme}>
-      <NavigationContainer theme={theme}>
-        <Stack.Navigator
-          screenOptions={{
-            header: props => <ProductDetailNavBar {...props} />,
-          }}>
-          <Stack.Screen options={{ headerShown: false }} name="Login" component={LoginScreen} />
-          <Stack.Screen options={{ headerShown: false }} name="Shop" component={InclusiveShopScreen} />
-          <Stack.Screen name="ProductDetailScreen" component={ProductDetailScreen} />
-        </Stack.Navigator>
-      </NavigationContainer>
-    </PaperProvider>
+    <NativeBaseProvider>
+      <PaperProvider theme={theme}>
+        <NavigationContainer theme={theme}>
+          <Stack.Navigator
+            screenOptions={{
+              header: props => <ProductDetailNavBar {...props} />,
+            }}>
+            <Stack.Screen options={{ headerShown: false }} name="Login" component={LoginScreen} />
+            <Stack.Screen options={{ headerShown: false }} name="Shop" component={InclusiveShopScreen} />
+            <Stack.Screen name="ProductDetailScreen" component={ProductDetailScreen} />
+          </Stack.Navigator>
+        </NavigationContainer>
+      </PaperProvider>
+    </NativeBaseProvider>
   );
 }
