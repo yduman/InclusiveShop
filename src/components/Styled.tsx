@@ -19,9 +19,16 @@ export const LoginButton = styled(FAB)`
   align-self: center;
 `;
 
-export const Spacer = styled(Divider)`
-  margin-top: 16px;
-  margin-bottom: 8px;
+interface SpacerProps {
+  top?: number;
+  bottom?: number;
+}
+
+export const Spacer = styled(Divider)<SpacerProps>`
+  background-color: transparent;
+  margin-top: ${props => (props.top ? String(props.top + "px") : "8px")};
+  margin-bottom: ${props =>
+    props.bottom ? String(props.bottom + "px") : "8px"};
 `;
 
 export const ProductView = styled.View`
@@ -51,4 +58,13 @@ export const SaleBadge = styled.View`
   padding-right: 8px;
   padding-top: 2px;
   padding-bottom: 2px;
+`;
+
+export const ProductImageCover = styled.Image`
+  max-width: 100%;
+  max-height: 74%;
+`;
+
+export const ProductDetailsContainer = styled.View`
+  padding: 16px;
 `;

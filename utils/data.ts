@@ -56,7 +56,7 @@ export const products: Product[] = [
     type: "Shirt",
     brand: "Massimo Dutti",
     color: "white",
-    title: "",
+    title: "Join Life",
     price: "$50",
     salePrice: "",
     isSale: false,

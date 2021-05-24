@@ -31,13 +31,13 @@ export default function HomeScreen() {
         subHeader="Recommendations for you"
       />
       <ProductList data={featuredProducts} isHorizontal />
-      <Spacer />
+      <Spacer top={4} bottom={8} />
       <Headlines
         header="Products on Sale"
         subHeader="Our best discounts for you"
       />
       <ProductList data={discountProducts} isHorizontal />
-      <Spacer />
+      <Spacer top={4} bottom={8} />
     </ScrollView>
   );
 }

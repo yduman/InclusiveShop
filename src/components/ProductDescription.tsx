@@ -1,6 +1,7 @@
 import React from "react";
-import { View, StyleSheet } from "react-native";
 import { Paragraph } from "react-native-paper";
+
+import Price from "./Price";
 
 interface ProductDescriptionProps {
   brand: string;
@@ -17,35 +18,7 @@ export default function ProductDescription(props: ProductDescriptionProps) {
       <Paragraph numberOfLines={1}>
         {props.type + " - " + props.color}
       </Paragraph>
-      {renderPrice(props.price, props.salePrice)}
+      <Price price={props.price} salePrice={props.salePrice} />
     </React.Fragment>
   );
 }
-
-function renderPrice(normalPrice: string, salePrice?: string) {
-  if (salePrice) {
-    return (
-      <View style={styles.priceContainer}>
-        <Paragraph numberOfLines={1} style={styles.salePrice}>
-          {salePrice}
-        </Paragraph>
-        <Paragraph style={styles.strikethrough}>{normalPrice}</Paragraph>
-      </View>
-    );
-  }
-  return <Paragraph numberOfLines={1}>{normalPrice}</Paragraph>;
-}
-
-const styles = StyleSheet.create({
-  strikethrough: {
-    textDecorationLine: "line-through",
-    textDecorationStyle: "solid",
-  },
-  priceContainer: {
-    flexDirection: "row",
-  },
-  salePrice: {
-    marginRight: 8,
-    fontWeight: "bold",
-  },
-});

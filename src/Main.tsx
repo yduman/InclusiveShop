@@ -3,6 +3,7 @@ import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
 import LoginScreen from "./screens/LoginScreen";
 import InclusiveShopScreen from "./screens/InclusiveShopScreen";
+import ProductDetailScreen from "./screens/ProductDetailScreen";
 
 const Stack = createStackNavigator();
 
@@ -19,6 +20,10 @@ export default function Main() {
           options={{ headerShown: false }}
           name="Shop"
           component={InclusiveShopScreen}
+        />
+        <Stack.Screen
+          name="ProductDetailScreen"
+          component={ProductDetailScreen}
         />
       </Stack.Navigator>
     </NavigationContainer>
