@@ -7,12 +7,14 @@ import { Product } from "../../utils/data";
 import {
   ProductDetailsContainer,
   ProductImageCover,
+  ProductLikeButton,
   Spacer,
 } from "../components/Styled";
 import ProductDetailTitle from "../components/ProductDetailTitle";
 import Price from "../components/Price";
+import { getFullDescription } from "../../utils";
 
-type ParamList = {
+export type ParamList = {
   ProductDetailScreen: {
     productId: number;
   };
@@ -20,15 +22,22 @@ type ParamList = {
 
 export default function ProductDetailScreen() {
   const route = useRoute<RouteProp<ParamList, "ProductDetailScreen">>();
+  const toggleFavorite = useProductStore(state => state.toggleFavorite);
   const product = useProductStore(state =>
     state.products.find(p => p.id === route.params.productId),
   ) as Product;
+  const description = getFullDescription(product);
 
-  const description =
-    product.title + " - " + product.type + " - " + product.color;
+  function handleLikePress() {
+    toggleFavorite(product.id);
+  }
 
   return (
-    <ScrollView>
+    <ScrollView showsVerticalScrollIndicator={false}>
+      <ProductLikeButton
+        icon={product.isFavorite ? "heart" : "heart-outline"}
+        onPress={handleLikePress}
+      />
       <ProductImageCover source={product.img} resizeMode="cover" />
       <ProductDetailsContainer>
         <ProductDetailTitle brand={product.brand} description={description} />

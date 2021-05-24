@@ -4,15 +4,16 @@
 - [X] Design product cards
 - [X] Design home screen
 - [X] Design favorites screen
+- [X] Configure Zalando-like theme
 - [ ] Design product detail screen
 - [ ] Design search screen
 - [ ] Design shopping cart screen
-- [ ] Configure Zalando-like theme (adhere to color contrast guidelines)
 - [ ] Apply a11y to login screen
 - [ ] Apply a11y to home screen
 - [ ] Apply a11y to search screen
 - [ ] Apply a11y to favorites screen
 - [ ] Apply a11y to shopping cart screen
+- [ ] Applay a11y to color theme
 - [ ] Extend state with `isSignedIn` to simulate auth flow
   - [ ] Design profile section
   - [ ] Implement logout

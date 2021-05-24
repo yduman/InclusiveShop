@@ -1,5 +1,5 @@
 import React from "react";
-import { createMaterialTopTabNavigator } from "@react-navigation/material-top-tabs";
+import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import Icon from "react-native-vector-icons/MaterialCommunityIcons";
 
@@ -8,7 +8,7 @@ import SearchScreen from "./SearchScreen";
 import FavoriteProductsScreen from "./FavoriteProductsScreen";
 import ShoppingCartScreen from "./ShoppingCartScreen";
 
-const Tab = createMaterialTopTabNavigator();
+const Tab = createBottomTabNavigator();
 
 function renderIcon(activeIcon: string, focused: boolean) {
   const iconSize = 20;
@@ -20,17 +20,10 @@ function renderIcon(activeIcon: string, focused: boolean) {
 }
 
 export default function InclusiveShopScreen() {
-  const insets = useSafeAreaInsets();
-
   return (
     <Tab.Navigator
-      swipeEnabled={false}
       tabBarOptions={{
-        showIcon: true,
         showLabel: false,
-        style: {
-          marginTop: insets.top,
-        },
       }}>
       <Tab.Screen
         name="Home"

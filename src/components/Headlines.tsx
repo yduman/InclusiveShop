@@ -1,16 +1,16 @@
 import React from "react";
-import { Title, Subheading } from "react-native-paper";
+import { Title, Subheading, Headline } from "react-native-paper";
 
 interface HeadlinesProps {
-  header: string;
-  subHeader: string;
+  title: string;
+  subtitle?: string;
 }
 
 export default function Headlines(props: HeadlinesProps) {
   return (
     <React.Fragment>
-      <Title>{props.header}</Title>
-      <Subheading>{props.subHeader}</Subheading>
+      <Headline>{props.title}</Headline>
+      <Subheading>{props.subtitle}</Subheading>
     </React.Fragment>
   );
 }

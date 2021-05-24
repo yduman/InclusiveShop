@@ -16,7 +16,7 @@ export default function LoginScreen() {
 
   return (
     <LoginContainer>
-      <AppLogo source={require("../../assets/applogo.png")} />
+      <AppLogo source={require("../../assets/images/applogo.png")} />
       <Input label="E-Mail" inputType="email" />
       <Input label="Password" inputType="password" />
       <LoginButton

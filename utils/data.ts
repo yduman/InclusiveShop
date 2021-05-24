@@ -29,9 +29,9 @@ export const products: Product[] = [
     price: "$40",
     salePrice: "",
     isSale: false,
-    isFavorite: true,
+    isFavorite: false,
     isFeatured: true,
-    img: require("../assets/clothing1.jpeg"),
+    img: require("../assets/images/clothing1.jpeg"),
   },
   {
     id: 2,
@@ -45,9 +45,9 @@ export const products: Product[] = [
     salePrice: "$40",
     salePercent: "-33%",
     isSale: true,
-    isFavorite: true,
+    isFavorite: false,
     isFeatured: false,
-    img: require("../assets/clothing2.jpeg"),
+    img: require("../assets/images/clothing2.jpeg"),
   },
   {
     id: 3,
@@ -60,9 +60,9 @@ export const products: Product[] = [
     price: "$50",
     salePrice: "",
     isSale: false,
-    isFavorite: true,
+    isFavorite: false,
     isFeatured: false,
-    img: require("../assets/clothing3.jpeg"),
+    img: require("../assets/images/clothing3.jpeg"),
   },
   {
     id: 4,
@@ -78,7 +78,7 @@ export const products: Product[] = [
     isSale: true,
     isFavorite: false,
     isFeatured: false,
-    img: require("../assets/clothing4.jpeg"),
+    img: require("../assets/images/clothing4.jpeg"),
   },
   {
     id: 5,
@@ -93,7 +93,7 @@ export const products: Product[] = [
     isSale: false,
     isFavorite: false,
     isFeatured: true,
-    img: require("../assets/clothing5.jpeg"),
+    img: require("../assets/images/clothing5.jpeg"),
   },
   {
     id: 6,
@@ -109,7 +109,7 @@ export const products: Product[] = [
     isSale: true,
     isFavorite: false,
     isFeatured: false,
-    img: require("../assets/clothing6.jpeg"),
+    img: require("../assets/images/clothing6.jpeg"),
   },
   {
     id: 7,
@@ -124,7 +124,7 @@ export const products: Product[] = [
     isSale: false,
     isFavorite: false,
     isFeatured: false,
-    img: require("../assets/clothing7.jpeg"),
+    img: require("../assets/images/clothing7.jpeg"),
   },
   {
     id: 8,
@@ -140,7 +140,7 @@ export const products: Product[] = [
     isSale: true,
     isFavorite: false,
     isFeatured: false,
-    img: require("../assets/clothing8.jpeg"),
+    img: require("../assets/images/clothing8.jpeg"),
   },
   {
     id: 9,
@@ -155,7 +155,7 @@ export const products: Product[] = [
     isSale: false,
     isFavorite: false,
     isFeatured: true,
-    img: require("../assets/sneaker1.jpeg"),
+    img: require("../assets/images/sneaker1.jpeg"),
   },
   {
     id: 10,
@@ -171,7 +171,7 @@ export const products: Product[] = [
     isSale: true,
     isFavorite: false,
     isFeatured: false,
-    img: require("../assets/sneaker2.jpeg"),
+    img: require("../assets/images/sneaker2.jpeg"),
   },
   {
     id: 11,
@@ -186,7 +186,7 @@ export const products: Product[] = [
     isSale: false,
     isFavorite: false,
     isFeatured: false,
-    img: require("../assets/sneaker3.jpeg"),
+    img: require("../assets/images/sneaker3.jpeg"),
   },
   {
     id: 12,
@@ -202,6 +202,6 @@ export const products: Product[] = [
     isSale: true,
     isFavorite: false,
     isFeatured: false,
-    img: require("../assets/sneaker4.jpeg"),
+    img: require("../assets/images/sneaker4.jpeg"),
   },
 ];

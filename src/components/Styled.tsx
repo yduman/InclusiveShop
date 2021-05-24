@@ -45,7 +45,11 @@ export const ProductLikeButton = styled(IconButton)`
   position: absolute;
   z-index: 1;
   background-color: white;
-  margin-left: 144px;
+  /* margin-left: 133px; */
+  align-self: flex-end;
+  top: 31%;
+  width: 48px;
+  height: 48px;
 `;
 
 export const SaleBadge = styled.View`
@@ -53,7 +57,7 @@ export const SaleBadge = styled.View`
   z-index: 1;
   background-color: red;
   color: white;
-  margin-top: 220px;
+  margin-top: 222px;
   padding-left: 8px;
   padding-right: 8px;
   padding-top: 2px;
