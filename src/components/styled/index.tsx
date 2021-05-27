@@ -28,7 +28,8 @@ export const Spacer = styled(Divider)<SpacerProps>`
   /* background-color: black; */
   margin-right: 16px;
   margin-top: ${props => (props.top ? String(props.top + "px") : "8px")};
-  margin-bottom: ${props => (props.bottom ? String(props.bottom + "px") : "8px")};
+  margin-bottom: ${props =>
+    props.bottom ? String(props.bottom + "px") : "8px"};
 `;
 
 export const ProductView = styled.View`

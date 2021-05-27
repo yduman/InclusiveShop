@@ -1,8 +1,15 @@
 import React from "react";
 import merge from "deepmerge";
 import { createStackNavigator } from "@react-navigation/stack";
-import { NavigationContainer, DefaultTheme as NavigationDefaultTheme } from "@react-navigation/native";
-import { configureFonts, DefaultTheme as PaperDefaultTheme, Provider as PaperProvider } from "react-native-paper";
+import {
+  NavigationContainer,
+  DefaultTheme as NavigationDefaultTheme,
+} from "@react-navigation/native";
+import {
+  configureFonts,
+  DefaultTheme as PaperDefaultTheme,
+  Provider as PaperProvider,
+} from "react-native-paper";
 import { NativeBaseProvider } from "native-base";
 
 import { fontConfig } from "../utils/theme";
@@ -33,8 +40,16 @@ export default function Main() {
       <PaperProvider theme={theme}>
         <NavigationContainer theme={theme}>
           <Stack.Navigator>
-            <Stack.Screen options={{ headerShown: false }} name="Login" component={LoginScreen} />
-            <Stack.Screen options={{ headerShown: false }} name="Shop" component={InclusiveShopScreen} />
+            <Stack.Screen
+              options={{ headerShown: false }}
+              name="Login"
+              component={LoginScreen}
+            />
+            <Stack.Screen
+              options={{ headerShown: false }}
+              name="Shop"
+              component={InclusiveShopScreen}
+            />
             <Stack.Screen
               options={{ header: props => <ProductDetailNavBar {...props} /> }}
               name="ProductDetailScreen"

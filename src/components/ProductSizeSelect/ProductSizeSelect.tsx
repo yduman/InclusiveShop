@@ -51,7 +51,12 @@ export default function ProductSizeSelect(props: Props) {
           return <Select.Item key={idx} label={val} value={val} />;
         })}
       </Select>
-      <Button onPress={handleToast} icon="cart" mode="contained" color={colors.accent} style={styles.cartButton}>
+      <Button
+        onPress={handleToast}
+        icon="cart"
+        mode="contained"
+        color={colors.accent}
+        style={styles.cartButton}>
         Add to Cart
       </Button>
     </VStack>

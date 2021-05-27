@@ -12,7 +12,9 @@ export default function ProductDetailNavBar(props: StackHeaderProps) {
   const { navigation, previous } = props;
   const route = useRoute<RouteProp<ParamList, "ProductDetailScreen">>();
   const productId = route.params.productId;
-  const product = useProductStore(state => state.products.filter(p => p.id === productId))[0] as Product;
+  const product = useProductStore(state =>
+    state.products.filter(p => p.id === productId),
+  )[0] as Product;
   const likeProduct = useProductStore(state => state.toggleFavorite);
   const description = getFullDescription(product);
 
@@ -20,7 +22,10 @@ export default function ProductDetailNavBar(props: StackHeaderProps) {
     <Appbar.Header>
       {previous ? <Appbar.BackAction onPress={navigation.goBack} /> : null}
       <Appbar.Content title={product.brand} subtitle={description} />
-      <Appbar.Action icon={product.isFavorite ? "heart" : "heart-outline"} onPress={() => likeProduct(productId)} />
+      <Appbar.Action
+        icon={product.isFavorite ? "heart" : "heart-outline"}
+        onPress={() => likeProduct(productId)}
+      />
     </Appbar.Header>
   );
 }

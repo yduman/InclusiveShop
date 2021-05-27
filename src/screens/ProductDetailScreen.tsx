@@ -17,16 +17,27 @@ export default function ProductDetailScreen() {
 
   // array.find() doesn't trigger a re-render when we use toggleFavorite()
   // Therefore, use array.filter() instead which somehow does the trigger
-  const product = useProductStore(state => state.products.filter(p => p.id === productId))[0];
+  const product = useProductStore(state =>
+    state.products.filter(p => p.id === productId),
+  )[0];
   const description = getFullDescription(product);
 
   return (
     <ScrollView showsVerticalScrollIndicator={false}>
-      <Image source={product.img} resizeMode="cover" alt="Some alt" style={{ height: 570 }} />
+      <Image
+        source={product.img}
+        resizeMode="cover"
+        alt="Some alt"
+        style={{ height: 570 }}
+      />
       <ProductDetailsContainer>
         <ProductDetailTitle brand={product.brand} description={description} />
         <Spacer top={2} />
-        <Price price={product.price} salePrice={product.salePrice} salePercent={product.salePercent?.slice(1)} />
+        <Price
+          price={product.price}
+          salePrice={product.salePrice}
+          salePercent={product.salePercent?.slice(1)}
+        />
       </ProductDetailsContainer>
       <ProductSizeSelect product={product} />
       <Spacer bottom={16} />

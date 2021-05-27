@@ -20,7 +20,11 @@ export default function LoginScreen() {
       <AppLogo source={require("../../assets/images/applogo.png")} />
       <Input label="E-Mail" inputType="email" />
       <Input label="Password" inputType="password" />
-      <LoginButton icon="login" label="Login" onPress={resetStateAndNavigateToShop} />
+      <LoginButton
+        icon="login"
+        label="Login"
+        onPress={resetStateAndNavigateToShop}
+      />
     </LoginContainer>
   );
 }
