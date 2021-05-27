@@ -13,4 +13,5 @@ The goal of this project is to highlight techniques regarding a11y and moreover 
 - [React Native CLI](https://reactnative.dev/docs/environment-setup)
 - [React Navigation](https://reactnavigation.org/)
 - [React Native Paper](https://callstack.github.io/react-native-paper/)
+- [Native Base v3](https://alpha.nativebase.io/docs/nativebase)
 - [Material Design](https://material.io/design/usability/accessibility.html#understanding-accessibility)
