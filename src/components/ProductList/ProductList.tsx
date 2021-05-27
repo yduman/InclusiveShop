@@ -15,6 +15,7 @@ export default function ProductList(props: ProductListProps) {
     <FlatList
       horizontal={props.isHorizontal}
       showsHorizontalScrollIndicator={false}
+      showsVerticalScrollIndicator={false}
       data={props.data}
       numColumns={props.columns}
       renderItem={({ item }) => {

@@ -2,12 +2,15 @@ import { ImageSourcePropType } from "react-native";
 
 export type ClothingSize = "XS" | "S" | "M" | "L" | "XL" | "XXL";
 export type ShoeSize = "38" | "39" | "40" | "41" | "42" | "43" | "44" | "45";
+export type Gender = "Men" | "Woman";
+export type Category = "Clothing" | "Shoes";
+export type ProductType = "Shirt" | "Jeans" | "Sneaker";
 
 export interface Product {
   id: number;
-  for: "Men" | "Woman";
-  category: "Clothing" | "Shoes";
-  type: "Shirt" | "Jeans" | "Sneaker";
+  for: Gender;
+  category: Category;
+  type: ProductType;
   brand: string;
   color: string;
   title: string;

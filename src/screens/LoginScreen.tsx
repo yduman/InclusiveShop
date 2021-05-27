@@ -1,9 +1,10 @@
 import React from "react";
 import { useNavigation } from "@react-navigation/native";
 
-import { AppLogo, LoginContainer, LoginButton } from "../components/styled";
 import Input from "../components/common/Input";
+import { AppLogo, LoginContainer, LoginButton } from "../components/styled";
 import useProductStore, { initialState } from "../../utils/useProductStore";
+import { StackScreens } from "../types/routerTypes";
 
 export default function LoginScreen() {
   const navigation = useNavigation();
@@ -11,7 +12,7 @@ export default function LoginScreen() {
 
   const resetStateAndNavigateToShop = () => {
     store.setShopState(initialState);
-    navigation.navigate("Shop");
+    navigation.navigate(StackScreens.Shop);
   };
 
   return (

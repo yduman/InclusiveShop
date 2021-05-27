@@ -1,12 +1,12 @@
 import React from "react";
-import { Appbar, useTheme } from "react-native-paper";
+import { Appbar } from "react-native-paper";
 import { StackHeaderProps } from "@react-navigation/stack";
 import { RouteProp, useRoute } from "@react-navigation/native";
 
 import useProductStore from "../../../utils/useProductStore";
-import { ParamList } from "../../screens/ProductDetailScreen";
-import { Product } from "../../../utils/data";
 import { getFullDescription } from "../../../utils";
+import { Product } from "../../../utils/data";
+import { ParamList } from "../../types/routerTypes";
 
 export default function ProductDetailNavBar(props: StackHeaderProps) {
   const { navigation, previous } = props;

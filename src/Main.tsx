@@ -5,11 +5,13 @@ import { NavigationContainer, DefaultTheme as NavigationDefaultTheme } from "@re
 import { configureFonts, DefaultTheme as PaperDefaultTheme, Provider as PaperProvider } from "react-native-paper";
 import { NativeBaseProvider } from "native-base";
 
+import { fontConfig } from "../utils/theme";
 import LoginScreen from "./screens/LoginScreen";
 import InclusiveShopScreen from "./screens/InclusiveShopScreen";
 import ProductDetailScreen from "./screens/ProductDetailScreen";
 import ProductDetailNavBar from "./components/navbars/ProductDetailNavBar";
-import { fontConfig } from "../utils/theme";
+import SearchResultNavBar from "./components/navbars/SearchResultNavBar";
+import SearchResultScreen from "./screens/SearchResultScreen";
 
 const Stack = createStackNavigator();
 const CombinedDefaultTheme = merge(PaperDefaultTheme, NavigationDefaultTheme);
@@ -37,6 +39,11 @@ export default function Main() {
               options={{ header: props => <ProductDetailNavBar {...props} /> }}
               name="ProductDetailScreen"
               component={ProductDetailScreen}
+            />
+            <Stack.Screen
+              options={{ header: props => <SearchResultNavBar {...props} /> }}
+              name="SearchResultScreen"
+              component={SearchResultScreen}
             />
           </Stack.Navigator>
         </NavigationContainer>

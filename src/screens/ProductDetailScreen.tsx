@@ -7,14 +7,9 @@ import Price from "../components/common/Price";
 import ProductDetailTitle from "../components/ProductDetailTitle";
 import ProductSizeSelect from "../components/ProductSizeSelect";
 import { ProductDetailsContainer, Spacer } from "../components/styled";
-import { getFullDescription } from "../../utils";
 import useProductStore from "../../utils/useProductStore";
-
-export type ParamList = {
-  ProductDetailScreen: {
-    productId: number;
-  };
-};
+import { getFullDescription } from "../../utils";
+import { ParamList } from "../types/routerTypes";
 
 export default function ProductDetailScreen() {
   const route = useRoute<RouteProp<ParamList, "ProductDetailScreen">>();

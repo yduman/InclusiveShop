@@ -6,12 +6,13 @@ import ProductDescription from "../ProductDescription";
 import ProductSaleBadge from "../ProductSaleBadge";
 import { Product } from "../../../utils/data";
 import { ProductImage, ProductView } from "../styled";
+import { StackScreens } from "../../types/routerTypes";
 
 export default function ProductCard(product: Product) {
   const navigation = useNavigation();
 
   function handleProductPress() {
-    navigation.navigate("ProductDetailScreen", { productId: product.id });
+    navigation.navigate(StackScreens.ProductDetail, { productId: product.id });
   }
 
   return (

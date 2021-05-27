@@ -1,5 +1,6 @@
 import React from "react";
 import { View } from "react-native";
+import { useSafeAreaInsets } from "react-native-safe-area-context";
 
 import Header from "../components/common/Header";
 import ProductList from "../components/ProductList";
@@ -8,15 +9,15 @@ import useProductStore from "../../utils/useProductStore";
 
 export default function FavoriteProductsScreen() {
   const favoriteProducts = useProductStore(state => state.products.filter(p => p.isFavorite));
+  const insets = useSafeAreaInsets();
 
   return (
     <React.Fragment>
       <Header title="Favorites" />
       <View
         style={{
-          paddingTop: 16,
-          paddingLeft: 16,
-          height: "100%",
+          padding: 16,
+          marginBottom: insets.bottom * 3,
         }}>
         {favoriteProducts.length === 0 ? (
           <EmptyPage
