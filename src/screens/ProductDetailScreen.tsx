@@ -9,10 +9,10 @@ import ProductSizeSelect from "../components/ProductSizeSelect";
 import { ProductDetailsContainer, Spacer } from "../components/styled";
 import useProductStore from "../../utils/useProductStore";
 import { getFullDescription } from "../../utils";
-import { ParamList } from "../types/routerTypes";
+import { ParamList, StackScreens } from "../types/routerTypes";
 
 export default function ProductDetailScreen() {
-  const route = useRoute<RouteProp<ParamList, "ProductDetailScreen">>();
+  const route = useRoute<RouteProp<ParamList, StackScreens.ProductDetail>>();
   const productId = route.params.productId;
 
   // array.find() doesn't trigger a re-render when we use toggleFavorite()

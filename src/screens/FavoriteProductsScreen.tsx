@@ -1,28 +1,21 @@
 import React from "react";
-import { View } from "react-native";
-import { useSafeAreaInsets } from "react-native-safe-area-context";
-
 import Header from "../components/common/Header";
 import ProductList from "../components/ProductList";
-import EmptyPage from "../components/common/EmptyPage";
+import FallbackContent from "../components/common/FallbackContent";
 import useProductStore from "../../utils/useProductStore";
+import PageContainer from "../components/common/PageContainer";
 
 export default function FavoriteProductsScreen() {
   const favoriteProducts = useProductStore(state =>
     state.products.filter(p => p.isFavorite),
   );
-  const insets = useSafeAreaInsets();
 
   return (
     <React.Fragment>
       <Header title="Favorites" />
-      <View
-        style={{
-          padding: 16,
-          marginBottom: insets.bottom * 3,
-        }}>
+      <PageContainer insetBottom>
         {favoriteProducts.length === 0 ? (
-          <EmptyPage
+          <FallbackContent
             title="No Favorites?"
             subtitle="Like a product in order to see it here."
             img={require("../../assets/images/nofavorites.png")}
@@ -34,7 +27,7 @@ export default function FavoriteProductsScreen() {
             columns={2}
           />
         )}
-      </View>
+      </PageContainer>
     </React.Fragment>
   );
 }

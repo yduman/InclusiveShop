@@ -2,7 +2,7 @@ import React from "react";
 import { View } from "react-native";
 
 import Header from "../components/common/Header";
-import EmptyPage from "../components/common/EmptyPage";
+import FallbackContent from "../components/common/FallbackContent";
 import ProductList from "../components/ProductList";
 import useProductStore from "../../utils/useProductStore";
 
@@ -19,7 +19,7 @@ export default function CheckoutScreen() {
           height: "100%",
         }}>
         {shoppingCart.length === 0 ? (
-          <EmptyPage
+          <FallbackContent
             title="Nothing you liked?"
             subtitle="Your shopping cart is empty."
             img={require("../../assets/images/emptycart.png")}

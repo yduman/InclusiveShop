@@ -1,16 +1,21 @@
 import React from "react";
-import { ScrollView } from "react-native";
 import { RouteProp, useRoute } from "@react-navigation/native";
 
 import ProductList from "../components/ProductList";
-import { ParamList } from "../types/routerTypes";
+import PageContainer from "../components/common/PageContainer";
+import { ParamList, StackScreens } from "../types/routerTypes";
+import useProductStore from "../../utils/useProductStore";
 
 export default function SearchResultScreen() {
-  const route = useRoute<RouteProp<ParamList, "SearchResultScreen">>();
+  const route = useRoute<RouteProp<ParamList, StackScreens.SearchResult>>();
+  const productType = route.params.productType;
+  const products = useProductStore(state =>
+    state.products.filter(p => p.type === productType),
+  );
 
   return (
-    <ScrollView showsVerticalScrollIndicator={false}>
-      <ProductList data={[]} isHorizontal={false} columns={2} />
-    </ScrollView>
+    <PageContainer>
+      <ProductList data={products} isHorizontal={false} columns={2} />
+    </PageContainer>
   );
 }

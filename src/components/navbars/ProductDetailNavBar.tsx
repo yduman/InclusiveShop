@@ -6,11 +6,11 @@ import { RouteProp, useRoute } from "@react-navigation/native";
 import useProductStore from "../../../utils/useProductStore";
 import { getFullDescription } from "../../../utils";
 import { Product } from "../../../utils/data";
-import { ParamList } from "../../types/routerTypes";
+import { ParamList, StackScreens } from "../../types/routerTypes";
 
 export default function ProductDetailNavBar(props: StackHeaderProps) {
   const { navigation, previous } = props;
-  const route = useRoute<RouteProp<ParamList, "ProductDetailScreen">>();
+  const route = useRoute<RouteProp<ParamList, StackScreens.ProductDetail>>();
   const productId = route.params.productId;
   const product = useProductStore(state =>
     state.products.filter(p => p.id === productId),

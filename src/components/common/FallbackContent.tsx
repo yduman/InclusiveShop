@@ -9,7 +9,7 @@ interface Props {
   img: ImageSourcePropType;
 }
 
-export default function EmptyPage(props: Props) {
+export default function FallbackContent(props: Props) {
   const { title, subtitle, img } = props;
   return (
     <React.Fragment>

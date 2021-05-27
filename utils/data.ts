@@ -2,7 +2,7 @@ import { ImageSourcePropType } from "react-native";
 
 export type ClothingSize = "XS" | "S" | "M" | "L" | "XL" | "XXL";
 export type ShoeSize = "38" | "39" | "40" | "41" | "42" | "43" | "44" | "45";
-export type Gender = "Men" | "Woman";
+export type Gender = "Men" | "Women";
 export type Category = "Clothing" | "Shoes";
 export type ProductType = "Shirt" | "Jeans" | "Sneaker";
 
@@ -60,7 +60,7 @@ export const products: Product[] = [
   },
   {
     id: 3,
-    for: "Woman",
+    for: "Women",
     category: "Clothing",
     type: "Shirt",
     brand: "Massimo Dutti",
@@ -76,7 +76,7 @@ export const products: Product[] = [
   },
   {
     id: 4,
-    for: "Woman",
+    for: "Women",
     category: "Clothing",
     type: "Shirt",
     brand: "Seidensticker",
@@ -126,7 +126,7 @@ export const products: Product[] = [
   },
   {
     id: 7,
-    for: "Woman",
+    for: "Women",
     category: "Clothing",
     type: "Jeans",
     brand: "Bershka",
@@ -142,7 +142,7 @@ export const products: Product[] = [
   },
   {
     id: 8,
-    for: "Woman",
+    for: "Women",
     category: "Clothing",
     type: "Jeans",
     brand: "G-Star",
@@ -192,7 +192,7 @@ export const products: Product[] = [
   },
   {
     id: 11,
-    for: "Woman",
+    for: "Women",
     category: "Shoes",
     type: "Sneaker",
     brand: "Nike",
@@ -208,7 +208,7 @@ export const products: Product[] = [
   },
   {
     id: 12,
-    for: "Woman",
+    for: "Women",
     category: "Shoes",
     type: "Sneaker",
     brand: "Converse",
