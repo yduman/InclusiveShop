@@ -5,7 +5,7 @@
 - [X] Design home screen
 - [X] Design favorites screen
 - [X] Configure Zalando-like theme
-- [ ] Design product detail screen
+- [X] Design product detail screen
 - [ ] Design search screen
 - [ ] Design shopping cart screen
 - [ ] Apply a11y to login screen

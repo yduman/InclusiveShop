@@ -9,6 +9,7 @@ interface ShopState {
 interface ProductStore extends ShopState {
   setShopState: (state: ShopState) => void;
   toggleFavorite: (id: number) => void;
+  addToCart: (product: Product) => void;
 }
 
 export const initialState = {
@@ -20,6 +21,7 @@ const useProductStore = create<ProductStore>((set, get) => ({
   ...initialState,
   setShopState: newState => set(() => ({ ...newState })),
   toggleFavorite: id => handleFavoriteChange(id, get, set),
+  addToCart: product => handleAddCart(product, get, set),
 }));
 
 function handleFavoriteChange(id: number, get: GetState<ProductStore>, set: SetState<ProductStore>) {
@@ -27,6 +29,12 @@ function handleFavoriteChange(id: number, get: GetState<ProductStore>, set: SetS
   let product = products.find(p => p.id === id) as Product;
   product.isFavorite = !product.isFavorite;
   set({ products });
+}
+
+function handleAddCart(product: Product, get: GetState<ProductStore>, set: SetState<ProductStore>) {
+  const state = get();
+  state.cart.push(product);
+  set(state);
 }
 
 export default useProductStore;

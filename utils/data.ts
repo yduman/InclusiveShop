@@ -1,5 +1,8 @@
 import { ImageSourcePropType } from "react-native";
 
+export type ClothingSize = "XS" | "S" | "M" | "L" | "XL" | "XXL";
+export type ShoeSize = "38" | "39" | "40" | "41" | "42" | "43" | "44" | "45";
+
 export interface Product {
   id: number;
   for: "Men" | "Woman";
@@ -15,6 +18,7 @@ export interface Product {
   isFavorite: boolean;
   isFeatured: boolean;
   img: ImageSourcePropType;
+  sizes: ClothingSize[] | ShoeSize[];
 }
 
 export const products: Product[] = [
@@ -32,6 +36,7 @@ export const products: Product[] = [
     isFavorite: false,
     isFeatured: true,
     img: require("../assets/images/clothing1.jpeg"),
+    sizes: ["S", "M", "L"],
   },
   {
     id: 2,
@@ -48,6 +53,7 @@ export const products: Product[] = [
     isFavorite: false,
     isFeatured: false,
     img: require("../assets/images/clothing2.jpeg"),
+    sizes: ["S", "M", "L", "XL"],
   },
   {
     id: 3,
@@ -63,6 +69,7 @@ export const products: Product[] = [
     isFavorite: false,
     isFeatured: false,
     img: require("../assets/images/clothing3.jpeg"),
+    sizes: ["XS", "S", "M", "L"],
   },
   {
     id: 4,
@@ -79,6 +86,7 @@ export const products: Product[] = [
     isFavorite: false,
     isFeatured: false,
     img: require("../assets/images/clothing4.jpeg"),
+    sizes: ["S", "M", "L"],
   },
   {
     id: 5,
@@ -94,6 +102,7 @@ export const products: Product[] = [
     isFavorite: false,
     isFeatured: true,
     img: require("../assets/images/clothing5.jpeg"),
+    sizes: ["S", "M", "L", "XL"],
   },
   {
     id: 6,
@@ -110,6 +119,7 @@ export const products: Product[] = [
     isFavorite: false,
     isFeatured: false,
     img: require("../assets/images/clothing6.jpeg"),
+    sizes: ["S", "M", "L"],
   },
   {
     id: 7,
@@ -125,6 +135,7 @@ export const products: Product[] = [
     isFavorite: false,
     isFeatured: false,
     img: require("../assets/images/clothing7.jpeg"),
+    sizes: ["XS", "S", "M", "L"],
   },
   {
     id: 8,
@@ -141,6 +152,7 @@ export const products: Product[] = [
     isFavorite: false,
     isFeatured: false,
     img: require("../assets/images/clothing8.jpeg"),
+    sizes: ["XS", "S", "M", "L"],
   },
   {
     id: 9,
@@ -156,6 +168,7 @@ export const products: Product[] = [
     isFavorite: false,
     isFeatured: true,
     img: require("../assets/images/sneaker1.jpeg"),
+    sizes: ["40", "41", "42", "43", "44", "45"],
   },
   {
     id: 10,
@@ -172,6 +185,7 @@ export const products: Product[] = [
     isFavorite: false,
     isFeatured: false,
     img: require("../assets/images/sneaker2.jpeg"),
+    sizes: ["40", "41", "42", "43", "44", "45"],
   },
   {
     id: 11,
@@ -187,6 +201,7 @@ export const products: Product[] = [
     isFavorite: false,
     isFeatured: false,
     img: require("../assets/images/sneaker3.jpeg"),
+    sizes: ["38", "39", "40", "41", "42", "43"],
   },
   {
     id: 12,
@@ -203,5 +218,6 @@ export const products: Product[] = [
     isFavorite: false,
     isFeatured: false,
     img: require("../assets/images/sneaker4.jpeg"),
+    sizes: ["38", "39", "40", "41", "42", "43"],
   },
 ];
