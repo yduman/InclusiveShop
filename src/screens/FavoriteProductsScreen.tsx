@@ -1,9 +1,9 @@
 import React from "react";
 import { View } from "react-native";
 
-import Header from "../components/Header";
+import Header from "../components/common/Header";
 import ProductList from "../components/ProductList";
-import EmptyPage from "../components/EmptyPage";
+import EmptyPage from "../components/common/EmptyPage";
 import useProductStore from "../../utils/useProductStore";
 
 export default function FavoriteProductsScreen() {

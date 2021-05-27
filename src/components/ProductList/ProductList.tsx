@@ -1,8 +1,8 @@
 import React from "react";
 import { FlatList } from "react-native";
 
-import { Product } from "../../utils/data";
-import ProductCard from "./ProductCard";
+import { Product } from "../../../utils/data";
+import ProductCard from "../ProductCard";
 
 interface ProductListProps {
   data: Product[];

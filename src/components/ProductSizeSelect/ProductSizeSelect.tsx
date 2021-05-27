@@ -2,8 +2,8 @@ import React, { useState } from "react";
 import { StyleSheet } from "react-native";
 import { Button, useTheme } from "react-native-paper";
 import { Select, VStack, CheckIcon, useToast } from "native-base";
-import { ClothingSize, Product, ShoeSize } from "../../utils/data";
-import useProductStore from "../../utils/useProductStore";
+import { Product } from "../../../utils/data";
+import useProductStore from "../../../utils/useProductStore";
 
 interface Props {
   product: Product;

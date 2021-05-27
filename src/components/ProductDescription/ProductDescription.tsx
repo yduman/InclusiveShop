@@ -1,9 +1,9 @@
 import React from "react";
 import { Paragraph } from "react-native-paper";
 
-import Price from "./Price";
+import Price from "../common/Price";
 
-interface ProductDescriptionProps {
+interface Props {
   brand: string;
   type: string;
   price: string;
@@ -11,7 +11,7 @@ interface ProductDescriptionProps {
   salePrice?: string;
 }
 
-export default function ProductDescription(props: ProductDescriptionProps) {
+export default function ProductDescription(props: Props) {
   return (
     <React.Fragment>
       <Paragraph numberOfLines={1}>{props.brand}</Paragraph>

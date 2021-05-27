@@ -1,8 +1,8 @@
 import React from "react";
 import { View } from "react-native";
 
-import Header from "../components/Header";
-import EmptyPage from "../components/EmptyPage";
+import Header from "../components/common/Header";
+import EmptyPage from "../components/common/EmptyPage";
 import ProductList from "../components/ProductList";
 import useProductStore from "../../utils/useProductStore";
 

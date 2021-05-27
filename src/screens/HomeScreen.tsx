@@ -1,11 +1,11 @@
 import React from "react";
 import { ScrollView } from "react-native";
 
-import { Spacer } from "../components/Styled";
+import { Spacer } from "../components/styled";
 import useProductStore from "../../utils/useProductStore";
 import ProductList from "../components/ProductList";
-import Headlines from "../components/Headlines";
-import Header from "../components/Header";
+import Headlines from "../components/common/Headlines";
+import Header from "../components/common/Header";
 
 export default function HomeScreen() {
   const featuredProducts = useProductStore(state => state.products.filter(p => p.isFeatured));

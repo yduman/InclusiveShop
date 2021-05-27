@@ -8,7 +8,7 @@ import { NativeBaseProvider } from "native-base";
 import LoginScreen from "./screens/LoginScreen";
 import InclusiveShopScreen from "./screens/InclusiveShopScreen";
 import ProductDetailScreen from "./screens/ProductDetailScreen";
-import ProductDetailNavBar from "./components/ProductDetailNavBar";
+import ProductDetailNavBar from "./components/navbars/ProductDetailNavBar";
 import { fontConfig } from "../utils/theme";
 
 const Stack = createStackNavigator();
@@ -30,13 +30,14 @@ export default function Main() {
     <NativeBaseProvider>
       <PaperProvider theme={theme}>
         <NavigationContainer theme={theme}>
-          <Stack.Navigator
-            screenOptions={{
-              header: props => <ProductDetailNavBar {...props} />,
-            }}>
+          <Stack.Navigator>
             <Stack.Screen options={{ headerShown: false }} name="Login" component={LoginScreen} />
             <Stack.Screen options={{ headerShown: false }} name="Shop" component={InclusiveShopScreen} />
-            <Stack.Screen name="ProductDetailScreen" component={ProductDetailScreen} />
+            <Stack.Screen
+              options={{ header: props => <ProductDetailNavBar {...props} /> }}
+              name="ProductDetailScreen"
+              component={ProductDetailScreen}
+            />
           </Stack.Navigator>
         </NavigationContainer>
       </PaperProvider>

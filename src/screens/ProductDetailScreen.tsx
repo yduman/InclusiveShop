@@ -2,12 +2,13 @@ import React from "react";
 import { ScrollView } from "react-native";
 import { RouteProp, useRoute } from "@react-navigation/native";
 import { Image } from "native-base";
-import useProductStore from "../../utils/useProductStore";
-import Price from "../components/Price";
+
+import Price from "../components/common/Price";
 import ProductDetailTitle from "../components/ProductDetailTitle";
-import { ProductDetailsContainer, Spacer } from "../components/Styled";
-import { getFullDescription } from "../../utils";
 import ProductSizeSelect from "../components/ProductSizeSelect";
+import { ProductDetailsContainer, Spacer } from "../components/styled";
+import { getFullDescription } from "../../utils";
+import useProductStore from "../../utils/useProductStore";
 
 export type ParamList = {
   ProductDetailScreen: {
@@ -20,7 +21,7 @@ export default function ProductDetailScreen() {
   const productId = route.params.productId;
 
   // array.find() doesn't trigger a re-render when we use toggleFavorite()
-  // Therefore, use array.filter() instead which does the trigger
+  // Therefore, use array.filter() instead which somehow does the trigger
   const product = useProductStore(state => state.products.filter(p => p.id === productId))[0];
   const description = getFullDescription(product);
 

@@ -41,17 +41,6 @@ export const ProductImage = styled.Image`
   height: 250px;
 `;
 
-// export const ProductLikeButton = styled(IconButton)`
-//   position: absolute;
-//   z-index: 1;
-//   background-color: white;
-//   /* margin-left: 133px; */
-//   align-self: flex-end;
-//   top: 31%;
-//   width: 48px;
-//   height: 48px;
-// `;
-
 export const SaleBadge = styled.View`
   position: absolute;
   z-index: 1;

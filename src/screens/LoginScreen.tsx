@@ -1,8 +1,8 @@
 import React from "react";
 import { useNavigation } from "@react-navigation/native";
 
-import { AppLogo, LoginContainer, LoginButton } from "../components/Styled";
-import Input from "../components/Input";
+import { AppLogo, LoginContainer, LoginButton } from "../components/styled";
+import Input from "../components/common/Input";
 import useProductStore, { initialState } from "../../utils/useProductStore";
 
 export default function LoginScreen() {

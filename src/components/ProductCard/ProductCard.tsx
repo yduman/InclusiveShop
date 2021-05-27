@@ -2,10 +2,10 @@ import React from "react";
 import { TouchableWithoutFeedback } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 
-import ProductDescription from "./ProductDescription";
-import ProductSaleBadge from "./ProductSaleBadge";
-import { Product } from "../../utils/data";
-import { ProductImage, ProductView } from "./Styled";
+import ProductDescription from "../ProductDescription";
+import ProductSaleBadge from "../ProductSaleBadge";
+import { Product } from "../../../utils/data";
+import { ProductImage, ProductView } from "../styled";
 
 export default function ProductCard(product: Product) {
   const navigation = useNavigation();

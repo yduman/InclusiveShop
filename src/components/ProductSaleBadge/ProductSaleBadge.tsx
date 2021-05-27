@@ -2,7 +2,7 @@ import React from "react";
 import { StyleSheet } from "react-native";
 import { Paragraph } from "react-native-paper";
 
-import { SaleBadge } from "./Styled";
+import { SaleBadge } from "../styled";
 
 interface ProductSaleBadgeProps {
   salePrice?: string;
