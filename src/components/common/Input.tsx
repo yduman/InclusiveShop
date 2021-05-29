@@ -1,12 +1,18 @@
-import React from "react";
+import React, { useState } from "react";
 import { StyleSheet } from "react-native";
 import { TextInput } from "react-native-paper";
 
 export default function Input(props: InputProps) {
-  const [text, setText] = React.useState("");
+  const [text, setText] = useState("");
 
   return (
     <TextInput
+      theme={{
+        colors: {
+          primary: "black",
+          placeholder: "black",
+        },
+      }}
       style={styles.input}
       mode="outlined"
       label={props.label}
