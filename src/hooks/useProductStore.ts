@@ -70,12 +70,19 @@ export function handleFavoriteChange(
   set: SetState<ProductStore>,
 ) {
   const store = get();
-  const favorites = get().favorites;
-  const product = store.products.find(p => p.id === id) as Product;
-  favorites.push(product.id);
+  let favorites = get().favorites;
+
+  if (favorites.includes(id)) {
+    favorites = favorites.filter(productId => productId != id);
+  } else {
+    const product = store.products.find(p => p.id === id) as Product;
+    favorites.push(product.id);
+  }
+
   set({ favorites });
 }
 
+// TODO: handle remove
 export function handleAddCart(
   product: Product,
   get: GetState<ProductStore>,
