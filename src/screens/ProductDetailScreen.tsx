@@ -14,9 +14,6 @@ import { ParamList, StackScreens } from "../types/routerTypes";
 export default function ProductDetailScreen() {
   const route = useRoute<RouteProp<ParamList, StackScreens.ProductDetail>>();
   const productId = route.params.productId;
-
-  // array.find() doesn't trigger a re-render when we use toggleFavorite()
-  // Therefore, use array.filter() instead which somehow does the trigger
   const product = useProductStore(state =>
     state.products.filter(p => p.id === productId),
   )[0];

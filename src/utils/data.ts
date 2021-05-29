@@ -18,13 +18,12 @@ export interface Product {
   salePrice: string;
   salePercent?: string;
   isSale: boolean;
-  isFavorite: boolean;
   isFeatured: boolean;
   img: ImageSourcePropType;
   sizes: ClothingSize[] | ShoeSize[];
 }
 
-export const products: Product[] = [
+export const productData: Product[] = [
   {
     id: 1,
     for: "Men",
@@ -36,7 +35,6 @@ export const products: Product[] = [
     price: "$40",
     salePrice: "",
     isSale: false,
-    isFavorite: false,
     isFeatured: true,
     img: require("../../assets/images/clothing1.jpeg"),
     sizes: ["S", "M", "L"],
@@ -53,7 +51,6 @@ export const products: Product[] = [
     salePrice: "$40",
     salePercent: "-33%",
     isSale: true,
-    isFavorite: false,
     isFeatured: false,
     img: require("../../assets/images/clothing2.jpeg"),
     sizes: ["S", "M", "L", "XL"],
@@ -69,7 +66,6 @@ export const products: Product[] = [
     price: "$50",
     salePrice: "",
     isSale: false,
-    isFavorite: false,
     isFeatured: false,
     img: require("../../assets/images/clothing3.jpeg"),
     sizes: ["XS", "S", "M", "L"],
@@ -86,7 +82,6 @@ export const products: Product[] = [
     salePrice: "$50",
     salePercent: "-28%",
     isSale: true,
-    isFavorite: false,
     isFeatured: false,
     img: require("../../assets/images/clothing4.jpeg"),
     sizes: ["S", "M", "L"],
@@ -102,7 +97,6 @@ export const products: Product[] = [
     price: "$35",
     salePrice: "",
     isSale: false,
-    isFavorite: false,
     isFeatured: true,
     img: require("../../assets/images/clothing5.jpeg"),
     sizes: ["S", "M", "L", "XL"],
@@ -119,7 +113,6 @@ export const products: Product[] = [
     salePrice: "$40",
     salePercent: "-20%",
     isSale: true,
-    isFavorite: false,
     isFeatured: false,
     img: require("../../assets/images/clothing6.jpeg"),
     sizes: ["S", "M", "L"],
@@ -135,7 +128,6 @@ export const products: Product[] = [
     price: "$30",
     salePrice: "",
     isSale: false,
-    isFavorite: false,
     isFeatured: false,
     img: require("../../assets/images/clothing7.jpeg"),
     sizes: ["XS", "S", "M", "L"],
@@ -152,7 +144,6 @@ export const products: Product[] = [
     salePrice: "$70",
     salePercent: "-30%",
     isSale: true,
-    isFavorite: false,
     isFeatured: false,
     img: require("../../assets/images/clothing8.jpeg"),
     sizes: ["XS", "S", "M", "L"],
@@ -168,7 +159,6 @@ export const products: Product[] = [
     price: "$75",
     salePrice: "",
     isSale: false,
-    isFavorite: false,
     isFeatured: true,
     img: require("../../assets/images/sneaker1.jpeg"),
     sizes: ["40", "41", "42", "43", "44", "45"],
@@ -185,7 +175,6 @@ export const products: Product[] = [
     salePrice: "$55",
     salePercent: "-26%",
     isSale: true,
-    isFavorite: false,
     isFeatured: false,
     img: require("../../assets/images/sneaker2.jpeg"),
     sizes: ["40", "41", "42", "43", "44", "45"],
@@ -201,7 +190,6 @@ export const products: Product[] = [
     price: "$150",
     salePrice: "",
     isSale: false,
-    isFavorite: false,
     isFeatured: false,
     img: require("../../assets/images/sneaker3.jpeg"),
     sizes: ["38", "39", "40", "41", "42", "43"],
@@ -218,7 +206,6 @@ export const products: Product[] = [
     salePrice: "$75",
     salePercent: "-6%",
     isSale: true,
-    isFavorite: false,
     isFeatured: false,
     img: require("../../assets/images/sneaker4.jpeg"),
     sizes: ["38", "39", "40", "41", "42", "43"],

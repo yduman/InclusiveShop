@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { HStack } from "native-base";
 
 import { Gender } from "../../utils/data";

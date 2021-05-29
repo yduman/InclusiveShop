@@ -3,7 +3,7 @@ import { useNavigation } from "@react-navigation/native";
 
 import Input from "../components/common/Input";
 import { AppLogo, LoginContainer, LoginButton } from "../components/styled";
-import useProductStore, { initialState } from "../hooks/useProductStore";
+import useProductStore from "../hooks/useProductStore";
 import { StackScreens } from "../types/routerTypes";
 
 export default function LoginScreen() {
@@ -11,7 +11,7 @@ export default function LoginScreen() {
   const store = useProductStore();
 
   const resetStateAndNavigateToShop = () => {
-    store.setShopState(initialState);
+    store.resetState();
     navigation.navigate(StackScreens.Shop);
   };
 

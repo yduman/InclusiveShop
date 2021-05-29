@@ -7,7 +7,8 @@ import ProductList from "../components/ProductList";
 import useProductStore from "../hooks/useProductStore";
 
 export default function CheckoutScreen() {
-  const shoppingCart = useProductStore(state => state.cart);
+  const store = useProductStore();
+  const cartItems = store.products.filter(p => store.cart.includes(p.id));
 
   return (
     <React.Fragment>
@@ -18,14 +19,14 @@ export default function CheckoutScreen() {
           paddingLeft: 16,
           height: "100%",
         }}>
-        {shoppingCart.length === 0 ? (
+        {store.cart.length === 0 ? (
           <FallbackContent
             title="Nothing you liked?"
             subtitle="Your shopping cart is empty."
             img={require("../../assets/images/emptycart.png")}
           />
         ) : (
-          <ProductList data={shoppingCart} isHorizontal={false} columns={2} />
+          <ProductList data={cartItems} isHorizontal={false} columns={2} />
         )}
       </View>
     </React.Fragment>
