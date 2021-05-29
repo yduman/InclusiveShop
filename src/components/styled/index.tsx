@@ -62,3 +62,20 @@ export const ProductImageCover = styled.Image`
 export const ProductDetailsContainer = styled.View`
   padding: 16px;
 `;
+
+interface GenderButtonProps {
+  isActive: boolean;
+}
+
+export const GenderButton = styled.TouchableOpacity<GenderButtonProps>`
+  padding: 16px;
+  flex: 1;
+  border-bottom-width: ${props => (props.isActive ? "2px" : "0px")};
+  border-bottom-color: black;
+  border-bottom-left-radius: 50px;
+  border-bottom-right-radius: 50px;
+`;
+
+export const CenterText = styled.Text`
+  text-align: center;
+`;

@@ -6,10 +6,9 @@
 - [X] Design favorites screen
 - [X] Configure Zalando-like theme
 - [X] Design product detail screen
-- [ ] Design search screen
+- [X] Design search screen
   - [X] List products from search result
-  - [ ] Add filter to navbar
-  - [ ] Change title to include gender
+  - [X] Change title to include gender
 - [ ] Design shopping cart screen
 - [ ] Apply a11y to login screen
 - [ ] Apply a11y to home screen

@@ -3,14 +3,19 @@ import { List } from "react-native-paper";
 import { useNavigation } from "@react-navigation/native";
 
 import { StackScreens } from "../../types/routerTypes";
-import { ProductType } from "../../utils/data";
+import { Gender, ProductType } from "../../utils/data";
 
 interface Props {
   displayName: string;
   productType: ProductType;
+  gender: Gender;
 }
 
-export default function ProductSearchType({ displayName, productType }: Props) {
+export default function ProductSearchType({
+  displayName,
+  productType,
+  gender,
+}: Props) {
   const navigation = useNavigation();
 
   return (
@@ -19,6 +24,7 @@ export default function ProductSearchType({ displayName, productType }: Props) {
       onPress={() =>
         navigation.navigate(StackScreens.SearchResult, {
           productType,
+          gender,
         })
       }
     />

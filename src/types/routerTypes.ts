@@ -1,4 +1,4 @@
-import { ProductType } from "../utils/data";
+import { Gender, ProductType } from "../utils/data";
 
 export type ParamList = {
   ProductDetailScreen: {
@@ -6,6 +6,7 @@ export type ParamList = {
   };
   SearchResultScreen: {
     productType: ProductType;
+    gender: Gender;
   };
 };
 

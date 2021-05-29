@@ -9,8 +9,9 @@ import useProductStore from "../hooks/useProductStore";
 export default function SearchResultScreen() {
   const route = useRoute<RouteProp<ParamList, StackScreens.SearchResult>>();
   const productType = route.params.productType;
+  const gender = route.params.gender;
   const products = useProductStore(state =>
-    state.products.filter(p => p.type === productType),
+    state.products.filter(p => p.type === productType && p.for === gender),
   );
 
   return (
