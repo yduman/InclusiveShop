@@ -7,8 +7,8 @@ import Price from "../components/common/Price";
 import ProductDetailTitle from "../components/ProductDetailTitle";
 import ProductSizeSelect from "../components/ProductSizeSelect";
 import { ProductDetailsContainer, Spacer } from "../components/styled";
-import useProductStore from "../../utils/useProductStore";
-import { getFullDescription } from "../../utils";
+import useProductStore from "../hooks/useProductStore";
+import { getFullDescription } from "../utils";
 import { ParamList, StackScreens } from "../types/routerTypes";
 
 export default function ProductDetailScreen() {

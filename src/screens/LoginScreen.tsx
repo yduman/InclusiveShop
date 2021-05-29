@@ -3,7 +3,7 @@ import { useNavigation } from "@react-navigation/native";
 
 import Input from "../components/common/Input";
 import { AppLogo, LoginContainer, LoginButton } from "../components/styled";
-import useProductStore, { initialState } from "../../utils/useProductStore";
+import useProductStore, { initialState } from "../hooks/useProductStore";
 import { StackScreens } from "../types/routerTypes";
 
 export default function LoginScreen() {

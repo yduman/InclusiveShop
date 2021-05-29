@@ -4,7 +4,7 @@ import { StackHeaderProps } from "@react-navigation/stack";
 import { RouteProp, useRoute } from "@react-navigation/native";
 
 import { ParamList, StackScreens } from "../../types/routerTypes";
-import { ProductType } from "../../../utils/data";
+import { ProductType } from "../../utils/data";
 
 export default function SearchResultNavBar(props: StackHeaderProps) {
   const { navigation, previous } = props;

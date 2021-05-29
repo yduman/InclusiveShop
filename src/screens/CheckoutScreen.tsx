@@ -4,7 +4,7 @@ import { View } from "react-native";
 import Header from "../components/common/Header";
 import FallbackContent from "../components/common/FallbackContent";
 import ProductList from "../components/ProductList";
-import useProductStore from "../../utils/useProductStore";
+import useProductStore from "../hooks/useProductStore";
 
 export default function CheckoutScreen() {
   const shoppingCart = useProductStore(state => state.cart);

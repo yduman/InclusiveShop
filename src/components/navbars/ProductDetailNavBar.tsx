@@ -3,9 +3,9 @@ import { Appbar } from "react-native-paper";
 import { StackHeaderProps } from "@react-navigation/stack";
 import { RouteProp, useRoute } from "@react-navigation/native";
 
-import useProductStore from "../../../utils/useProductStore";
-import { getFullDescription } from "../../../utils";
-import { Product } from "../../../utils/data";
+import useProductStore from "../../hooks/useProductStore";
+import { getFullDescription } from "../../utils";
+import { Product } from "../../utils/data";
 import { ParamList, StackScreens } from "../../types/routerTypes";
 
 export default function ProductDetailNavBar(props: StackHeaderProps) {

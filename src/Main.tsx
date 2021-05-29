@@ -12,7 +12,7 @@ import {
 } from "react-native-paper";
 import { NativeBaseProvider } from "native-base";
 
-import { fontConfig } from "../utils/theme";
+import { fontConfig } from "./utils/theme";
 import LoginScreen from "./screens/LoginScreen";
 import InclusiveShopScreen from "./screens/InclusiveShopScreen";
 import ProductDetailScreen from "./screens/ProductDetailScreen";

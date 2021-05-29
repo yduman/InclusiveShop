@@ -2,7 +2,7 @@ import React from "react";
 import Header from "../components/common/Header";
 import ProductList from "../components/ProductList";
 import FallbackContent from "../components/common/FallbackContent";
-import useProductStore from "../../utils/useProductStore";
+import useProductStore from "../hooks/useProductStore";
 import PageContainer from "../components/common/PageContainer";
 
 export default function FavoriteProductsScreen() {

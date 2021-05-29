@@ -38,7 +38,7 @@ export const products: Product[] = [
     isSale: false,
     isFavorite: false,
     isFeatured: true,
-    img: require("../assets/images/clothing1.jpeg"),
+    img: require("../../assets/images/clothing1.jpeg"),
     sizes: ["S", "M", "L"],
   },
   {
@@ -55,7 +55,7 @@ export const products: Product[] = [
     isSale: true,
     isFavorite: false,
     isFeatured: false,
-    img: require("../assets/images/clothing2.jpeg"),
+    img: require("../../assets/images/clothing2.jpeg"),
     sizes: ["S", "M", "L", "XL"],
   },
   {
@@ -71,7 +71,7 @@ export const products: Product[] = [
     isSale: false,
     isFavorite: false,
     isFeatured: false,
-    img: require("../assets/images/clothing3.jpeg"),
+    img: require("../../assets/images/clothing3.jpeg"),
     sizes: ["XS", "S", "M", "L"],
   },
   {
@@ -88,7 +88,7 @@ export const products: Product[] = [
     isSale: true,
     isFavorite: false,
     isFeatured: false,
-    img: require("../assets/images/clothing4.jpeg"),
+    img: require("../../assets/images/clothing4.jpeg"),
     sizes: ["S", "M", "L"],
   },
   {
@@ -104,7 +104,7 @@ export const products: Product[] = [
     isSale: false,
     isFavorite: false,
     isFeatured: true,
-    img: require("../assets/images/clothing5.jpeg"),
+    img: require("../../assets/images/clothing5.jpeg"),
     sizes: ["S", "M", "L", "XL"],
   },
   {
@@ -121,7 +121,7 @@ export const products: Product[] = [
     isSale: true,
     isFavorite: false,
     isFeatured: false,
-    img: require("../assets/images/clothing6.jpeg"),
+    img: require("../../assets/images/clothing6.jpeg"),
     sizes: ["S", "M", "L"],
   },
   {
@@ -137,7 +137,7 @@ export const products: Product[] = [
     isSale: false,
     isFavorite: false,
     isFeatured: false,
-    img: require("../assets/images/clothing7.jpeg"),
+    img: require("../../assets/images/clothing7.jpeg"),
     sizes: ["XS", "S", "M", "L"],
   },
   {
@@ -154,7 +154,7 @@ export const products: Product[] = [
     isSale: true,
     isFavorite: false,
     isFeatured: false,
-    img: require("../assets/images/clothing8.jpeg"),
+    img: require("../../assets/images/clothing8.jpeg"),
     sizes: ["XS", "S", "M", "L"],
   },
   {
@@ -170,7 +170,7 @@ export const products: Product[] = [
     isSale: false,
     isFavorite: false,
     isFeatured: true,
-    img: require("../assets/images/sneaker1.jpeg"),
+    img: require("../../assets/images/sneaker1.jpeg"),
     sizes: ["40", "41", "42", "43", "44", "45"],
   },
   {
@@ -187,7 +187,7 @@ export const products: Product[] = [
     isSale: true,
     isFavorite: false,
     isFeatured: false,
-    img: require("../assets/images/sneaker2.jpeg"),
+    img: require("../../assets/images/sneaker2.jpeg"),
     sizes: ["40", "41", "42", "43", "44", "45"],
   },
   {
@@ -203,7 +203,7 @@ export const products: Product[] = [
     isSale: false,
     isFavorite: false,
     isFeatured: false,
-    img: require("../assets/images/sneaker3.jpeg"),
+    img: require("../../assets/images/sneaker3.jpeg"),
     sizes: ["38", "39", "40", "41", "42", "43"],
   },
   {
@@ -220,7 +220,7 @@ export const products: Product[] = [
     isSale: true,
     isFavorite: false,
     isFeatured: false,
-    img: require("../assets/images/sneaker4.jpeg"),
+    img: require("../../assets/images/sneaker4.jpeg"),
     sizes: ["38", "39", "40", "41", "42", "43"],
   },
 ];

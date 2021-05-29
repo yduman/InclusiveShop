@@ -1,4 +1,4 @@
-import { ProductType } from "../../utils/data";
+import { ProductType } from "../utils/data";
 
 export type ParamList = {
   ProductDetailScreen: {

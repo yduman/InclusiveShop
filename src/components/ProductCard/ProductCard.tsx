@@ -4,7 +4,7 @@ import { useNavigation } from "@react-navigation/native";
 
 import ProductDescription from "../ProductDescription";
 import ProductSaleBadge from "../ProductSaleBadge";
-import { Product } from "../../../utils/data";
+import { Product } from "../../utils/data";
 import { ProductImage, ProductView } from "../styled";
 import { StackScreens } from "../../types/routerTypes";
 

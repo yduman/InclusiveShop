@@ -4,7 +4,7 @@ import { RouteProp, useRoute } from "@react-navigation/native";
 import ProductList from "../components/ProductList";
 import PageContainer from "../components/common/PageContainer";
 import { ParamList, StackScreens } from "../types/routerTypes";
-import useProductStore from "../../utils/useProductStore";
+import useProductStore from "../hooks/useProductStore";
 
 export default function SearchResultScreen() {
   const route = useRoute<RouteProp<ParamList, StackScreens.SearchResult>>();
