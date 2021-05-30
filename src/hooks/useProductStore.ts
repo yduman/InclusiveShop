@@ -1,22 +1,12 @@
 import create, { GetState, SetState } from "zustand";
-import { Category, Product, productData, ProductType } from "../utils/data";
-
-export interface ProductCategory {
-  name: Category;
-  types: CategoryType[];
-}
-
-export interface CategoryType {
-  name: ProductType;
-  namePlural: string;
-}
-
-export interface ShopState {
-  products: Product[];
-  categories: ProductCategory[];
-  favorites: number[];
-  cart: number[];
-}
+import {
+  Category,
+  ClothingSize,
+  Product,
+  productData,
+  ProductType,
+  ShoeSize,
+} from "../utils/data";
 
 const initialState: ShopState = {
   products: [...productData],
@@ -37,11 +27,33 @@ const initialState: ShopState = {
   cart: [],
 };
 
+export interface ProductCategory {
+  name: Category;
+  types: CategoryType[];
+}
+
+export interface CategoryType {
+  name: ProductType;
+  namePlural: string;
+}
+
+export interface CartItem {
+  productId: number;
+  selectedSizes: Set<string>;
+}
+
+export interface ShopState {
+  products: Product[];
+  categories: ProductCategory[];
+  favorites: number[];
+  cart: CartItem[];
+}
+
 export interface ProductStore extends ShopState {
   getState: () => ProductStore;
   resetState: () => void;
   toggleFavorite: (id: number) => void;
-  addToCart: (product: Product) => void;
+  addToCart: (id: number, size: string) => void;
 }
 
 const useProductStore = create<ProductStore>((set, get) => ({
@@ -49,7 +61,7 @@ const useProductStore = create<ProductStore>((set, get) => ({
   getState: () => get(),
   resetState: () => handleResetState(get, set),
   toggleFavorite: id => handleFavoriteChange(id, get, set),
-  addToCart: product => handleAddCart(product, get, set),
+  addToCart: (id, size) => handleAddCart(id, size, get, set),
 }));
 
 export function handleResetState(
@@ -82,14 +94,24 @@ export function handleFavoriteChange(
   set({ favorites });
 }
 
-// TODO: handle remove
 export function handleAddCart(
-  product: Product,
+  id: number,
+  size: string,
   get: GetState<ProductStore>,
   set: SetState<ProductStore>,
 ) {
-  const cart = get().cart;
-  cart.push(product.id);
+  let cart = get().cart;
+  const found = cart.find(item => item.productId === id);
+
+  if (found) {
+    found.selectedSizes.add(size);
+    cart = cart.map(cartItem => (cartItem.productId === id ? found : cartItem));
+  } else {
+    const sizes = new Set<string>();
+    sizes.add(size);
+    cart.push({ productId: id, selectedSizes: sizes });
+  }
+
   set({ cart });
 }
 

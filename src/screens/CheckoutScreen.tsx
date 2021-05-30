@@ -8,7 +8,8 @@ import useProductStore from "../hooks/useProductStore";
 
 export default function CheckoutScreen() {
   const store = useProductStore();
-  const cartItems = store.products.filter(p => store.cart.includes(p.id));
+  const productIds = store.cart.map(val => val.productId);
+  const cartProducts = store.products.filter(p => productIds.includes(p.id));
 
   return (
     <React.Fragment>
@@ -26,7 +27,7 @@ export default function CheckoutScreen() {
             img={require("../../assets/images/emptycart.png")}
           />
         ) : (
-          <ProductList data={cartItems} isHorizontal={false} columns={2} />
+          <ProductList data={cartProducts} isHorizontal={false} columns={2} />
         )}
       </View>
     </React.Fragment>

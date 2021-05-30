@@ -16,6 +16,7 @@ export default function ProductSizeSelect(props: Props) {
   const toast = useToast();
   const addToCart = useProductStore(state => state.addToCart);
 
+  // TODO: add action button which navigates directly to checkout
   function handleToast() {
     if (size.length === 0) {
       toast.show({
@@ -25,10 +26,10 @@ export default function ProductSizeSelect(props: Props) {
         placement: "top",
       });
     } else {
-      addToCart(product);
+      addToCart(product.id, size);
       toast.show({
         title: "In your cart!",
-        description: `Successfully added size ${size} to your cart.`,
+        description: `Successfully added product to your cart.`,
         status: "success",
         placement: "top",
       });
