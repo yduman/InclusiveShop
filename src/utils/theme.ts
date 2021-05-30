@@ -1,21 +1,21 @@
 const regular = {
   fontFamily: "Inter-Regular",
-  fontWeight: "normal" as "normal",
+  fontWeight: "normal" as const,
 };
 
 const medium = {
   fontFamily: "Inter-Medium",
-  fontWeight: "normal" as "normal",
+  fontWeight: "normal" as const,
 };
 
 const light = {
   fontFamily: "Inter-Light",
-  fontWeight: "normal" as "normal",
+  fontWeight: "normal" as const,
 };
 
 const thin = {
   fontFamily: "Inter-Thin",
-  fontWeight: "normal" as "normal",
+  fontWeight: "normal" as const,
 };
 
 export const fontConfig = {

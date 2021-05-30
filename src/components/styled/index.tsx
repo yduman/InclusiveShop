@@ -1,5 +1,6 @@
 import styled from "styled-components/native";
-import { FAB, Divider, IconButton } from "react-native-paper";
+import { FAB, Divider } from "react-native-paper";
+import { EdgeInsets } from "react-native-safe-area-context";
 
 export const LoginContainer = styled.View`
   flex: 1;
@@ -78,4 +79,15 @@ export const GenderButton = styled.TouchableOpacity<GenderButtonProps>`
 
 export const CenterText = styled.Text`
   text-align: center;
+`;
+
+interface ContainerProps {
+  insetBottom?: boolean;
+  insets: EdgeInsets;
+}
+
+export const Container = styled.View<ContainerProps>`
+  padding: 16px;
+  margin-bottom: ${props =>
+    props.insetBottom ? String(props.insets.bottom * 3 + "px") : "0px"};
 `;

@@ -1,0 +1,13 @@
+{
+  "extends": [
+    "eslint:recommended",
+    "@react-native-community",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:react-native-a11y/all"
+  ],
+  "rules": {
+    "quotes": ["error", "double"],
+    "@typescript-eslint/explicit-module-boundary-types": 0
+  },
+  "parser": "@typescript-eslint/parser"
+}

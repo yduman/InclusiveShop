@@ -1,6 +1,6 @@
 import React from "react";
-import { View } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
+import { Container } from "../styled";
 
 interface Props {
   children?: React.ReactNode;
@@ -11,12 +11,8 @@ export default function PageContainer({ children, insetBottom }: Props) {
   const insets = useSafeAreaInsets();
 
   return (
-    <View
-      style={{
-        padding: 16,
-        marginBottom: insetBottom ? insets.bottom * 3 : 0,
-      }}>
+    <Container insetBottom={insetBottom} insets={insets}>
       {children}
-    </View>
+    </Container>
   );
 }

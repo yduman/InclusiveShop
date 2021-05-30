@@ -1,7 +1,9 @@
 import React, { useState } from "react";
 import { StyleSheet } from "react-native";
-import { Button, useTheme } from "react-native-paper";
-import { Select, VStack, CheckIcon, useToast } from "native-base";
+import { Button, Portal, Snackbar, useTheme } from "react-native-paper";
+import { Select, VStack, CheckIcon } from "native-base";
+import { useNavigation } from "@react-navigation/native";
+
 import { Product } from "../../utils/data";
 import useProductStore from "../../hooks/useProductStore";
 
@@ -9,58 +11,66 @@ interface Props {
   product: Product;
 }
 
-export default function ProductSizeSelect(props: Props) {
-  const { product } = props;
+export default function ProductSizeSelect({ product }: Props) {
   const [size, setSize] = useState("");
+  const [visible, setVisible] = useState(false);
   const { colors } = useTheme();
-  const toast = useToast();
+  const navigation = useNavigation();
   const addToCart = useProductStore(state => state.addToCart);
 
-  // TODO: add action button which navigates directly to checkout
   function handleToast() {
-    if (size.length === 0) {
-      toast.show({
-        title: "Select a size!",
-        description: "You need to select a size in order to buy it.",
-        status: "error",
-        placement: "top",
-      });
-    } else {
-      addToCart(product.id, size);
-      toast.show({
-        title: "In your cart!",
-        description: `Successfully added product to your cart.`,
-        status: "success",
-        placement: "top",
-      });
-    }
+    addToCart(product.id, size);
+    setVisible(true);
   }
 
+  const onDismiss = () => setVisible(false);
+
   return (
-    <VStack alignItems="center" space={2} style={styles.select}>
-      <Select
-        selectedValue={size}
-        width={"100%"}
-        accessibilityLabel="Select your fitting size"
-        placeholder="Select your size"
-        onValueChange={val => setSize(val)}
-        _selectedItem={{
-          bg: "black",
-          endIcon: <CheckIcon size={4} />,
-        }}>
-        {product.sizes.map((val, idx) => {
-          return <Select.Item key={idx} label={val} value={val} />;
-        })}
-      </Select>
-      <Button
-        onPress={handleToast}
-        icon="cart"
-        mode="contained"
-        color={colors.accent}
-        style={styles.cartButton}>
-        Add to Cart
-      </Button>
-    </VStack>
+    <React.Fragment>
+      <Portal>
+        <Snackbar
+          theme={{
+            colors: {
+              accent: "white",
+            },
+          }}
+          visible={visible}
+          onDismiss={onDismiss}
+          duration={3000}
+          action={{
+            label: "Checkout",
+            labelStyle: styles.snackbarLabel,
+            onPress: () => navigation.navigate("Checkout"),
+          }}>
+          Added to the shopping cart.
+        </Snackbar>
+      </Portal>
+      <VStack alignItems="center" space={2} style={styles.select}>
+        <Select
+          selectedValue={size}
+          width={"100%"}
+          accessibilityLabel="Select your fitting size"
+          placeholder="Select your size"
+          onValueChange={val => setSize(val)}
+          _selectedItem={{
+            bg: "black",
+            endIcon: <CheckIcon size={4} />,
+          }}>
+          {product.sizes.map((val, idx) => {
+            return <Select.Item key={idx} label={val} value={val} />;
+          })}
+        </Select>
+        <Button
+          onPress={handleToast}
+          icon="cart"
+          mode="contained"
+          color={colors.accent}
+          style={styles.cartButton}
+          disabled={size.length === 0 || visible}>
+          Add to Cart
+        </Button>
+      </VStack>
+    </React.Fragment>
   );
 }
 
@@ -71,5 +81,9 @@ const styles = StyleSheet.create({
   },
   cartButton: {
     width: "100%",
+  },
+  snackbarLabel: {
+    fontWeight: "bold",
+    color: "aquamarine",
   },
 });

@@ -1,5 +1,5 @@
 import React from "react";
-import { Title, Subheading, Headline } from "react-native-paper";
+import { Subheading, Headline } from "react-native-paper";
 
 interface HeadlinesProps {
   title: string;

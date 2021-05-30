@@ -1,12 +1,5 @@
 import create, { GetState, SetState } from "zustand";
-import {
-  Category,
-  ClothingSize,
-  Product,
-  productData,
-  ProductType,
-  ShoeSize,
-} from "../utils/data";
+import { Category, Product, productData, ProductType } from "../utils/data";
 
 const initialState: ShopState = {
   products: [...productData],
@@ -85,7 +78,7 @@ export function handleFavoriteChange(
   let favorites = get().favorites;
 
   if (favorites.includes(id)) {
-    favorites = favorites.filter(productId => productId != id);
+    favorites = favorites.filter(productId => productId !== id);
   } else {
     const product = store.products.find(p => p.id === id) as Product;
     favorites.push(product.id);

@@ -10,6 +10,7 @@ export type ParamList = {
   };
 };
 
+// eslint-disable-next-line no-shadow
 export enum StackScreens {
   Login = "Login",
   Shop = "Shop",

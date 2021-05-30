@@ -1,5 +1,5 @@
 import React from "react";
-import { ScrollView } from "react-native";
+import { ScrollView, StyleSheet } from "react-native";
 import { RouteProp, useRoute } from "@react-navigation/native";
 import { Image } from "native-base";
 
@@ -25,7 +25,7 @@ export default function ProductDetailScreen() {
         source={product.img}
         resizeMode="cover"
         alt="Some alt"
-        style={{ height: 570 }}
+        style={styles.img}
       />
       <ProductDetailsContainer>
         <ProductDetailTitle brand={product.brand} description={description} />
@@ -41,3 +41,9 @@ export default function ProductDetailScreen() {
     </ScrollView>
   );
 }
+
+const styles = StyleSheet.create({
+  img: {
+    height: 570,
+  },
+});

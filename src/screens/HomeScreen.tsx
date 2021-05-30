@@ -1,5 +1,5 @@
 import React from "react";
-import { ScrollView } from "react-native";
+import { ScrollView, StyleSheet } from "react-native";
 
 import { Spacer } from "../components/styled";
 import useProductStore from "../hooks/useProductStore";
@@ -18,12 +18,7 @@ export default function HomeScreen() {
   return (
     <React.Fragment>
       <Header title="InclusiveShop" />
-      <ScrollView
-        showsVerticalScrollIndicator={false}
-        style={{
-          paddingTop: 16,
-          paddingLeft: 16,
-        }}>
+      <ScrollView showsVerticalScrollIndicator={false} style={styles.home}>
         <Headlines
           title="Featured Products"
           subtitle="Recommendations for you"
@@ -40,3 +35,10 @@ export default function HomeScreen() {
     </React.Fragment>
   );
 }
+
+const styles = StyleSheet.create({
+  home: {
+    paddingTop: 16,
+    paddingLeft: 16,
+  },
+});

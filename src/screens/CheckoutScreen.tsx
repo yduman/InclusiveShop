@@ -1,5 +1,5 @@
 import React from "react";
-import { View } from "react-native";
+import { View, StyleSheet } from "react-native";
 
 import Header from "../components/common/Header";
 import FallbackContent from "../components/common/FallbackContent";
@@ -14,12 +14,7 @@ export default function CheckoutScreen() {
   return (
     <React.Fragment>
       <Header title="Checkout" />
-      <View
-        style={{
-          paddingTop: 16,
-          paddingLeft: 16,
-          height: "100%",
-        }}>
+      <View style={styles.container}>
         {store.cart.length === 0 ? (
           <FallbackContent
             title="Nothing you liked?"
@@ -33,3 +28,11 @@ export default function CheckoutScreen() {
     </React.Fragment>
   );
 }
+
+const styles = StyleSheet.create({
+  container: {
+    paddingTop: 16,
+    paddingLeft: 16,
+    height: "100%",
+  },
+});
