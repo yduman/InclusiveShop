@@ -26,6 +26,7 @@ export default function ProductDetailScreen() {
         resizeMode="cover"
         alt="Some alt"
         style={styles.img}
+        accessibilityIgnoresInvertColors
       />
       <ProductDetailsContainer>
         <ProductDetailTitle brand={product.brand} description={description} />

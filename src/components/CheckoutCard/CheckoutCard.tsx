@@ -1,5 +1,5 @@
 import React from "react";
-import { View, Text } from "react-native";
+import { Text } from "react-native";
 
 import useProductStore, { CartItem } from "../../hooks/useProductStore";
 import { Product } from "../../utils/data";
