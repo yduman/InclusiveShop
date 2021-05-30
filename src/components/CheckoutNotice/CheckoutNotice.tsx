@@ -13,7 +13,7 @@ export default function CheckoutNotice() {
         <Text style={styles.total}>$120</Text>
       </HStack>
       <Button
-        onPress={() => {}}
+        onPress={() => console.log("checkout")}
         mode="contained"
         color={colors.accent}
         style={styles.checkout}>
@@ -68,8 +68,9 @@ const styles = StyleSheet.create({
     padding: 16,
   },
   total: {
-    fontSize: 16,
+    fontSize: 20,
     fontWeight: "bold",
+    letterSpacing: 1,
   },
   vat: {
     fontSize: 10,

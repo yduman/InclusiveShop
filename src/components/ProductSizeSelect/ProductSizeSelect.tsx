@@ -83,7 +83,6 @@ const styles = StyleSheet.create({
     width: "100%",
   },
   snackbarLabel: {
-    fontWeight: "bold",
     color: "aquamarine",
   },
 });

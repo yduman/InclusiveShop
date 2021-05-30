@@ -5,7 +5,7 @@ const regular = {
 
 const medium = {
   fontFamily: "Inter-Medium",
-  fontWeight: "normal" as const,
+  fontWeight: "bold" as const,
 };
 
 const light = {
