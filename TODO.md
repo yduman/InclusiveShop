@@ -10,6 +10,8 @@
   - [X] List products from search result
   - [X] Change title to include gender
 - [ ] Design shopping cart screen
+  - [X] Figure out data structure for checkout screen
+  - [ ] Design product card for checkout screen
 - [ ] Apply a11y to login screen
 - [ ] Apply a11y to home screen
 - [ ] Apply a11y to search screen
