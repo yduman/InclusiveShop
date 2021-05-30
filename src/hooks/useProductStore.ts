@@ -32,7 +32,8 @@ export interface CategoryType {
 
 export interface CartItem {
   productId: number;
-  selectedSizes: Set<string>;
+  selectedSize: string;
+  count: number;
 }
 
 export interface ShopState {
@@ -94,18 +95,20 @@ export function handleAddCart(
   set: SetState<ProductStore>,
 ) {
   let cart = get().cart;
-  const found = cart.find(item => item.productId === id);
+  const found = cart.find(item => isEqualCartItem(item, id, size));
 
   if (found) {
-    found.selectedSizes.add(size);
-    cart = cart.map(cartItem => (cartItem.productId === id ? found : cartItem));
+    found.count += 1;
+    cart = cart.map(item => (isEqualCartItem(item, id, size) ? found : item));
   } else {
-    const sizes = new Set<string>();
-    sizes.add(size);
-    cart.push({ productId: id, selectedSizes: sizes });
+    cart.push({ productId: id, selectedSize: size, count: 1 });
   }
 
   set({ cart });
+}
+
+function isEqualCartItem(item: CartItem, id: number, size: string) {
+  return item.productId === id && item.selectedSize === size;
 }
 
 export default useProductStore;

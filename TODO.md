@@ -11,7 +11,12 @@
   - [X] Change title to include gender
 - [ ] Design shopping cart screen
   - [X] Figure out data structure for checkout screen
+  - [X] Implement shipped by header
+  - [X] Implement checkout footer
+  - [X] Implement FlatList for checkout
   - [ ] Design product card for checkout screen
+  - [ ] Pass correct price to `CheckoutNotice`
+  - [ ] Display modal when triggering checkout
 - [ ] Apply a11y to login screen
 - [ ] Apply a11y to home screen
 - [ ] Apply a11y to search screen

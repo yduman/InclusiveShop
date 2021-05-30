@@ -82,12 +82,18 @@ export const CenterText = styled.Text`
 `;
 
 interface ContainerProps {
-  insetBottom?: boolean;
   insets: EdgeInsets;
+  insetBottom?: boolean;
 }
 
 export const Container = styled.View<ContainerProps>`
   padding: 16px;
+  height: 100%;
   margin-bottom: ${props =>
-    props.insetBottom ? String(props.insets.bottom * 3 + "px") : "0px"};
+    props.insetBottom ? String(props.insets.bottom * 5 + "px") : "0px"};
+`;
+
+export const CheckoutCardContainer = styled.View`
+  border-bottom-width: 1px;
+  border-bottom-color: lightgrey;
 `;

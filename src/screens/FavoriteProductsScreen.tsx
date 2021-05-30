@@ -12,17 +12,17 @@ export default function FavoriteProductsScreen() {
   return (
     <React.Fragment>
       <Header title="Favorites" />
-      <PageContainer insetBottom>
-        {favorites.length === 0 ? (
-          <FallbackContent
-            title="No Favorites?"
-            subtitle="Like a product in order to see it here."
-            img={require("../../assets/images/nofavorites.png")}
-          />
-        ) : (
+      {favorites.length === 0 ? (
+        <FallbackContent
+          title="No Favorites?"
+          subtitle="Like a product in order to see it here."
+          img={require("../../assets/images/nofavorites.png")}
+        />
+      ) : (
+        <PageContainer withInset>
           <ProductList data={favorites} isHorizontal={false} columns={2} />
-        )}
-      </PageContainer>
+        </PageContainer>
+      )}
     </React.Fragment>
   );
 }

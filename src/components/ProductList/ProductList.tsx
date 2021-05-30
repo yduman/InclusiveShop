@@ -4,20 +4,20 @@ import { FlatList } from "react-native";
 import { Product } from "../../utils/data";
 import ProductCard from "../ProductCard";
 
-interface ProductListProps {
+interface Props {
   data: Product[];
   isHorizontal: boolean;
   columns?: number;
 }
 
-export default function ProductList(props: ProductListProps) {
+export default function ProductList({ isHorizontal, data, columns }: Props) {
   return (
     <FlatList
-      horizontal={props.isHorizontal}
+      horizontal={isHorizontal}
       showsHorizontalScrollIndicator={false}
       showsVerticalScrollIndicator={false}
-      data={props.data}
-      numColumns={props.columns}
+      data={data}
+      numColumns={columns}
       renderItem={({ item }) => {
         return <ProductCard {...item} />;
       }}

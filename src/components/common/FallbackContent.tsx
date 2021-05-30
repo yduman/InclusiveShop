@@ -1,5 +1,5 @@
 import React from "react";
-import { Image, ImageSourcePropType, StyleSheet } from "react-native";
+import { View, Image, ImageSourcePropType, StyleSheet } from "react-native";
 
 import Headlines from "./Headlines";
 
@@ -9,17 +9,24 @@ interface Props {
   img: ImageSourcePropType;
 }
 
-export default function FallbackContent(props: Props) {
-  const { title, subtitle, img } = props;
+export default function FallbackContent({ title, subtitle, img }: Props) {
   return (
-    <React.Fragment>
+    <View style={styles.view}>
       <Headlines title={title} subtitle={subtitle} />
-      <Image source={img} resizeMode="cover" style={styles.img} />
-    </React.Fragment>
+      <Image
+        source={img}
+        resizeMode="cover"
+        style={styles.img}
+        accessibilityIgnoresInvertColors
+      />
+    </View>
   );
 }
 
 const styles = StyleSheet.create({
+  view: {
+    padding: 16,
+  },
   img: {
     maxWidth: "100%",
     maxHeight: "50%",

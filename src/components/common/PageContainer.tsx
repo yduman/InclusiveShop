@@ -1,18 +1,24 @@
+/* eslint-disable react-native/no-inline-styles */
 import React from "react";
+import { View } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
-import { Container } from "../styled";
 
 interface Props {
   children?: React.ReactNode;
-  insetBottom?: boolean;
+  withInset?: boolean;
 }
 
-export default function PageContainer({ children, insetBottom }: Props) {
+export default function PageContainer({ children, withInset }: Props) {
   const insets = useSafeAreaInsets();
 
   return (
-    <Container insetBottom={insetBottom} insets={insets}>
+    <View
+      style={{
+        padding: 16,
+        height: "100%",
+        paddingBottom: withInset ? insets.bottom * 3 : 0,
+      }}>
       {children}
-    </Container>
+    </View>
   );
 }
