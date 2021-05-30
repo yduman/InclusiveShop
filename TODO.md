@@ -14,9 +14,11 @@
   - [X] Implement shipped by header
   - [X] Implement checkout footer
   - [X] Implement FlatList for checkout
-  - [ ] Design product card for checkout screen
-  - [ ] Pass correct price to `CheckoutNotice`
+  - [X] Design product card for checkout screen
+  - [X] Implement triple dot button logic
+  - [ ] Implement modal logic
   - [ ] Display modal when triggering checkout
+  - [ ] Pass correct price to `CheckoutNotice`
 - [ ] Apply a11y to login screen
 - [ ] Apply a11y to home screen
 - [ ] Apply a11y to search screen

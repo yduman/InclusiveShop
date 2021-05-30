@@ -10,7 +10,7 @@ export default function CheckoutNotice() {
     <VStack style={styles.container} space={4}>
       <HStack justifyContent="space-between">
         <Text style={styles.total}>Total</Text>
-        <Text style={styles.total}>$120</Text>
+        <Text style={styles.total}>$75</Text>
       </HStack>
       <Button
         onPress={() => console.log("checkout")}

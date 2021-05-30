@@ -1,6 +1,6 @@
-import React from "react";
+import React, { useState } from "react";
 import { StyleSheet, Image } from "react-native";
-import { IconButton, Text } from "react-native-paper";
+import { IconButton, Text, Modal, Portal, Button } from "react-native-paper";
 import { HStack, VStack } from "native-base";
 
 import useProductStore, { CartItem } from "../../hooks/useProductStore";
@@ -12,33 +12,59 @@ export default function CheckoutCard({
   selectedSize,
   count,
 }: CartItem) {
+  const [visible, setVisible] = useState(false);
   const product = useProductStore(state =>
     state.products.find(p => p.id === productId),
   ) as Product;
 
+  const showModal = () => setVisible(true);
+  const hideModal = () => setVisible(false);
+  const containerStyle = { backgroundColor: "white", padding: 20 };
+
   return (
-    <HStack
-      style={styles.cardContainer}
-      space={2}
-      justifyContent="space-between">
-      <Image
-        source={product.img}
-        resizeMode="cover"
-        style={styles.img}
-        accessibilityIgnoresInvertColors
-      />
-      <VStack space={1} style={styles.content} w="55%">
-        <Text style={styles.text}>{product.brand}</Text>
-        <Text style={styles.text} numberOfLines={1}>
-          {getFullDescription(product)}
-        </Text>
-        <Text style={styles.price}>{product.price}</Text>
-        <Text style={styles.text}>Color: {product.color}</Text>
-        <Text style={styles.text}>Size: {selectedSize}</Text>
-        <Text style={styles.text}>Quantity: {count}</Text>
-      </VStack>
-      <IconButton icon="dots-horizontal" onPress={() => console.log("more")} />
-    </HStack>
+    <React.Fragment>
+      <Portal>
+        <Modal
+          visible={visible}
+          onDismiss={hideModal}
+          contentContainerStyle={containerStyle}>
+          <Button
+            theme={{ colors: { primary: "black" } }}
+            mode="text"
+            onPress={() => console.log("Change quantity")}>
+            Change quantity ({count})
+          </Button>
+          <Button
+            theme={{ colors: { primary: "black" } }}
+            mode="text"
+            onPress={() => console.log("Delete")}>
+            Delete
+          </Button>
+        </Modal>
+      </Portal>
+      <HStack
+        style={styles.cardContainer}
+        space={2}
+        justifyContent="space-between">
+        <Image
+          source={product.img}
+          resizeMode="cover"
+          style={styles.img}
+          accessibilityIgnoresInvertColors
+        />
+        <VStack space={1} style={styles.content} w="55%">
+          <Text style={styles.text}>{product.brand}</Text>
+          <Text style={styles.text} numberOfLines={1}>
+            {getFullDescription(product)}
+          </Text>
+          <Text style={styles.price}>{product.price}</Text>
+          <Text style={styles.text}>Color: {product.color}</Text>
+          <Text style={styles.text}>Size: {selectedSize}</Text>
+          <Text style={styles.text}>Quantity: {count}</Text>
+        </VStack>
+        <IconButton icon="dots-horizontal" onPress={showModal} />
+      </HStack>
+    </React.Fragment>
   );
 }
 
