@@ -19,7 +19,7 @@ export default function ProductSizeSelect({ product }: Props) {
   const addToCart = useProductStore(state => state.addToCart);
 
   function handleToast() {
-    addToCart(product.id, size);
+    addToCart(product.id, size, product.priceNum);
     setVisible(true);
   }
 

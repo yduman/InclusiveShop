@@ -2,15 +2,19 @@ import React from "react";
 import { Text, StyleSheet, Image } from "react-native";
 import { VStack, HStack } from "native-base";
 import { Button, useTheme } from "react-native-paper";
+import useProductStore from "../../hooks/useProductStore";
+import { calculateTotalPrice } from "../../utils";
 
 export default function CheckoutNotice() {
   const { colors } = useTheme();
+  const store = useProductStore();
+  const totalPrice = calculateTotalPrice(store.cart);
 
   return (
     <VStack style={styles.container} space={4}>
       <HStack justifyContent="space-between">
         <Text style={styles.total}>Total</Text>
-        <Text style={styles.total}>$75</Text>
+        <Text style={styles.total}>{totalPrice}</Text>
       </HStack>
       <Button
         onPress={() => console.log("checkout")}

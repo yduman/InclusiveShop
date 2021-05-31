@@ -37,7 +37,7 @@ export default function QuantitySelect({
               key={idx}
               endIcon={
                 currentCount === val ? (
-                  <Icon name="check" size={20} />
+                  <Icon name="check" size={20} color="#000" />
                 ) : undefined
               }
               backgroundColor={currentCount === val ? "#D3D3D3" : "transparent"}

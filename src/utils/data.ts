@@ -15,6 +15,7 @@ export interface Product {
   color: string;
   title: string;
   price: string;
+  priceNum: number;
   salePrice: string;
   salePercent?: string;
   isSale: boolean;
@@ -33,6 +34,7 @@ export const productData: Product[] = [
     color: "crockery/beige",
     title: "JPRBLASUMMER BAND",
     price: "$40",
+    priceNum: 40,
     salePrice: "",
     isSale: false,
     isFeatured: true,
@@ -48,6 +50,7 @@ export const productData: Product[] = [
     color: "green",
     title: "MARVIC",
     price: "$60",
+    priceNum: 40,
     salePrice: "$40",
     salePercent: "-33%",
     isSale: true,
@@ -64,6 +67,7 @@ export const productData: Product[] = [
     color: "white",
     title: "Join Life",
     price: "$50",
+    priceNum: 50,
     salePrice: "",
     isSale: false,
     isFeatured: false,
@@ -79,6 +83,7 @@ export const productData: Product[] = [
     color: "white",
     title: "Comfortable Slim",
     price: "$70",
+    priceNum: 50,
     salePrice: "$50",
     salePercent: "-28%",
     isSale: true,
@@ -95,6 +100,7 @@ export const productData: Product[] = [
     color: "blue/grey",
     title: "Relaxed Fit",
     price: "$35",
+    priceNum: 35,
     salePrice: "",
     isSale: false,
     isFeatured: true,
@@ -110,6 +116,7 @@ export const productData: Product[] = [
     color: "black denim",
     title: "TROY - Slim Fit",
     price: "$50",
+    priceNum: 40,
     salePrice: "$40",
     salePercent: "-20%",
     isSale: true,
@@ -126,6 +133,7 @@ export const productData: Product[] = [
     color: "dark/blue",
     title: "Straight Leg",
     price: "$30",
+    priceNum: 30,
     salePrice: "",
     isSale: false,
     isFeatured: false,
@@ -141,6 +149,7 @@ export const productData: Product[] = [
     color: "indigo aged",
     title: "KATE BOYFRIEND - Relaxed Fit",
     price: "$100",
+    priceNum: 70,
     salePrice: "$70",
     salePercent: "-30%",
     isSale: true,
@@ -157,6 +166,7 @@ export const productData: Product[] = [
     color: "black",
     title: "OLD SKOOL",
     price: "$75",
+    priceNum: 75,
     salePrice: "",
     isSale: false,
     isFeatured: true,
@@ -172,6 +182,7 @@ export const productData: Product[] = [
     color: "green",
     title: "500",
     price: "$75",
+    priceNum: 55,
     salePrice: "$55",
     salePercent: "-26%",
     isSale: true,
@@ -188,6 +199,7 @@ export const productData: Product[] = [
     color: "black/anthracite/white",
     title: "AIR MAX 270",
     price: "$150",
+    priceNum: 150,
     salePrice: "",
     isSale: false,
     isFeatured: false,
@@ -203,6 +215,7 @@ export const productData: Product[] = [
     color: "black/garnet/white",
     title: "CHUCK TAYLOR ALL STAR LIFT",
     price: "$80",
+    priceNum: 75,
     salePrice: "$75",
     salePercent: "-6%",
     isSale: true,
