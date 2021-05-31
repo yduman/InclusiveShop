@@ -36,7 +36,7 @@ export default function ProductSizeSelect({ product }: Props) {
           }}
           visible={visible}
           onDismiss={onDismiss}
-          duration={3000}
+          duration={2000}
           action={{
             label: "Checkout",
             labelStyle: styles.snackbarLabel,

@@ -1,11 +1,12 @@
 import React, { useState } from "react";
 import { StyleSheet, Image } from "react-native";
 import { IconButton, Text, Modal, Portal, Button } from "react-native-paper";
-import { HStack, VStack } from "native-base";
+import { HStack, useDisclose, VStack } from "native-base";
 
 import useProductStore, { CartItem } from "../../hooks/useProductStore";
 import { Product } from "../../utils/data";
 import { getFullDescription } from "../../utils";
+import QuantitySelect from "../QuantitySelect";
 
 export default function CheckoutCard({
   productId,
@@ -16,7 +17,8 @@ export default function CheckoutCard({
   const product = useProductStore(state =>
     state.products.find(p => p.id === productId),
   ) as Product;
-
+  const deleteFromCart = useProductStore(state => state.deleteFromCart);
+  const { isOpen, onOpen, onClose } = useDisclose();
   const showModal = () => setVisible(true);
   const hideModal = () => setVisible(false);
   const containerStyle = { backgroundColor: "white", padding: 20 };
@@ -31,13 +33,19 @@ export default function CheckoutCard({
           <Button
             theme={{ colors: { primary: "black" } }}
             mode="text"
-            onPress={() => console.log("Change quantity")}>
+            onPress={() => {
+              onOpen();
+              hideModal();
+            }}>
             Change quantity ({count})
           </Button>
           <Button
             theme={{ colors: { primary: "black" } }}
             mode="text"
-            onPress={() => console.log("Delete")}>
+            onPress={() => {
+              deleteFromCart(productId, selectedSize);
+              hideModal();
+            }}>
             Delete
           </Button>
         </Modal>
@@ -64,6 +72,13 @@ export default function CheckoutCard({
         </VStack>
         <IconButton icon="dots-horizontal" onPress={showModal} />
       </HStack>
+      <QuantitySelect
+        isOpen={isOpen}
+        onClose={onClose}
+        productId={productId}
+        selectedSize={selectedSize}
+        currentCount={count}
+      />
     </React.Fragment>
   );
 }

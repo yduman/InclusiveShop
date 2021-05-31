@@ -16,9 +16,9 @@
   - [X] Implement FlatList for checkout
   - [X] Design product card for checkout screen
   - [X] Implement triple dot button logic
-  - [ ] Implement modal logic
-  - [ ] Display modal when triggering checkout
+  - [X] Implement modal logic
   - [ ] Pass correct price to `CheckoutNotice`
+  - [ ] Display modal when triggering checkout
 - [ ] Apply a11y to login screen
 - [ ] Apply a11y to home screen
 - [ ] Apply a11y to search screen

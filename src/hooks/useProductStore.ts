@@ -48,6 +48,8 @@ export interface ProductStore extends ShopState {
   resetState: () => void;
   toggleFavorite: (id: number) => void;
   addToCart: (id: number, size: string) => void;
+  deleteFromCart: (id: number, size: string) => void;
+  changeQuantity: (id: number, size: string, newCount: number) => void;
 }
 
 const useProductStore = create<ProductStore>((set, get) => ({
@@ -56,12 +58,17 @@ const useProductStore = create<ProductStore>((set, get) => ({
   resetState: () => handleResetState(get, set),
   toggleFavorite: id => handleFavoriteChange(id, get, set),
   addToCart: (id, size) => handleAddCart(id, size, get, set),
+  deleteFromCart: (id, size) => handleDeleteFromCart(id, size, get, set),
+  changeQuantity: (id, size, newCount) =>
+    handleQuantityChange(id, size, newCount, get, set),
 }));
 
 export function handleResetState(
   get: GetState<ProductStore>,
   set: SetState<ProductStore>,
 ) {
+  console.log("resetting");
+
   const storeState = get();
   storeState.products = [...productData];
   storeState.categories = initialState.categories;
@@ -102,6 +109,35 @@ export function handleAddCart(
     cart = cart.map(item => (isEqualCartItem(item, id, size) ? found : item));
   } else {
     cart.push({ productId: id, selectedSize: size, count: 1 });
+  }
+
+  set({ cart });
+}
+
+export function handleDeleteFromCart(
+  id: number,
+  size: string,
+  get: GetState<ProductStore>,
+  set: SetState<ProductStore>,
+) {
+  let cart = get().cart;
+  cart = cart.filter(item => !isEqualCartItem(item, id, size));
+  set({ cart });
+}
+
+export function handleQuantityChange(
+  id: number,
+  size: string,
+  newCount: number,
+  get: GetState<ProductStore>,
+  set: SetState<ProductStore>,
+) {
+  let cart = get().cart;
+  const found = cart.find(item => isEqualCartItem(item, id, size));
+
+  if (found) {
+    found.count = newCount;
+    cart = cart.map(item => (isEqualCartItem(item, id, size) ? found : item));
   }
 
   set({ cart });
