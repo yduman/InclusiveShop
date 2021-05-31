@@ -1,14 +1,38 @@
 import React from "react";
-import { Text, StyleSheet, Image } from "react-native";
+import { Text, StyleSheet, Image, Alert } from "react-native";
 import { VStack, HStack } from "native-base";
 import { Button, useTheme } from "react-native-paper";
+import { NavigationProp, useNavigation } from "@react-navigation/native";
+
 import useProductStore from "../../hooks/useProductStore";
 import { calculateTotalPrice } from "../../utils";
+
+const checkoutAlert = (
+  emptyCart: () => void,
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  navigation: NavigationProp<any>,
+) => {
+  Alert.alert(
+    "Your order has been received!",
+    "Thank you for purchasing at InclusiveShop.",
+    [
+      {
+        text: "Go to Home",
+        onPress: () => {
+          emptyCart();
+          navigation.navigate("Home");
+        },
+      },
+    ],
+  );
+};
 
 export default function CheckoutNotice() {
   const { colors } = useTheme();
   const store = useProductStore();
+  const emptyCart = useProductStore(state => state.emptyCart);
   const totalPrice = calculateTotalPrice(store.cart);
+  const navigation = useNavigation();
 
   return (
     <VStack style={styles.container} space={4}>
@@ -17,7 +41,7 @@ export default function CheckoutNotice() {
         <Text style={styles.total}>{totalPrice}</Text>
       </HStack>
       <Button
-        onPress={() => console.log("checkout")}
+        onPress={() => checkoutAlert(emptyCart, navigation)}
         mode="contained"
         color={colors.accent}
         style={styles.checkout}>

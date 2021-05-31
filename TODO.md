@@ -9,7 +9,7 @@
 - [X] Design search screen
   - [X] List products from search result
   - [X] Change title to include gender
-- [ ] Design shopping cart screen
+- [X] Design shopping cart screen
   - [X] Figure out data structure for checkout screen
   - [X] Implement shipped by header
   - [X] Implement checkout footer
@@ -17,11 +17,11 @@
   - [X] Design product card for checkout screen
   - [X] Implement triple dot button logic
   - [X] Implement modal logic
-  - [ ] Pass correct price to `CheckoutNotice`
-  - [ ] Display modal when triggering checkout
+  - [X] Pass correct price to `CheckoutNotice`
+  - [X] Display modal when triggering checkout
 - [ ] Apply a11y to login screen
 - [ ] Apply a11y to home screen
 - [ ] Apply a11y to search screen
 - [ ] Apply a11y to favorites screen
 - [ ] Apply a11y to shopping cart screen
-- [ ] Applay a11y to color theme
+- [ ] Apply a11y to color theme (contrast)

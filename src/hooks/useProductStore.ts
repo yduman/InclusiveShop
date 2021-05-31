@@ -51,6 +51,7 @@ export interface ProductStore extends ShopState {
   addToCart: (id: number, size: string, priceNum: number) => void;
   deleteFromCart: (id: number, size: string) => void;
   changeQuantity: (id: number, size: string, newCount: number) => void;
+  emptyCart: () => void;
 }
 
 const useProductStore = create<ProductStore>((set, get) => ({
@@ -63,6 +64,7 @@ const useProductStore = create<ProductStore>((set, get) => ({
   deleteFromCart: (id, size) => handleDeleteFromCart(id, size, get, set),
   changeQuantity: (id, size, newCount) =>
     handleQuantityChange(id, size, newCount, get, set),
+  emptyCart: () => set({ cart: [] }),
 }));
 
 export function handleResetState(
