@@ -21,7 +21,8 @@
   - [X] Display modal when triggering checkout
 - [X] Apply a11y to login screen
 - [X] Apply a11y to home screen
-- [ ] Apply a11y to search screen
+- [X] Apply a11y to search screen
+- [ ] Apply a11y to product detail screen
 - [ ] Apply a11y to favorites screen
 - [ ] Apply a11y to shopping cart screen
 - [ ] Apply a11y to color theme (contrast)
