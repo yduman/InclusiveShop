@@ -1,4 +1,5 @@
 import React from "react";
+import { PixelRatio, Platform } from "react-native";
 import { Appbar } from "react-native-paper";
 import { StackHeaderProps } from "@react-navigation/stack";
 import { RouteProp, useRoute } from "@react-navigation/native";
@@ -14,8 +15,26 @@ export default function SearchResultNavBar(props: StackHeaderProps) {
 
   return (
     <Appbar.Header>
-      {previous ? <Appbar.BackAction onPress={navigation.goBack} /> : null}
-      <Appbar.Content title={getTitle(productType, gender)} />
+      {previous ? (
+        <Appbar.BackAction
+          accessibilityLabel="Go back"
+          accessibilityHint="Will navigate you back to the search page"
+          accessibilityRole="button"
+          onPress={navigation.goBack}
+        />
+      ) : null}
+      <Appbar.Content
+        accessibilityRole="header"
+        title={getTitle(productType, gender)}
+        titleStyle={{
+          fontSize:
+            PixelRatio.getFontScale() >= 2
+              ? PixelRatio.getPixelSizeForLayoutSize(3)
+              : Platform.OS === "ios"
+              ? 17
+              : 20,
+        }}
+      />
     </Appbar.Header>
   );
 }
@@ -24,7 +43,10 @@ function getTitle(productType: ProductType, gender: Gender) {
   let type: string;
 
   switch (productType) {
-    case "Shirt" || "Sneaker":
+    case "Shirt":
+      type = productType + "s";
+      break;
+    case "Sneaker":
       type = productType + "s";
       break;
     default:

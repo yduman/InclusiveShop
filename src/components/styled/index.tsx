@@ -43,12 +43,16 @@ export const ProductImage = styled.Image`
   height: 250px;
 `;
 
-export const SaleBadge = styled.View`
+interface SaleBadgeProps {
+  pixelRatio: number;
+}
+
+export const SaleBadge = styled.View<SaleBadgeProps>`
   position: absolute;
   z-index: 1;
   background-color: red;
   color: white;
-  margin-top: 222px;
+  margin-top: ${props => String(220 - props.pixelRatio) + "px"};
   padding-left: 8px;
   padding-right: 8px;
   padding-top: 2px;

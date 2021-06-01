@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { StyleSheet } from "react-native";
+import { Text, StyleSheet, PixelRatio, Platform } from "react-native";
 import { Button, Portal, Snackbar, useTheme } from "react-native-paper";
 import { Select, VStack, CheckIcon } from "native-base";
 import { useNavigation } from "@react-navigation/native";
@@ -36,13 +36,13 @@ export default function ProductSizeSelect({ product }: Props) {
           }}
           visible={visible}
           onDismiss={onDismiss}
-          duration={2000}
+          duration={10000}
           action={{
             label: "Checkout",
             labelStyle: styles.snackbarLabel,
             onPress: () => navigation.navigate("Checkout"),
           }}>
-          Added to the shopping cart.
+          <Text maxFontSizeMultiplier={1.8}>Added to the shopping cart.</Text>
         </Snackbar>
       </Portal>
       <VStack alignItems="center" space={2} style={styles.select}>
@@ -85,5 +85,11 @@ const styles = StyleSheet.create({
   },
   snackbarLabel: {
     color: "aquamarine",
+    fontSize:
+      PixelRatio.getFontScale() >= 2
+        ? PixelRatio.getPixelSizeForLayoutSize(3)
+        : Platform.OS === "ios"
+        ? 11
+        : 14,
   },
 });

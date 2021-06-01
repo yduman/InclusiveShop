@@ -12,7 +12,7 @@ interface Props {
 
 function costHint(product: Product) {
   if (product.isSale) {
-    return `is reduced from ${product.price} to ${product.salePrice}. That is a discount by ${product.salePercent}`;
+    return `is reduced from ${product.price} to ${product.salePrice}. A discount by ${product.salePercent}`;
   } else {
     return `costs ${product.price}`;
   }
@@ -29,9 +29,7 @@ export default function ProductList({ isHorizontal, data, columns }: Props) {
       renderItem={({ item, index }) => {
         return (
           <View
-            accessibilityLabel={`Product ${index + 1} out of ${
-              data.length + 1
-            }`}
+            accessibilityLabel={`Product ${index + 1} of ${data.length}`}
             accessibilityHint={`${item.brand} ${item.type}, the color is ${
               item.color
             } and ${costHint(item)}`}

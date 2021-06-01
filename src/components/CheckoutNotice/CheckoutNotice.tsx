@@ -37,15 +37,19 @@ export default function CheckoutNotice() {
   return (
     <VStack style={styles.container} space={4}>
       <HStack justifyContent="space-between">
-        <Text style={styles.total}>Total</Text>
-        <Text style={styles.total}>{totalPrice}</Text>
+        <Text maxFontSizeMultiplier={1.8} style={styles.total}>
+          Total
+        </Text>
+        <Text maxFontSizeMultiplier={1.8} style={styles.total}>
+          {totalPrice}
+        </Text>
       </HStack>
       <Button
         onPress={() => checkoutAlert(emptyCart, navigation)}
         mode="contained"
         color={colors.accent}
         style={styles.checkout}>
-        Checkout
+        <Text maxFontSizeMultiplier={1.8}>Checkout</Text>
       </Button>
       <HStack space={5} justifyContent="center">
         <Image

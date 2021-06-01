@@ -13,8 +13,10 @@ export default function ShippingNotice() {
       <HStack space={4}>
         <Icon name="package-variant-closed" size={30} />
         <VStack space={1}>
-          <Text>Shipped by InclusiveShop</Text>
-          <Text style={styles.date}>{getShippingDate()}</Text>
+          <Text maxFontSizeMultiplier={1.8}>Shipped by InclusiveShop</Text>
+          <Text maxFontSizeMultiplier={1.8} style={styles.date}>
+            {getShippingDate()}
+          </Text>
         </VStack>
       </HStack>
     </View>

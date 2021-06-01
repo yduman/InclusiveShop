@@ -20,6 +20,9 @@ export default function ProductSearchType({
 
   return (
     <List.Item
+      accessibilityLabel={displayName}
+      accessibilityHint={`Will list all ${displayName} we have in stock.`}
+      accessibilityRole="button"
       title={displayName}
       onPress={() =>
         navigation.navigate(StackScreens.SearchResult, {

@@ -14,7 +14,11 @@ export default function SearchScreen() {
 
   return (
     <React.Fragment>
-      <Header title="Search" />
+      <Header
+        title="Search"
+        accessibilityLabel="You are at the search screen"
+        accessibilityHint="Select your desired category on this page"
+      />
       <GenderButtonGroup gender={gender} onGenderChange={setGender} />
       <List.AccordionGroup>
         {categories.map((category, idx) => (

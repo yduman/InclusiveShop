@@ -37,7 +37,7 @@ export default function CheckoutCard({
               onOpen();
               hideModal();
             }}>
-            Change quantity ({count})
+            <Text maxFontSizeMultiplier={1.4}>Change quantity ({count})</Text>
           </Button>
           <Button
             theme={{ colors: { primary: "black" } }}
@@ -46,7 +46,7 @@ export default function CheckoutCard({
               deleteFromCart(productId, selectedSize);
               hideModal();
             }}>
-            Delete
+            <Text maxFontSizeMultiplier={1.4}>Delete</Text>
           </Button>
         </Modal>
       </Portal>
@@ -61,14 +61,27 @@ export default function CheckoutCard({
           accessibilityIgnoresInvertColors
         />
         <VStack space={1} style={styles.content} w="55%">
-          <Text style={styles.text}>{product.brand}</Text>
-          <Text style={styles.text} numberOfLines={1}>
+          <Text maxFontSizeMultiplier={1.4} style={styles.text}>
+            {product.brand}
+          </Text>
+          <Text
+            maxFontSizeMultiplier={1.4}
+            style={styles.text}
+            numberOfLines={1}>
             {getFullDescription(product)}
           </Text>
-          <Text style={styles.price}>{product.price}</Text>
-          <Text style={styles.text}>Color: {product.color}</Text>
-          <Text style={styles.text}>Size: {selectedSize}</Text>
-          <Text style={styles.text}>Quantity: {count}</Text>
+          <Text maxFontSizeMultiplier={1.4} style={styles.price}>
+            {product.price}
+          </Text>
+          <Text maxFontSizeMultiplier={1.4} style={styles.text}>
+            Color: {product.color}
+          </Text>
+          <Text maxFontSizeMultiplier={1.4} style={styles.text}>
+            Size: {selectedSize}
+          </Text>
+          <Text maxFontSizeMultiplier={1.4} style={styles.text}>
+            Quantity: {count}
+          </Text>
         </VStack>
         <IconButton icon="dots-horizontal" onPress={showModal} />
       </HStack>

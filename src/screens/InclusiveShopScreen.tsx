@@ -1,6 +1,6 @@
 import React from "react";
-import { createMaterialBottomTabNavigator } from "@react-navigation/material-bottom-tabs";
 import Icon from "react-native-vector-icons/MaterialCommunityIcons";
+import { createMaterialBottomTabNavigator } from "@react-navigation/material-bottom-tabs";
 
 import HomeScreen from "./HomeScreen";
 import SearchScreen from "./SearchScreen";
@@ -20,7 +20,10 @@ function renderIcon(activeIcon: string, focused: boolean) {
 
 export default function InclusiveShopScreen() {
   return (
-    <Tab.Navigator>
+    // No usage of labels since they behave strange for larger fonts
+    // Possible workaround could be provide tabBarIcon with custom component
+    // see: https://bit.ly/3ia8BA0
+    <Tab.Navigator labeled={false}>
       <Tab.Screen
         name="Home"
         component={HomeScreen}

@@ -21,11 +21,13 @@ export default function Headlines({
       accessibilityHint={accessibilityHint}
       accessibilityRole="header">
       <Headline
+        maxFontSizeMultiplier={1.8}
         accessibilityElementsHidden
         importantForAccessibility="no-hide-descendants">
         {title}
       </Headline>
       <Subheading
+        maxFontSizeMultiplier={1.8}
         accessibilityElementsHidden
         importantForAccessibility="no-hide-descendants">
         {subtitle}

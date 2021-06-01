@@ -1,5 +1,5 @@
 import React from "react";
-import { StyleSheet } from "react-native";
+import { PixelRatio, StyleSheet } from "react-native";
 import { Paragraph } from "react-native-paper";
 
 import { SaleBadge } from "../styled";
@@ -13,8 +13,10 @@ export default function ProductSaleBadge(props: ProductSaleBadgeProps) {
   return (
     <React.Fragment>
       {props.salePrice ? (
-        <SaleBadge>
-          <Paragraph style={styles.discount}>{props.salePercent}</Paragraph>
+        <SaleBadge pixelRatio={PixelRatio.getPixelSizeForLayoutSize(5)}>
+          <Paragraph maxFontSizeMultiplier={1.8} style={styles.discount}>
+            {props.salePercent}
+          </Paragraph>
         </SaleBadge>
       ) : null}
     </React.Fragment>

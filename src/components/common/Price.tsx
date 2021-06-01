@@ -14,19 +14,26 @@ export default function Price(props: Props) {
   return (
     <React.Fragment>
       {salePercent ? (
-        <Caption style={styles.salePercent}>{salePercent} discount</Caption>
+        <Caption maxFontSizeMultiplier={1.8} style={styles.salePercent}>
+          {salePercent} discount
+        </Caption>
       ) : null}
       {salePrice ? (
         <View style={styles.priceContainer}>
           <Paragraph
+            maxFontSizeMultiplier={1.8}
             numberOfLines={1}
             style={salePercent ? styles.salePriceDetail : styles.salePrice}>
             {salePrice}
           </Paragraph>
-          <Paragraph style={styles.strikethrough}>{price}</Paragraph>
+          <Paragraph maxFontSizeMultiplier={1.8} style={styles.strikethrough}>
+            {price}
+          </Paragraph>
         </View>
       ) : (
-        <Paragraph numberOfLines={1}>{price}</Paragraph>
+        <Paragraph maxFontSizeMultiplier={1.8} numberOfLines={1}>
+          {price}
+        </Paragraph>
       )}
     </React.Fragment>
   );

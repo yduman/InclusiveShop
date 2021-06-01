@@ -56,7 +56,9 @@ export default function Main() {
               component={ProductDetailScreen}
             />
             <Stack.Screen
-              options={{ header: props => <SearchResultNavBar {...props} /> }}
+              options={{
+                header: props => <SearchResultNavBar {...props} />,
+              }}
               name="SearchResultScreen"
               component={SearchResultScreen}
             />

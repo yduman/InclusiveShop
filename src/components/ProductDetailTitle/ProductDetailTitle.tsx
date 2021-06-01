@@ -10,8 +10,10 @@ interface Props {
 export default function ProductDetailTitle(props: Props) {
   return (
     <React.Fragment>
-      <Paragraph>{props.brand}</Paragraph>
-      <Paragraph style={styles.descr}>{props.description}</Paragraph>
+      <Paragraph maxFontSizeMultiplier={1.8}>{props.brand}</Paragraph>
+      <Paragraph maxFontSizeMultiplier={1.8} style={styles.descr}>
+        {props.description}
+      </Paragraph>
     </React.Fragment>
   );
 }

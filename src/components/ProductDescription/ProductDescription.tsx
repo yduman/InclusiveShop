@@ -14,8 +14,10 @@ interface Props {
 export default function ProductDescription(props: Props) {
   return (
     <React.Fragment>
-      <Paragraph numberOfLines={1}>{props.brand}</Paragraph>
-      <Paragraph numberOfLines={1}>
+      <Paragraph maxFontSizeMultiplier={1.8} numberOfLines={1}>
+        {props.brand}
+      </Paragraph>
+      <Paragraph maxFontSizeMultiplier={1.8} numberOfLines={1}>
         {props.type + " - " + props.color}
       </Paragraph>
       <Price price={props.price} salePrice={props.salePrice} />
