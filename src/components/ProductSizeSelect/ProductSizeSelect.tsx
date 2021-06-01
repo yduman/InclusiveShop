@@ -49,8 +49,9 @@ export default function ProductSizeSelect({ product }: Props) {
         <Select
           selectedValue={size}
           width={"100%"}
-          accessibilityLabel="Select your fitting size"
           placeholder="Select your size"
+          accessibilityLabel="Select your fitting size"
+          accessibilityHint="Selects the size that fits for you"
           onValueChange={val => setSize(val)}
           _selectedItem={{
             bg: "black",

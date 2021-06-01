@@ -2,7 +2,19 @@ import React, { useState } from "react";
 import { StyleSheet } from "react-native";
 import { TextInput } from "react-native-paper";
 
-export default function Input(props: InputProps) {
+interface Props {
+  label: string;
+  inputType: InputType;
+  accessibilityLabel: string;
+  accessibilityHint: string;
+}
+
+export default function Input({
+  label,
+  inputType,
+  accessibilityLabel,
+  accessibilityHint,
+}: Props) {
   const [text, setText] = useState("");
 
   return (
@@ -15,13 +27,15 @@ export default function Input(props: InputProps) {
       }}
       style={styles.input}
       mode="outlined"
-      label={props.label}
+      label={label}
       value={text}
-      autoCompleteType={props.inputType}
-      keyboardType={getKeyboardType(props.inputType)}
-      textContentType={getTextContentType(props.inputType)}
-      secureTextEntry={props.inputType === "password"}
+      autoCompleteType={inputType}
+      keyboardType={getKeyboardType(inputType)}
+      textContentType={getTextContentType(inputType)}
+      secureTextEntry={inputType === "password"}
       onChangeText={t => setText(t)}
+      accessibilityLabel={accessibilityLabel}
+      accessibilityHint={accessibilityHint}
     />
   );
 }
@@ -47,11 +61,6 @@ function getTextContentType(inputType: InputType) {
 }
 
 type InputType = "email" | "password";
-
-interface InputProps {
-  label: string;
-  inputType: InputType;
-}
 
 const styles = StyleSheet.create({
   input: {
