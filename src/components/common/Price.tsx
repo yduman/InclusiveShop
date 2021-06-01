@@ -12,7 +12,16 @@ export default function Price(props: Props) {
   const { price, salePrice, salePercent } = props;
 
   return (
-    <React.Fragment>
+    <View
+      accessibilityLabel={
+        salePercent
+          ? `The price is reduced to ${salePrice}`
+          : `The price is ${price}`
+      }
+      accessibilityHint={
+        salePercent ? `A discount by ${salePercent}` : "VAT included"
+      }
+      accessibilityRole="text">
       {salePercent ? (
         <Caption maxFontSizeMultiplier={1.8} style={styles.salePercent}>
           {salePercent} discount
@@ -35,7 +44,7 @@ export default function Price(props: Props) {
           {price}
         </Paragraph>
       )}
-    </React.Fragment>
+    </View>
   );
 }
 

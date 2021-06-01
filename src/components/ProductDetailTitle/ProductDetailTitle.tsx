@@ -1,20 +1,32 @@
 import React from "react";
-import { StyleSheet } from "react-native";
+import { StyleSheet, View } from "react-native";
 import { Paragraph } from "react-native-paper";
 
 interface Props {
   brand: string;
   description: string;
+  type: string;
+  color: string;
+  model: string;
 }
 
-export default function ProductDetailTitle(props: Props) {
+export default function ProductDetailTitle({
+  brand,
+  description,
+  type,
+  color,
+  model,
+}: Props) {
   return (
-    <React.Fragment>
-      <Paragraph maxFontSizeMultiplier={1.8}>{props.brand}</Paragraph>
+    <View
+      accessibilityLabel={`The ${model} ${type} by ${brand}`}
+      accessibilityHint={`The color is ${color}`}
+      accessibilityRole="text">
+      <Paragraph maxFontSizeMultiplier={1.8}>{brand}</Paragraph>
       <Paragraph maxFontSizeMultiplier={1.8} style={styles.descr}>
-        {props.description}
+        {description}
       </Paragraph>
-    </React.Fragment>
+    </View>
   );
 }
 

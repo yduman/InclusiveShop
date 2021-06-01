@@ -1,5 +1,13 @@
-import React, { useState } from "react";
-import { Text, StyleSheet, PixelRatio, Platform } from "react-native";
+/* eslint-disable @typescript-eslint/ban-ts-comment */
+import React, { useRef, useState } from "react";
+import {
+  Text,
+  StyleSheet,
+  PixelRatio,
+  Platform,
+  AccessibilityInfo,
+  findNodeHandle,
+} from "react-native";
 import { Button, Portal, Snackbar, useTheme } from "react-native-paper";
 import { Select, VStack, CheckIcon } from "native-base";
 import { useNavigation } from "@react-navigation/native";
@@ -17,11 +25,12 @@ export default function ProductSizeSelect({ product }: Props) {
   const { colors } = useTheme();
   const navigation = useNavigation();
   const addToCart = useProductStore(state => state.addToCart);
+  const selectRef = useRef();
 
-  function handleToast() {
+  const handleToast = () => {
     addToCart(product.id, size, product.priceNum);
     setVisible(true);
-  }
+  };
 
   const onDismiss = () => setVisible(false);
 
@@ -47,18 +56,50 @@ export default function ProductSizeSelect({ product }: Props) {
       </Portal>
       <VStack alignItems="center" space={2} style={styles.select}>
         <Select
+          _actionSheetContent={{
+            onLayout: () => {
+              if (selectRef && selectRef.current) {
+                // @ts-ignore
+                const tag = findNodeHandle(selectRef.current);
+                if (tag) {
+                  // for some reason you need to call this multiple times
+                  // in order to set the focus... duh
+                  // https://github.com/facebook/react-native/issues/30097
+                  AccessibilityInfo.setAccessibilityFocus(tag);
+                  AccessibilityInfo.setAccessibilityFocus(tag);
+                  AccessibilityInfo.setAccessibilityFocus(tag);
+                  AccessibilityInfo.setAccessibilityFocus(tag);
+                }
+              }
+            },
+          }}
           selectedValue={size}
           width={"100%"}
           placeholder="Select your size"
-          accessibilityLabel="Select your fitting size"
+          accessibilityLabel="Select your size"
           accessibilityHint="Selects the size that fits for you"
           onValueChange={val => setSize(val)}
           _selectedItem={{
             bg: "black",
             endIcon: <CheckIcon size={4} />,
           }}>
+          <Select.Item
+            ref={selectRef}
+            accessibilityLabel="No size"
+            accessibilityHint="Has no effect for your purchases"
+            label={"-"}
+            value={"-"}
+          />
           {product.sizes.map((val, idx) => {
-            return <Select.Item key={idx} label={val} value={val} />;
+            return (
+              <Select.Item
+                accessibilityLabel="Select option"
+                accessibilityHint={`Size ${val}`}
+                key={idx}
+                label={val}
+                value={val}
+              />
+            );
           })}
         </Select>
         <Button
@@ -67,7 +108,7 @@ export default function ProductSizeSelect({ product }: Props) {
           mode="contained"
           color={colors.accent}
           style={styles.cartButton}
-          disabled={size.length === 0 || visible}>
+          disabled={size.length === 0 || visible || size === "-"}>
           Add to Cart
         </Button>
       </VStack>

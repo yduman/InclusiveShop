@@ -17,11 +17,20 @@ export default function ProductDetailNavBar(props: StackHeaderProps) {
   const product = store.products.filter(p => p.id === productId)[0];
   const description = getFullDescription(product);
   const likeProduct = store.toggleFavorite;
+  const isLiked = favorites.includes(productId);
 
   return (
     <Appbar.Header>
-      {previous ? <Appbar.BackAction onPress={navigation.goBack} /> : null}
+      {previous ? (
+        <Appbar.BackAction
+          accessibilityLabel="Go back"
+          accessibilityHint="Will navigate you back to the previous page"
+          accessibilityRole="button"
+          onPress={navigation.goBack}
+        />
+      ) : null}
       <Appbar.Content
+        accessibilityRole="header"
         title={product.brand}
         subtitle={description}
         titleStyle={{
@@ -42,7 +51,12 @@ export default function ProductDetailNavBar(props: StackHeaderProps) {
         }}
       />
       <Appbar.Action
-        icon={favorites.includes(productId) ? "heart" : "heart-outline"}
+        accessibilityRole="button"
+        accessibilityLabel="Add to favorites"
+        accessibilityHint={`Adds this product to your favorites list. Currently ${
+          isLiked ? "in your list" : "not in your list"
+        }`}
+        icon={isLiked ? "heart" : "heart-outline"}
         onPress={() => likeProduct(productId)}
       />
     </Appbar.Header>

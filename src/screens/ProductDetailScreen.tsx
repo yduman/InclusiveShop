@@ -26,10 +26,18 @@ export default function ProductDetailScreen() {
         resizeMode="cover"
         alt="Some alt"
         style={styles.img}
+        accessibilityElementsHidden
         accessibilityIgnoresInvertColors
+        importantForAccessibility="no-hide-descendants"
       />
       <ProductDetailsContainer>
-        <ProductDetailTitle brand={product.brand} description={description} />
+        <ProductDetailTitle
+          brand={product.brand}
+          description={description}
+          type={product.type}
+          color={product.color}
+          model={product.title}
+        />
         <Spacer top={2} />
         <Price
           price={product.price}
