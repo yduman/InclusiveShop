@@ -19,8 +19,8 @@
   - [X] Implement modal logic
   - [X] Pass correct price to `CheckoutNotice`
   - [X] Display modal when triggering checkout
-- [ ] Apply a11y to login screen
-- [ ] Apply a11y to home screen
+- [X] Apply a11y to login screen
+- [X] Apply a11y to home screen
 - [ ] Apply a11y to search screen
 - [ ] Apply a11y to favorites screen
 - [ ] Apply a11y to shopping cart screen
