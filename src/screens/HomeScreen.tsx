@@ -17,19 +17,27 @@ export default function HomeScreen() {
 
   return (
     <React.Fragment>
-      <Header title="InclusiveShop" />
+      <Header
+        title="InclusiveShop"
+        accessibilityLabel="You are at the home screen"
+        accessibilityHint="Explore products that are featured or in sale!"
+      />
       <ScrollView showsVerticalScrollIndicator={false} style={styles.home}>
         <Headlines
           title="Featured Products"
-          subtitle="Recommendations for you"
+          subtitle="Our recommendations for you"
+          accessibilityLabel="Upon next are our featured products"
+          accessibilityHint="You can scroll horizontally through the list to find a product you like"
         />
         <ProductList data={featuredProducts} isHorizontal />
         <Spacer top={4} bottom={8} />
         <Headlines
           title="Products on Sale"
           subtitle="Our best discounts for you"
+          accessibilityLabel="Upon next are our products on discount"
+          accessibilityHint="You can scroll horizontally through the list to find a product you like"
         />
-        <ProductList data={discountProducts} isHorizontal />
+        <ProductList data={discountProducts} isHorizontal={true} />
         <Spacer top={4} bottom={20} />
       </ScrollView>
     </React.Fragment>

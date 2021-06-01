@@ -25,7 +25,7 @@ export default function InclusiveShopScreen() {
         name="Home"
         component={HomeScreen}
         options={{
-          tabBarAccessibilityLabel: "Home",
+          tabBarAccessibilityLabel: "Bottom tab navigation. Homepage",
           tabBarIcon: ({ focused }) => renderIcon("home", focused),
         }}
       />
@@ -33,7 +33,8 @@ export default function InclusiveShopScreen() {
         name="Search"
         component={SearchScreen}
         options={{
-          tabBarAccessibilityLabel: "Search Products",
+          tabBarAccessibilityLabel:
+            "Bottom tab navigation. Search products page",
           tabBarIcon: ({ focused }) => renderIcon("text-box-search", focused),
         }}
       />
@@ -41,7 +42,8 @@ export default function InclusiveShopScreen() {
         name="Favorites"
         component={FavoriteProductsScreen}
         options={{
-          tabBarAccessibilityLabel: "Favorite Products",
+          tabBarAccessibilityLabel:
+            "Bottom tab navigation. Favorite products page",
           tabBarIcon: ({ focused }) => renderIcon("heart", focused),
         }}
       />
@@ -49,7 +51,7 @@ export default function InclusiveShopScreen() {
         name="Checkout"
         component={CheckoutScreen}
         options={{
-          tabBarAccessibilityLabel: "Checkout",
+          tabBarAccessibilityLabel: "Bottom tab navigation. Checkout page",
           tabBarIcon: ({ focused }) => renderIcon("cart", focused),
         }}
       />

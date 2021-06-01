@@ -8,7 +8,11 @@ import { Product } from "../../utils/data";
 import { ProductImage, ProductView } from "../styled";
 import { StackScreens } from "../../types/routerTypes";
 
-export default function ProductCard(product: Product) {
+interface Props {
+  product: Product;
+}
+
+export default function ProductCard({ product }: Props) {
   const navigation = useNavigation();
 
   function handleProductPress() {
@@ -16,7 +20,10 @@ export default function ProductCard(product: Product) {
   }
 
   return (
-    <TouchableWithoutFeedback onPress={handleProductPress}>
+    <TouchableWithoutFeedback
+      onPress={handleProductPress}
+      accessibilityElementsHidden
+      importantForAccessibility="no-hide-descendants">
       <ProductView>
         <ProductImage source={product.img} resizeMode="cover" />
         <ProductSaleBadge

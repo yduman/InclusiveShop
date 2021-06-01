@@ -4,12 +4,25 @@ import { Appbar } from "react-native-paper";
 interface Props {
   title: string;
   subtitle?: string;
+  accessibilityLabel?: string;
+  accessibilityHint?: string;
 }
 
-export default function Header(props: Props) {
+export default function Header({
+  title,
+  subtitle,
+  accessibilityLabel,
+  accessibilityHint,
+}: Props) {
   return (
     <Appbar.Header>
-      <Appbar.Content title={props.title} subtitle={props.subtitle} />
+      <Appbar.Content
+        title={title}
+        subtitle={subtitle}
+        accessibilityLabel={accessibilityLabel}
+        accessibilityHint={accessibilityHint}
+        accessibilityRole="header"
+      />
     </Appbar.Header>
   );
 }
