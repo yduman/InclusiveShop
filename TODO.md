@@ -22,7 +22,8 @@
 - [X] Apply a11y to login screen
 - [X] Apply a11y to home screen
 - [X] Apply a11y to search screen
-- [ ] Apply a11y to product detail screen
-- [ ] Apply a11y to favorites screen
+- [X] Apply a11y to product detail screen
+- [X] Apply a11y to favorites screen
 - [ ] Apply a11y to shopping cart screen
 - [ ] Apply a11y to color theme (contrast)
+- [ ] A11y focus to header when navigating to new screen with bottom tab nav

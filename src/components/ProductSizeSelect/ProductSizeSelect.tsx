@@ -38,6 +38,8 @@ export default function ProductSizeSelect({ product }: Props) {
     <React.Fragment>
       <Portal>
         <Snackbar
+          accessibilityLabel="Successfully added"
+          accessibilityHint="This product is now in your shopping cart"
           theme={{
             colors: {
               accent: "white",
@@ -45,8 +47,10 @@ export default function ProductSizeSelect({ product }: Props) {
           }}
           visible={visible}
           onDismiss={onDismiss}
-          duration={10000}
+          duration={2000}
           action={{
+            accessibilityElementsHidden: true,
+            importantForAccessibility: "no-hide-descendants",
             label: "Checkout",
             labelStyle: styles.snackbarLabel,
             onPress: () => navigation.navigate("Checkout"),
@@ -76,7 +80,9 @@ export default function ProductSizeSelect({ product }: Props) {
           selectedValue={size}
           width={"100%"}
           placeholder="Select your size"
-          accessibilityLabel="Select your size"
+          accessibilityLabel={`Size selector. Current selected size is: ${
+            size ? size : "no size"
+          }`}
           accessibilityHint="Selects the size that fits for you"
           onValueChange={val => setSize(val)}
           _selectedItem={{
@@ -85,8 +91,8 @@ export default function ProductSizeSelect({ product }: Props) {
           }}>
           <Select.Item
             ref={selectRef}
-            accessibilityLabel="No size"
-            accessibilityHint="Has no effect for your purchases"
+            accessibilityLabel="Select option: No size"
+            accessibilityHint="Selecting it has no effect on your purchases"
             label={"-"}
             value={"-"}
           />
@@ -103,6 +109,9 @@ export default function ProductSizeSelect({ product }: Props) {
           })}
         </Select>
         <Button
+          accessibilityLabel="Add this product to your shopping cart"
+          accessibilityHint="After pressing this button your selection will land in the shopping cart"
+          accessibilityRole="button"
           onPress={handleToast}
           icon="cart"
           mode="contained"

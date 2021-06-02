@@ -1,15 +1,18 @@
-import React from "react";
-import { PixelRatio, Platform } from "react-native";
+import React, { useEffect, useState } from "react";
+import { PixelRatio, Platform, AccessibilityInfo } from "react-native";
 import { Appbar } from "react-native-paper";
 import { StackHeaderProps } from "@react-navigation/stack";
 import { RouteProp, useRoute } from "@react-navigation/native";
 
 import useProductStore from "../../hooks/useProductStore";
-import { getFullDescription } from "../../utils";
+import { getCartCountAnnouncement, getFullDescription } from "../../utils";
 import { ParamList, StackScreens } from "../../types/routerTypes";
 
-export default function ProductDetailNavBar(props: StackHeaderProps) {
-  const { navigation, previous } = props;
+export default function ProductDetailNavBar({
+  navigation,
+  previous,
+}: StackHeaderProps) {
+  const [isScreenReaderEnabled, setIsScreenReaderEnabled] = useState(false);
   const route = useRoute<RouteProp<ParamList, StackScreens.ProductDetail>>();
   const productId = route.params.productId;
   const store = useProductStore();
@@ -18,6 +21,13 @@ export default function ProductDetailNavBar(props: StackHeaderProps) {
   const description = getFullDescription(product);
   const likeProduct = store.toggleFavorite;
   const isLiked = favorites.includes(productId);
+  const cartAnnouncement = getCartCountAnnouncement(store.cart);
+
+  useEffect(() => {
+    AccessibilityInfo.isScreenReaderEnabled().then(isEnabled =>
+      setIsScreenReaderEnabled(isEnabled),
+    );
+  }, []);
 
   return (
     <Appbar.Header>
@@ -59,6 +69,15 @@ export default function ProductDetailNavBar(props: StackHeaderProps) {
         icon={isLiked ? "heart" : "heart-outline"}
         onPress={() => likeProduct(productId)}
       />
+      {isScreenReaderEnabled ? (
+        <Appbar.Action
+          accessibilityRole="button"
+          accessibilityLabel="Shopping Cart"
+          accessibilityHint={cartAnnouncement}
+          icon="cart"
+          onPress={() => navigation.navigate("Checkout")}
+        />
+      ) : null}
     </Appbar.Header>
   );
 }

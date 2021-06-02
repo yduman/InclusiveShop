@@ -12,12 +12,19 @@ interface Props {
 export default function FallbackContent({ title, subtitle, img }: Props) {
   return (
     <View style={styles.view}>
-      <Headlines title={title} subtitle={subtitle} />
+      <Headlines
+        title={title}
+        subtitle={subtitle}
+        accessibilityLabel={title}
+        accessibilityHint={subtitle}
+      />
       <Image
         source={img}
         resizeMode="cover"
         style={styles.img}
         accessibilityIgnoresInvertColors
+        accessibilityElementsHidden
+        importantForAccessibility="no-hide-descendants"
       />
     </View>
   );

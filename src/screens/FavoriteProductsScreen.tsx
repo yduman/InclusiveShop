@@ -11,7 +11,11 @@ export default function FavoriteProductsScreen() {
 
   return (
     <React.Fragment>
-      <Header title="Favorites" />
+      <Header
+        title="Favorites"
+        accessibilityLabel="You are at the favorite products screen"
+        accessibilityHint="Here you find all products that you liked!"
+      />
       {favorites.length === 0 ? (
         <FallbackContent
           title="No Favorites?"

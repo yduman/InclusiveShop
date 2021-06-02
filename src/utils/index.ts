@@ -12,3 +12,18 @@ export function calculateTotalPrice(cartItems: CartItem[]) {
   });
   return `$${total}`;
 }
+
+export function getCartCountAnnouncement(cartItems: CartItem[]) {
+  let total = 0;
+  cartItems.forEach(item => {
+    total += item.count;
+  });
+
+  if (total === 0) {
+    return "Your cart is currently empty.";
+  } else if (total === 1) {
+    return `You have ${total} item in your shopping cart`;
+  } else {
+    return `You have ${total} items in your shopping cart`;
+  }
+}
