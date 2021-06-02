@@ -1,5 +1,5 @@
 import React from "react";
-import { FlatList } from "react-native";
+import { View, FlatList } from "react-native";
 
 import { CartItem } from "../../hooks/useProductStore";
 import CheckoutCard from "../CheckoutCard";
@@ -15,7 +15,14 @@ export default function CheckoutList({ data }: Props) {
       data={data}
       keyExtractor={(_, idx) => idx.toString()}
       renderItem={({ item, index }) => {
-        return <CheckoutCard key={index} {...item} />;
+        return (
+          <CheckoutCard
+            key={index}
+            id={index}
+            cartLength={data.length}
+            {...item}
+          />
+        );
       }}
     />
   );

@@ -12,7 +12,8 @@ export default function ShippingNotice() {
     <View
       style={styles.view}
       accessibilityLabel="The products will be shipped by InclusiveShop"
-      accessibilityHint={`Your parcel will arrive between ${getShippingDate()}`}>
+      accessibilityHint={`Your parcel will arrive between ${getShippingDate()}`}
+      accessibilityRole="header">
       <HStack
         space={4}
         accessibilityElementsHidden

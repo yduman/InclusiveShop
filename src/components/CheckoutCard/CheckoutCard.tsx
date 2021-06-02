@@ -8,11 +8,21 @@ import { Product } from "../../utils/data";
 import { getFullDescription } from "../../utils";
 import QuantitySelect from "../QuantitySelect";
 
+interface Props {
+  id: number;
+  productId: number;
+  selectedSize: string;
+  count: number;
+  cartLength: number;
+}
+
 export default function CheckoutCard({
+  id,
   productId,
   selectedSize,
   count,
-}: CartItem) {
+  cartLength,
+}: Props) {
   const [visible, setVisible] = useState(false);
   const product = useProductStore(state =>
     state.products.find(p => p.id === productId),
@@ -59,27 +69,56 @@ export default function CheckoutCard({
           resizeMode="cover"
           style={styles.img}
           accessibilityIgnoresInvertColors
+          accessibilityElementsHidden
+          importantForAccessibility="no-hide-descendants"
         />
-        <VStack space={1} style={styles.content} w="55%">
-          <Text maxFontSizeMultiplier={1.4} style={styles.text}>
+        <VStack
+          space={1}
+          style={styles.content}
+          w="55%"
+          accessibilityLabel={`Product ${id + 1} of ${cartLength}`}
+          accessibilityHint={`${product.brand} ${product.title} ${product.type}; Price: ${product.price}; Color: ${product.color}; Size: ${selectedSize}; Quantity: ${count}`}>
+          <Text
+            accessibilityElementsHidden
+            importantForAccessibility="no-hide-descendants"
+            maxFontSizeMultiplier={1.4}
+            style={styles.text}>
             {product.brand}
           </Text>
           <Text
+            accessibilityElementsHidden
+            importantForAccessibility="no-hide-descendants"
             maxFontSizeMultiplier={1.4}
             style={styles.text}
             numberOfLines={1}>
             {getFullDescription(product)}
           </Text>
-          <Text maxFontSizeMultiplier={1.4} style={styles.price}>
+          <Text
+            accessibilityElementsHidden
+            importantForAccessibility="no-hide-descendants"
+            maxFontSizeMultiplier={1.4}
+            style={styles.price}>
             {product.price}
           </Text>
-          <Text maxFontSizeMultiplier={1.4} style={styles.text}>
+          <Text
+            accessibilityElementsHidden
+            importantForAccessibility="no-hide-descendants"
+            maxFontSizeMultiplier={1.4}
+            style={styles.text}>
             Color: {product.color}
           </Text>
-          <Text maxFontSizeMultiplier={1.4} style={styles.text}>
+          <Text
+            accessibilityElementsHidden
+            importantForAccessibility="no-hide-descendants"
+            maxFontSizeMultiplier={1.4}
+            style={styles.text}>
             Size: {selectedSize}
           </Text>
-          <Text maxFontSizeMultiplier={1.4} style={styles.text}>
+          <Text
+            accessibilityElementsHidden
+            importantForAccessibility="no-hide-descendants"
+            maxFontSizeMultiplier={1.4}
+            style={styles.text}>
             Quantity: {count}
           </Text>
         </VStack>
