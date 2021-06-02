@@ -13,7 +13,11 @@ export default function CheckoutScreen() {
 
   return (
     <React.Fragment>
-      <Header title="Checkout" />
+      <Header
+        title="Checkout"
+        accessibilityLabel="You are at the checkout screen"
+        accessibilityHint="All products in your shopping cart are listed below"
+      />
       {store.cart.length === 0 ? (
         <FallbackContent
           title="Nothing you liked?"

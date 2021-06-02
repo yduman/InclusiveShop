@@ -1,5 +1,5 @@
 import React from "react";
-import { View, Text, StyleSheet } from "react-native";
+import { View, Text, StyleSheet, AccessibilityInfo } from "react-native";
 import { VStack, HStack } from "native-base";
 import Icon from "react-native-vector-icons/MaterialCommunityIcons";
 import dayjs from "dayjs";
@@ -9,8 +9,14 @@ dayjs.extend(relativeTime);
 
 export default function ShippingNotice() {
   return (
-    <View style={styles.view}>
-      <HStack space={4}>
+    <View
+      style={styles.view}
+      accessibilityLabel="The products will be shipped by InclusiveShop"
+      accessibilityHint={`Your parcel will arrive between ${getShippingDate()}`}>
+      <HStack
+        space={4}
+        accessibilityElementsHidden
+        importantForAccessibility="no-hide-descendants">
         <Icon name="package-variant-closed" size={30} />
         <VStack space={1}>
           <Text maxFontSizeMultiplier={1.8}>Shipped by InclusiveShop</Text>
@@ -31,7 +37,7 @@ function getShippingDate() {
 }
 
 function formatDate(date: dayjs.Dayjs) {
-  return date.format("ddd, DD/MM");
+  return date.format("ddd, DD MMM YYYY");
 }
 
 const styles = StyleSheet.create({
