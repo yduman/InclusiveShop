@@ -1,5 +1,5 @@
 import React from "react";
-import { View, Text, StyleSheet, AccessibilityInfo } from "react-native";
+import { View, Text, StyleSheet } from "react-native";
 import { VStack, HStack } from "native-base";
 import Icon from "react-native-vector-icons/MaterialCommunityIcons";
 import dayjs from "dayjs";
