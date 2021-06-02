@@ -1,9 +1,10 @@
-import React, { useState } from "react";
-import { StyleSheet, Image } from "react-native";
+/* eslint-disable @typescript-eslint/ban-ts-comment */
+import React, { useState, useRef, useEffect } from "react";
+import { View, StyleSheet, Image, AccessibilityInfo } from "react-native";
 import { IconButton, Text, Modal, Portal, Button } from "react-native-paper";
 import { HStack, useDisclose, VStack } from "native-base";
 
-import useProductStore, { CartItem } from "../../hooks/useProductStore";
+import useProductStore from "../../hooks/useProductStore";
 import { Product } from "../../utils/data";
 import { getFullDescription } from "../../utils";
 import QuantitySelect from "../QuantitySelect";
@@ -23,24 +24,34 @@ export default function CheckoutCard({
   count,
   cartLength,
 }: Props) {
+  const countSelectRef = useRef();
+  const [hasSR, setHasSR] = useState(false);
   const [visible, setVisible] = useState(false);
   const product = useProductStore(state =>
     state.products.find(p => p.id === productId),
   ) as Product;
   const deleteFromCart = useProductStore(state => state.deleteFromCart);
+
   const { isOpen, onOpen, onClose } = useDisclose();
-  const showModal = () => setVisible(true);
   const hideModal = () => setVisible(false);
-  const containerStyle = { backgroundColor: "white", padding: 20 };
+  const showModal = () => setVisible(true);
+
+  useEffect(() => {
+    AccessibilityInfo.isScreenReaderEnabled().then(x => setHasSR(x));
+  }, []);
 
   return (
     <React.Fragment>
       <Portal>
         <Modal
+          dismissable
+          overlayAccessibilityLabel="Close dialog"
           visible={visible}
           onDismiss={hideModal}
           contentContainerStyle={containerStyle}>
           <Button
+            accessibilityLabel="Change quantity dialog button"
+            accessibilityHint="Will let you select your desired amount you want for this product"
             theme={{ colors: { primary: "black" } }}
             mode="text"
             onPress={() => {
@@ -50,6 +61,8 @@ export default function CheckoutCard({
             <Text maxFontSizeMultiplier={1.4}>Change quantity ({count})</Text>
           </Button>
           <Button
+            accessibilityLabel="Delete product dialog button"
+            accessibilityHint="Will delete this product from your shopping cart"
             theme={{ colors: { primary: "black" } }}
             mode="text"
             onPress={() => {
@@ -122,9 +135,32 @@ export default function CheckoutCard({
             Quantity: {count}
           </Text>
         </VStack>
-        <IconButton icon="dots-horizontal" onPress={showModal} />
+        {hasSR ? (
+          <View>
+            <IconButton
+              accessibilityLabel="Change quantity"
+              accessibilityHint="Select this button to change the quantity you want to purchase for this product"
+              icon="numeric"
+              onPress={onOpen}
+            />
+            <IconButton
+              accessibilityLabel="Remove product"
+              accessibilityHint="Select this button to remove this product from the shopping cart"
+              icon="delete"
+              onPress={() => deleteFromCart(productId, selectedSize)}
+            />
+          </View>
+        ) : (
+          <IconButton
+            accessibilityElementsHidden
+            importantForAccessibility="no-hide-descendants"
+            icon="dots-horizontal"
+            onPress={showModal}
+          />
+        )}
       </HStack>
       <QuantitySelect
+        ref={countSelectRef}
         isOpen={isOpen}
         onClose={onClose}
         productId={productId}
@@ -135,6 +171,7 @@ export default function CheckoutCard({
   );
 }
 
+const containerStyle = { backgroundColor: "white", padding: 20 };
 const styles = StyleSheet.create({
   cardContainer: {
     borderBottomWidth: 1,

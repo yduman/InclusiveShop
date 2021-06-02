@@ -67,7 +67,7 @@ export default function ProductSizeSelect({ product }: Props) {
                 const tag = findNodeHandle(selectRef.current);
                 if (tag) {
                   // for some reason you need to call this multiple times
-                  // in order to set the focus... duh
+                  // in order to set the focus...
                   // https://github.com/facebook/react-native/issues/30097
                   AccessibilityInfo.setAccessibilityFocus(tag);
                   AccessibilityInfo.setAccessibilityFocus(tag);
