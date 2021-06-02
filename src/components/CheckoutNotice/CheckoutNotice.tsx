@@ -27,6 +27,8 @@ const checkoutAlert = (
   );
 };
 
+// TODO: investigate payment image refactoring by index.ts on images folder
+// map on ["Visa", ...]
 export default function CheckoutNotice() {
   const { colors } = useTheme();
   const store = useProductStore();
@@ -36,11 +38,23 @@ export default function CheckoutNotice() {
 
   return (
     <VStack style={styles.container} space={4}>
-      <HStack justifyContent="space-between">
-        <Text maxFontSizeMultiplier={1.8} style={styles.total}>
+      <HStack
+        justifyContent="space-between"
+        accessibilityLabel="Total Price"
+        accessibilityHint={`${totalPrice}`}
+        accessibilityRole="header">
+        <Text
+          maxFontSizeMultiplier={1.8}
+          style={styles.total}
+          accessibilityElementsHidden
+          importantForAccessibility="no-hide-descendants">
           Total
         </Text>
-        <Text maxFontSizeMultiplier={1.8} style={styles.total}>
+        <Text
+          maxFontSizeMultiplier={1.8}
+          style={styles.total}
+          accessibilityElementsHidden
+          importantForAccessibility="no-hide-descendants">
           {totalPrice}
         </Text>
       </HStack>
@@ -51,42 +65,59 @@ export default function CheckoutNotice() {
         style={styles.checkout}>
         <Text maxFontSizeMultiplier={1.8}>Checkout</Text>
       </Button>
-      <HStack space={5} justifyContent="center">
+      <HStack
+        space={5}
+        justifyContent="center"
+        accessibilityRole="header"
+        accessibilityLabel="Payment methods"
+        accessibilityHint="Visa, MasterCard, American Express, PayPal, Apple Pay and Google Pay">
         <Image
           source={require("../../../assets/images/visa.png")}
           resizeMode="contain"
           style={styles.payment}
           accessibilityIgnoresInvertColors
+          accessibilityElementsHidden
+          importantForAccessibility="no-hide-descendants"
         />
         <Image
           source={require("../../../assets/images/mastercard.png")}
           resizeMode="contain"
           style={styles.payment}
           accessibilityIgnoresInvertColors
+          accessibilityElementsHidden
+          importantForAccessibility="no-hide-descendants"
         />
         <Image
           source={require("../../../assets/images/aexpress.png")}
           resizeMode="contain"
           style={styles.payment}
           accessibilityIgnoresInvertColors
+          accessibilityElementsHidden
+          importantForAccessibility="no-hide-descendants"
         />
         <Image
           source={require("../../../assets/images/paypal.png")}
           resizeMode="contain"
           style={styles.payment}
           accessibilityIgnoresInvertColors
+          accessibilityElementsHidden
+          importantForAccessibility="no-hide-descendants"
         />
         <Image
           source={require("../../../assets/images/applepay.png")}
           resizeMode="contain"
           style={styles.payment}
           accessibilityIgnoresInvertColors
+          accessibilityElementsHidden
+          importantForAccessibility="no-hide-descendants"
         />
         <Image
           source={require("../../../assets/images/googlepay.png")}
           resizeMode="contain"
           style={styles.payment}
           accessibilityIgnoresInvertColors
+          accessibilityElementsHidden
+          importantForAccessibility="no-hide-descendants"
         />
       </HStack>
     </VStack>
