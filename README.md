@@ -70,7 +70,7 @@ This project uses the [Inter font family](https://rsms.me/inter/). It is designe
 
 ## Font Scaling
 
-> All screens should have the ability to deal with large system font
+> All screens should have the ability to deal with large system fonts
 
 - You can make use of APIs like
   - [`maxFontSizeMultiplier`](https://reactnative.dev/docs/text#maxfontsizemultiplier)
@@ -89,9 +89,9 @@ You make use of `useRef` and pass that to the desired view. Afterwards, in your 
 
 ## Recognized Issues
 
-- There were cases where the screen reader would just ignore `accessibilityLabel`. It would constantly start reading `accessibilityHint`
-- Handling focus programmatically is a hard task and not really stable as it seems, since you need to call `AccessibilityInfo.setAccessibilityFocus(reactTag: number)` multiple times in order to work reliably. Read [this issue](https://github.com/facebook/react-native/issues/30097) for further information.
-- Usually, you have a11y APIs that collections. There are currently open issues for that [[1]](https://github.com/facebook/react-native/issues/30977) [[2]](https://github.com/facebook/react-native/issues/30972). You can kind of realize this in a hacky way with passing down the collection size and index of the elements via props an make it announcable via `accessibilityLabel` and `accessibilityHint`. 
+- There were cases where the screen reader would just ignore `accessibilityLabel`. It would constantly start reading `accessibilityHint` first.
+- Handling focus programmatically is a hard task and not really stable as it seems. You need to call `setAccessibilityFocus` multiple times to force the focus. Read [this issue](https://github.com/facebook/react-native/issues/30097) for further information.
+- Usually you have a11y APIs that support collections. There are currently open issues for that [[1]](https://github.com/facebook/react-native/issues/30977) [[2]](https://github.com/facebook/react-native/issues/30972). You can kind of realize this in a hacky way by passing down the collection size and index of elements via props an make it announcable via `accessibilityLabel` and `accessibilityHint`. 
 - [Not all standard roles and traits are supported](https://github.com/facebook/react-native/issues/30839)
 - [RN is currently missing an API for accessibility order, which hurts UX](https://github.com/facebook/react-native/issues/30888)
-- Modal a11y was weird, so I had to come up with different UI design in order to keep up good UX. May be related to [this issue](https://github.com/facebook/react-native/issues/30860).
+- Modal a11y was weird, so I had to come up with different UI designs in order to prevent negative UX. May be related to [this issue](https://github.com/facebook/react-native/issues/30860).
