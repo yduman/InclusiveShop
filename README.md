@@ -37,3 +37,8 @@ const theme = {
 - Primary Background + Accent Foreground = [Contrast Ratio of 15.48:1](https://color.a11y.com/ContrastPair/?bgcolor=EAE7DC&fgcolor=0F0F0F)
 - White Background + Accent Foreground = [Contrast Ratio of 19.16:1](https://color.a11y.com/ContrastPair/?bgcolor=FFFFFF&fgcolor=0F0F0F)
 - All combinations pass WCAG AA and WCAG AAA
+
+## Recognized Issues
+
+- There were cases where the screen reader would just ignore `accessibilityLabel`. It would constantly start reading `accessibilityHint`
+- Handling focus programmatically is a hard task and not really stable as it seems, since you need to call `AccessibilityInfo.setAccessibilityFocus(reactTag)` multiple times in order to work reliably. Read [this issue](https://github.com/facebook/react-native/issues/30097) for further information.
