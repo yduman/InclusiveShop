@@ -25,6 +25,7 @@
 - [X] Apply a11y to product detail screen
 - [X] Apply a11y to favorites screen
 - [X] Apply a11y to shopping cart screen
-- [ ] Apply a11y to color theme (contrast)
+- [X] Apply a11y to color theme (contrast)
 - [ ] Focus SR to header when navigating to new screen with bottom tab nav
 - [ ] Focus SR back to element when leaving modal
+  - hard to realize at the moment
