@@ -24,6 +24,12 @@ The goal of this project is to highlight techniques regarding a11y and moreover 
 - Testing
 - Internationalization (i18n)
 
+### Sample Screens
+
+<img src="./screenImages/LoginScreen.png" width="250" />
+<img src="./screenImages/ProductDetailScreen.png" width="250" />
+<img src="./screenImages/CheckoutScreen.png" width="250" />
+
 ## Common React Native Accessibility APIs Used
 
 > Screen reader capabilities tested with TalkBack on an OnePlus 6T using Android 10
