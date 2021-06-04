@@ -77,9 +77,9 @@ This project uses the [Inter font family](https://rsms.me/inter/). It is designe
   - [`PixelRatio.getFontScale()`](https://reactnative.dev/docs/pixelratio#getfontscale)
   - [`PixelRatio.getPixelSizeForLayoutSize(layoutSize: number)`](https://reactnative.dev/docs/pixelratio#getpixelsizeforlayoutsize)
 
-## Setting Focus Programmatically For A11y
+## Forcing Focus for Accessibility
 
-> Sometimes you have to force focus to a specific element
+> Sometimes you have to force focus to a specific element. E.g. entering or leaving a modal
 
 You make use of `useRef` and pass that to the desired view. Afterwards, in your handler, you combine the usage of `findNodeHandle` and `AccessibilityInfo.setAccessibilityFocus` in order to set the focus. The ref value is passed to `findNodeHandle`, which should return the reactTag that you then need to pass to `setAccessibilityFocus`. The latter API doesn't work reliably as it should. You can read on [Recognized Issues](#recognized-issues) why.
 
