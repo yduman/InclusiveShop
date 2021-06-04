@@ -111,7 +111,7 @@ export default function CheckoutCard({
             importantForAccessibility="no-hide-descendants"
             maxFontSizeMultiplier={1.4}
             style={styles.price}>
-            {product.price}
+            {product.isSale ? product.salePrice : product.price}
           </Text>
           <Text
             accessibilityElementsHidden
