@@ -25,10 +25,11 @@ The goal of this project is to highlight techniques regarding a11y and moreover 
 - Internationalization (i18n)
 
 ### Sample Screens
-
-<img src="./screenImages/LoginScreen.png" width="250" />
-<img src="./screenImages/ProductDetailScreen.png" width="250" />
-<img src="./screenImages/CheckoutScreen.png" width="250" />
+<p float="left">
+  <img src="./screenImages/LoginScreen.png" width="200" />
+  <img src="./screenImages/ProductDetailScreen.png" width="200" />
+  <img src="./screenImages/CheckoutScreen.png" width="200" />
+</p>
 
 ## Common React Native Accessibility APIs Used
 
