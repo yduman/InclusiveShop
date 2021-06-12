@@ -80,7 +80,9 @@ export default function ProductSizeSelect({ product }: Props) {
           selectedValue={size}
           width={"100%"}
           placeholder="Select your size"
-          accessibilityLabel={`Size selector. Current selected size is: ${
+          placeholderTextColor="black"
+          borderColor="black"
+          accessibilityLabel={`Size selector. Current choice is: ${
             size ? size : "no size"
           }`}
           accessibilityHint="Selects the size that fits for you"
@@ -110,13 +112,14 @@ export default function ProductSizeSelect({ product }: Props) {
         </Select>
         <Button
           accessibilityLabel="Add this product to your shopping cart"
-          accessibilityHint="After pressing this button your selection will land in the shopping cart"
+          accessibilityHint="Your selection will land in your shopping cart"
           accessibilityRole="button"
           onPress={handleToast}
           icon="cart"
           mode="contained"
           color={colors.accent}
           style={styles.cartButton}
+          contentStyle={styles.cartButton}
           disabled={size.length === 0 || visible || size === "-"}>
           Add to Cart
         </Button>
@@ -132,6 +135,7 @@ const styles = StyleSheet.create({
   },
   cartButton: {
     width: "100%",
+    height: 48,
   },
   snackbarLabel: {
     color: "aquamarine",

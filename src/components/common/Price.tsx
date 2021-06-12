@@ -62,10 +62,10 @@ const styles = StyleSheet.create({
   },
   salePriceDetail: {
     marginRight: 8,
-    color: "red",
+    color: "#b71c1c",
     fontWeight: "bold",
   },
   salePercent: {
-    color: "red",
+    color: "#b71c1c",
   },
 });

@@ -1,5 +1,5 @@
 import React from "react";
-import { PixelRatio, Platform } from "react-native";
+import { PixelRatio, Platform, StyleSheet } from "react-native";
 import { Appbar } from "react-native-paper";
 import { StackHeaderProps } from "@react-navigation/stack";
 import { RouteProp, useRoute } from "@react-navigation/native";
@@ -17,6 +17,7 @@ export default function SearchResultNavBar(props: StackHeaderProps) {
     <Appbar.Header>
       {previous ? (
         <Appbar.BackAction
+          style={styles.navButton}
           accessibilityLabel="Go back"
           accessibilityHint="Will navigate you back to the search page"
           accessibilityRole="button"
@@ -56,3 +57,10 @@ function getTitle(productType: ProductType, gender: Gender) {
 
   return type + " for " + gender;
 }
+
+const styles = StyleSheet.create({
+  navButton: {
+    width: 48,
+    height: 48,
+  },
+});

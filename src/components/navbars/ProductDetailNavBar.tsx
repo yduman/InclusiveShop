@@ -1,5 +1,10 @@
 import React, { useEffect, useState } from "react";
-import { PixelRatio, Platform, AccessibilityInfo } from "react-native";
+import {
+  PixelRatio,
+  Platform,
+  AccessibilityInfo,
+  StyleSheet,
+} from "react-native";
 import { Appbar } from "react-native-paper";
 import { StackHeaderProps } from "@react-navigation/stack";
 import { RouteProp, useRoute } from "@react-navigation/native";
@@ -33,6 +38,7 @@ export default function ProductDetailNavBar({
     <Appbar.Header>
       {previous ? (
         <Appbar.BackAction
+          style={styles.navButton}
           accessibilityLabel="Go back"
           accessibilityHint="Will navigate you back to the previous page"
           accessibilityRole="button"
@@ -61,6 +67,7 @@ export default function ProductDetailNavBar({
         }}
       />
       <Appbar.Action
+        style={styles.navButton}
         accessibilityRole="button"
         accessibilityLabel="Add to favorites"
         accessibilityHint={`Adds this product to your favorites list. Currently ${
@@ -71,6 +78,7 @@ export default function ProductDetailNavBar({
       />
       {isScreenReaderEnabled ? (
         <Appbar.Action
+          style={styles.navButton}
           accessibilityRole="button"
           accessibilityLabel="Shopping Cart"
           accessibilityHint={cartAnnouncement}
@@ -81,3 +89,10 @@ export default function ProductDetailNavBar({
     </Appbar.Header>
   );
 }
+
+const styles = StyleSheet.create({
+  navButton: {
+    width: 48,
+    height: 48,
+  },
+});

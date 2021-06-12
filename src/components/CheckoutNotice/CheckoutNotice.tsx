@@ -1,5 +1,5 @@
 import React from "react";
-import { Text, StyleSheet, Image, Alert } from "react-native";
+import { Text, StyleSheet, Image, Alert, View } from "react-native";
 import { VStack, HStack } from "native-base";
 import { Button, useTheme } from "react-native-paper";
 import { NavigationProp, useNavigation } from "@react-navigation/native";
@@ -62,7 +62,7 @@ export default function CheckoutNotice() {
         onPress={() => checkoutAlert(emptyCart, navigation)}
         mode="contained"
         color={colors.accent}
-        style={styles.checkout}>
+        contentStyle={styles.checkout}>
         <Text maxFontSizeMultiplier={1.8}>Checkout</Text>
       </Button>
       <HStack
@@ -140,6 +140,7 @@ const styles = StyleSheet.create({
   },
   checkout: {
     width: "100%",
+    height: 48,
   },
   payment: {
     height: 25,

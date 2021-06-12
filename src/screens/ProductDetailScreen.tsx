@@ -46,7 +46,7 @@ export default function ProductDetailScreen() {
         />
       </ProductDetailsContainer>
       <ProductSizeSelect product={product} />
-      <Spacer bottom={16} />
+      <Spacer top={24} />
     </ScrollView>
   );
 }
