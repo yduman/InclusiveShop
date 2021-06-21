@@ -50,7 +50,7 @@ interface SaleBadgeProps {
 export const SaleBadge = styled.View<SaleBadgeProps>`
   position: absolute;
   z-index: 1;
-  background-color: #b71c1c;
+  background-color: #ac1b1b;
   color: white;
   margin-top: ${props => String(220 - props.pixelRatio) + "px"};
   padding-left: 8px;
