@@ -17,6 +17,25 @@ The goal of this project is to highlight techniques regarding a11y and moreover 
 - [Native Base v3](https://alpha.nativebase.io/docs/nativebase)
 - [Material Design](https://material.io/design/usability/accessibility.html#understanding-accessibility)
 
+### Running the Apps
+
+```console
+# install dependencies
+$ yarn
+
+# start bundler
+$ yarn start
+
+# iOS first time install pods
+$ npx pod-install
+
+# run iOS app
+$ yarn ios
+
+# run Anroid app (Java 12)
+$ yarn android
+```
+
 ### Out of Scope
 
 > Due to limited time, the following topics are out of scope, but should be deeply considered in real-life projects!
