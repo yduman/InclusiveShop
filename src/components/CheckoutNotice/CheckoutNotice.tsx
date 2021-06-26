@@ -75,7 +75,7 @@ export default function CheckoutNotice() {
           source={require("../../../assets/images/visa.png")}
           resizeMode="contain"
           style={styles.payment}
-          accessibilityIgnoresInvertColors
+          accessibilityIgnoresInvertColors={false}
           accessibilityElementsHidden
           importantForAccessibility="no-hide-descendants"
         />
@@ -83,7 +83,7 @@ export default function CheckoutNotice() {
           source={require("../../../assets/images/mastercard.png")}
           resizeMode="contain"
           style={styles.payment}
-          accessibilityIgnoresInvertColors
+          accessibilityIgnoresInvertColors={false}
           accessibilityElementsHidden
           importantForAccessibility="no-hide-descendants"
         />
@@ -91,7 +91,7 @@ export default function CheckoutNotice() {
           source={require("../../../assets/images/aexpress.png")}
           resizeMode="contain"
           style={styles.payment}
-          accessibilityIgnoresInvertColors
+          accessibilityIgnoresInvertColors={false}
           accessibilityElementsHidden
           importantForAccessibility="no-hide-descendants"
         />
@@ -99,7 +99,7 @@ export default function CheckoutNotice() {
           source={require("../../../assets/images/paypal.png")}
           resizeMode="contain"
           style={styles.payment}
-          accessibilityIgnoresInvertColors
+          accessibilityIgnoresInvertColors={false}
           accessibilityElementsHidden
           importantForAccessibility="no-hide-descendants"
         />
@@ -107,7 +107,7 @@ export default function CheckoutNotice() {
           source={require("../../../assets/images/applepay.png")}
           resizeMode="contain"
           style={styles.payment}
-          accessibilityIgnoresInvertColors
+          accessibilityIgnoresInvertColors={false}
           accessibilityElementsHidden
           importantForAccessibility="no-hide-descendants"
         />
@@ -115,7 +115,7 @@ export default function CheckoutNotice() {
           source={require("../../../assets/images/googlepay.png")}
           resizeMode="contain"
           style={styles.payment}
-          accessibilityIgnoresInvertColors
+          accessibilityIgnoresInvertColors={false}
           accessibilityElementsHidden
           importantForAccessibility="no-hide-descendants"
         />

@@ -81,7 +81,7 @@ export default function CheckoutCard({
           source={product.img}
           resizeMode="cover"
           style={styles.img}
-          accessibilityIgnoresInvertColors
+          accessibilityIgnoresInvertColors={false}
           accessibilityElementsHidden
           importantForAccessibility="no-hide-descendants"
         />

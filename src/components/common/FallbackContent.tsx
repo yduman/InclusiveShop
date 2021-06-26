@@ -22,7 +22,7 @@ export default function FallbackContent({ title, subtitle, img }: Props) {
         source={img}
         resizeMode="cover"
         style={styles.img}
-        accessibilityIgnoresInvertColors
+        accessibilityIgnoresInvertColors={false}
         accessibilityElementsHidden
         importantForAccessibility="no-hide-descendants"
       />

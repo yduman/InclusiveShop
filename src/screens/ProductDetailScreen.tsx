@@ -27,7 +27,7 @@ export default function ProductDetailScreen() {
         alt="Some alt"
         style={styles.img}
         accessibilityElementsHidden
-        accessibilityIgnoresInvertColors
+        accessibilityIgnoresInvertColors={false}
         importantForAccessibility="no-hide-descendants"
       />
       <ProductDetailsContainer>
